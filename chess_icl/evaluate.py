@@ -16,5 +16,5 @@ def evaluate(
     k_values: Sequence[int],
     seed: int,
 ) -> None:
-    """Compare standard, rules-only variant, and K-game variant predictions."""
-    raise NotImplementedError("TODO: Sample demonstrations and score each evaluation condition.")
+    """Compare centipawn prediction errors across rulesets and K values."""
+    raise NotImplementedError("TODO: Sample demonstrations and compute mean absolute error.")

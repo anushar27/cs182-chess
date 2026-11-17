@@ -1,10 +1,10 @@
-"""Standard-chess pretraining and in-context outcome prediction."""
+"""Standard-chess pretraining and in-context score prediction."""
 
 from collections.abc import Sequence
 from pathlib import Path
 from typing import Protocol
 
-from .data import Game, Outcome, Position
+from .data import Game, Position, ScoredPosition
 
 
 class Evaluator(Protocol):
@@ -14,13 +14,14 @@ class Evaluator(Protocol):
         *,
         rules: str,
         demonstrations: Sequence[Game] = (),
-    ) -> Outcome:
-        """Predict from the side-to-move perspective."""
+    ) -> float:
+        """Predict a centipawn score from the side-to-move perspective."""
 
 
-def pretrain(games: Sequence[Game], checkpoint: Path) -> None:
-    """Train a standard-chess evaluator and save its weights."""
-    raise NotImplementedError("TODO: Choose the model, encoding, and training objective.")
+
+def pretrain(positions: Sequence[ScoredPosition], checkpoint: Path) -> None:
+    """Train on standard-chess position scores and save the model weights."""
+    raise NotImplementedError("TODO: Encode training inputs and train a regression model.")
 
 
 def load_evaluator(checkpoint: Path) -> Evaluator:

@@ -1,10 +1,10 @@
-"""Game records and paired evaluation positions."""
+"""Game records and paired centipawn evaluations."""
 
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Literal
 
-Outcome = Literal["win", "draw", "loss"]
+GameResult = Literal["win", "draw", "loss"]
 
 
 @dataclass(frozen=True)
@@ -12,22 +12,28 @@ class Game:
     game_id: str
     initial_fen: str
     moves: tuple[str, ...]
-    white_outcome: Outcome
+    white_outcome: GameResult
 
 
 @dataclass(frozen=True)
 class Position:
     fen: str
-    history: tuple[str, ...] = ()
-    # TODO: Define the history or extra state required by the chosen rules.
+    initial_fen: str | None = None
+    moves: tuple[str, ...] = ()
+    # For history-dependent rules, replay moves from initial_fen to reach fen.
+
+
+@dataclass(frozen=True)
+class ScoredPosition:
+    position: Position
+    score_cp: float
 
 
 @dataclass(frozen=True)
 class PositionPair:
-    position: Position
-    standard_outcome: Outcome
-    variant_outcome: Outcome
-    # Both outcomes use the side-to-move perspective.
+    # Both views share piece placement and side to move.
+    standard: ScoredPosition
+    variant: ScoredPosition
 
 
 def load_games(path: Path) -> list[Game]:
@@ -35,6 +41,6 @@ def load_games(path: Path) -> list[Game]:
     raise NotImplementedError("TODO: Choose a game format and implement loading.")
 
 
-def build_position_pairs(standard_rules: str, variant_rules: str) -> list[PositionPair]:
-    """Label each shared held-out position independently under both rulesets."""
-    raise NotImplementedError("TODO: Choose the variant and implement reference labeling.")
+def load_position_pairs(path: Path) -> list[PositionPair]:
+    """Load paired reference scores produced during offline preparation."""
+    raise NotImplementedError("TODO: Choose a format and load scored position pairs.")
