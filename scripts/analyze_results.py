@@ -2,48 +2,65 @@
 
 import argparse
 import json
-import sys
 from collections import defaultdict
 from pathlib import Path
 from typing import Sequence
-
-# Add repo root to sys.path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_k_vs_accuracy(results: list[dict], output_path: Path):
-    """Plot Accuracy vs K for each model and variant."""
-    fig, axes = plt.subplots(3, 3, figsize=(15, 12), sharey=True)
+def plot_model_comparison_by_k(model_results: dict[str, list[dict]], output_path: Path):
+    """Plot Accuracy vs K for each variant comparing the three models."""
+    variants = [
+        "short_knight", "mobile_king", "piece_capture",
+        "forward_pawn_capture", "dark_square_immunity", "blocked_squares",
+        "long_board", "knight_army", "antichess"
+    ]
+
+    fig, axes = plt.subplots(3, 3, figsize=(16, 12), sharey=True)
     axes = axes.flatten()
 
-    # Group by variant -> K -> list of accuracies
-    variant_data = defaultdict(lambda: defaultdict(list))
-    for entry in results:
-        v = entry["variant"]
-        k = entry["K"]
-        variant_data[v][k].append(entry["accuracy"])
+    models = ["chess_only", "move_variants", "all_variants"]
+    model_labels = {
+        "chess_only": "Standard Chess Pretrain Only (Zero-shot)",
+        "move_variants": "Trained on Move Variants",
+        "all_variants": "Trained on All Variants (Upper bound)",
+    }
+    colors = {
+        "chess_only": "#d62728",      # red
+        "move_variants": "#1f77b4",   # blue
+        "all_variants": "#2ca02c",    # green
+    }
 
-    variants = sorted(list(variant_data.keys()))
+    k_values = [0, 1, 2, 4, 8, 16]
 
-    for i, var in enumerate(variants[:9]):
-        ax = axes[i]
-        k_dict = variant_data[var]
-        ks = sorted(list(k_dict.keys()))
-        means = [np.mean(k_dict[k]) for k in ks]
-        stds = [np.std(k_dict[k]) for k in ks]
+    for idx, var in enumerate(variants):
+        ax = axes[idx]
+        for m in models:
+            entries = model_results.get(m, [])
+            k_dict = defaultdict(list)
+            for e in entries:
+                if e["variant"] == var:
+                    k_dict[e["K"]].append(e["accuracy"])
 
-        ax.errorbar(ks, means, yerr=stds, marker="o", capsize=4, linewidth=2, color="#1f77b4")
-        ax.axhline(y=0.333, color="gray", linestyle="--", alpha=0.6, label="Random (33.3%)")
-        ax.set_title(var, fontsize=12, fontweight="bold")
-        ax.set_xlabel("Number of Demos (K)")
-        ax.set_ylabel("Accuracy")
-        ax.set_ylim(0.0, 1.0)
+            means = [np.mean(k_dict[k]) * 100 if k_dict[k] else 0.0 for k in k_values]
+            stds = [np.std(k_dict[k]) * 100 if k_dict[k] else 0.0 for k in k_values]
+
+            ax.errorbar(
+                k_values, means, yerr=stds,
+                marker="o", capsize=3, label=model_labels[m],
+                color=colors[m], linewidth=2
+            )
+
+        ax.axhline(y=33.33, color="gray", linestyle="--", alpha=0.5, label="Random Baseline (33.3%)" if idx == 0 else "")
+        ax.set_title(var.replace("_", " ").title(), fontsize=12, fontweight="bold")
+        ax.set_xlabel("Demonstrations (K)")
+        ax.set_ylabel("Accuracy (%)")
+        ax.set_ylim(0, 105)
         ax.grid(True, alpha=0.3)
-        if i == 0:
-            ax.legend(loc="upper left")
+        if idx == 0:
+            ax.legend(loc="lower left", fontsize=8)
 
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -53,36 +70,44 @@ def plot_k_vs_accuracy(results: list[dict], output_path: Path):
 
 
 def plot_cross_category_transfer(model_results: dict[str, list[dict]], output_path: Path):
-    """Compare models (move_variants vs chess_only vs all_variants) across categories."""
+    """Compare models across variant categories."""
     categories = ["MOVE", "CAPTURE", "BOARD", "PIECES", "OBJECTIVE"]
-    models = list(model_results.keys())
+    models = ["chess_only", "move_variants", "all_variants"]
+    labels = ["Standard Only", "Move Variants", "All Variants"]
 
     cat_acc = {m: {c: [] for c in categories} for m in models}
 
-    for m, entries in model_results.items():
+    for m in models:
+        entries = model_results.get(m, [])
         for e in entries:
-            cat = e.get("category", "MOVE")
-            if cat in cat_acc[m]:
-                cat_acc[m][cat].append(e["accuracy"])
+            # Only consider K in [1, 8] for in-context evaluation
+            if e["K"] in [1, 2, 4, 8]:
+                cat = e.get("category", "MOVE")
+                if cat in cat_acc[m]:
+                    cat_acc[m][cat].append(e["accuracy"] * 100)
 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(11, 6))
     x = np.arange(len(categories))
     width = 0.25
 
-    colors = ["#2ca02c", "#1f77b4", "#ff7f0e"]
+    colors = ["#d62728", "#1f77b4", "#2ca02c"]
 
     for idx, m in enumerate(models):
         means = [np.mean(cat_acc[m][c]) if cat_acc[m][c] else 0.0 for c in categories]
         stds = [np.std(cat_acc[m][c]) if cat_acc[m][c] else 0.0 for c in categories]
-        ax.bar(x + idx * width - width, means, width, yerr=stds, label=m, color=colors[idx % len(colors)], capsize=3)
+        ax.bar(
+            x + (idx - 1) * width, means, width,
+            yerr=stds, label=labels[idx],
+            color=colors[idx], capsize=4, alpha=0.88, edgecolor="black"
+        )
 
-    ax.axhline(y=0.333, color="gray", linestyle="--", alpha=0.6, label="Random")
-    ax.set_ylabel("Average Accuracy", fontsize=12)
-    ax.set_title("Cross-Category ICL Generalization", fontsize=14, fontweight="bold")
+    ax.axhline(y=33.33, color="gray", linestyle="--", alpha=0.7, label="Random (33.3%)")
+    ax.set_ylabel("Mean Accuracy (%) (K=1..8)", fontsize=12)
+    ax.set_title("Cross-Category In-Context Learning Transfer", fontsize=14, fontweight="bold")
     ax.set_xticks(x)
-    ax.set_xticklabels(categories, fontsize=11)
-    ax.set_ylim(0.0, 1.0)
-    ax.legend()
+    ax.set_xticklabels(categories, fontsize=11, fontweight="medium")
+    ax.set_ylim(0, 105)
+    ax.legend(fontsize=11)
     ax.grid(axis="y", alpha=0.3)
 
     plt.tight_layout()
@@ -92,41 +117,54 @@ def plot_cross_category_transfer(model_results: dict[str, list[dict]], output_pa
     print(f"Saved figure: {output_path}")
 
 
-def generate_latex_table(results: list[dict], output_path: Path):
-    """Generate LaTeX table of accuracy across K for all variants."""
-    variant_k_data = defaultdict(lambda: defaultdict(list))
-    for entry in results:
-        v = entry["variant"]
-        k = entry["K"]
-        variant_k_data[v][k].append(entry["accuracy"])
-
-    k_values = [0, 1, 2, 4, 8, 16]
+def generate_comprehensive_latex_table(model_results: dict[str, list[dict]], output_path: Path):
+    """Generate detailed LaTeX table comparing models across K values."""
+    variants = [
+        "short_knight", "mobile_king", "piece_capture",
+        "forward_pawn_capture", "dark_square_immunity", "blocked_squares",
+        "long_board", "knight_army", "antichess"
+    ]
+    models = ["chess_only", "move_variants", "all_variants"]
+    model_short = {"chess_only": "Base", "move_variants": "Move", "all_variants": "All"}
+    k_values = [0, 1, 2, 4, 8]
 
     lines = []
-    lines.append(r"\begin{table}[ht]")
+    lines.append(r"\begin{table*}[t]")
     lines.append(r"\centering")
-    lines.append(r"\begin{tabular}{lcccccc}")
+    lines.append(r"\small")
+    lines.append(r"\begin{tabular}{llccccc}")
     lines.append(r"\toprule")
-    lines.append(r"Variant & K=0 & K=1 & K=2 & K=4 & K=8 & K=16 \\")
+    lines.append(r"Variant & Model & K=0 & K=1 & K=2 & K=4 & K=8 \\")
     lines.append(r"\midrule")
 
-    for v, k_dict in sorted(variant_k_data.items()):
-        row = [v.replace("_", r"\_")]
-        for k in k_values:
-            accs = k_dict.get(k, [])
-            if accs:
-                mean = np.mean(accs) * 100
-                std = np.std(accs) * 100
-                row.append(f"{mean:.1f} $\\pm$ {std:.1f}")
-            else:
-                row.append("-")
-        lines.append(" & ".join(row) + r" \\")
+    for v in variants:
+        v_name = v.replace("_", r"\_")
+        for m_idx, m in enumerate(models):
+            entries = model_results.get(m, [])
+            k_dict = defaultdict(list)
+            for e in entries:
+                if e["variant"] == v:
+                    k_dict[e["K"]].append(e["accuracy"])
+
+            row_header = v_name if m_idx == 0 else ""
+            model_tag = model_short[m]
+            vals = []
+            for k in k_values:
+                accs = k_dict.get(k, [])
+                if accs:
+                    mean = np.mean(accs) * 100
+                    std = np.std(accs) * 100
+                    vals.append(f"{mean:.1f} $\\pm$ {std:.1f}")
+                else:
+                    vals.append("-")
+            lines.append(f"{row_header} & {model_tag} & " + " & ".join(vals) + r" \\")
+        lines.append(r"\midrule")
 
     lines.append(r"\bottomrule")
     lines.append(r"\end{tabular}")
-    lines.append(r"\caption{In-context evaluation accuracy (\%) across demonstration count $K$.}")
-    lines.append(r"\label{tab:icl_results}")
-    lines.append(r"\end{table}")
+    lines.append(r"\caption{In-Context Evaluation Accuracy (\%) across demonstration count $K$ for each training condition.}")
+    lines.append(r"\label{tab:icl_comprehensive}")
+    lines.append(r"\end{table*}")
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w") as f:
@@ -144,33 +182,24 @@ def main():
     out_dir = Path(args.output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    result_files = list(res_dir.glob("*.json"))
-    if not result_files:
-        print(f"No result files found in {res_dir}")
-        return
+    # Group by model type (chess_only, move_variants, all_variants)
+    model_types = ["chess_only", "move_variants", "all_variants"]
+    model_results = {m: [] for m in model_types}
 
-    all_models_results = {}
-    combined_entries = []
+    for rf in res_dir.glob("*.json"):
+        for m in model_types:
+            if rf.name.startswith(m):
+                try:
+                    with open(rf) as f:
+                        data = json.load(f)
+                        model_results[m].extend(data.get("main_results", []))
+                except Exception as e:
+                    print(f"Error reading {rf}: {e}")
 
-    for rf in result_files:
-        try:
-            with open(rf) as f:
-                data = json.load(f)
-                entries = data.get("main_results", [])
-                name = rf.stem
-                all_models_results[name] = entries
-                combined_entries.extend(entries)
-        except Exception as e:
-            print(f"Error reading {rf}: {e}")
-
-    if combined_entries:
-        plot_k_vs_accuracy(combined_entries, out_dir / "k_vs_accuracy.png")
-        generate_latex_table(combined_entries, out_dir / "results_table.tex")
-
-    if len(all_models_results) > 1:
-        plot_cross_category_transfer(all_models_results, out_dir / "cross_category_transfer.png")
-
-    print(f"Analysis complete. Generated artifacts in {out_dir}")
+    plot_model_comparison_by_k(model_results, out_dir / "k_vs_accuracy_comparison.png")
+    plot_cross_category_transfer(model_results, out_dir / "cross_category_transfer.png")
+    generate_comprehensive_latex_table(model_results, out_dir / "comprehensive_table.tex")
+    print(f"All analysis figures and tables generated in {out_dir}")
 
 
 if __name__ == "__main__":
