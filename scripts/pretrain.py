@@ -15,13 +15,13 @@ from torch.utils.data import DataLoader
 
 from chess_icl.data import ChessTokenizer
 from chess_icl.dataset import ChessPretrainDataset
-from chess_icl.model import ChessTransformer, TINY, SMALL, MEDIUM, ModelConfig
+from chess_icl.model import ChessTransformer, TINY, SMALL, MEDIUM, LARGE, ModelConfig
 
 
 def evaluate(model, dataloader, criterion, device):
     model.eval()
     total_loss, correct, total = 0.0, 0, 0
-    with torch.no_grad():
+    with torch.inference_mode():
         for input_ids, labels in dataloader:
             input_ids, labels = input_ids.to(device), labels.to(device)
             logits = model(input_ids)
@@ -45,7 +45,7 @@ def pretrain(args):
     tokenizer = ChessTokenizer()
 
     # Model configuration
-    config_map = {"tiny": TINY, "small": SMALL, "medium": MEDIUM}
+    config_map = {"tiny": TINY, "small": SMALL, "medium": MEDIUM, "large": LARGE}
     base_cfg = config_map.get(args.config, SMALL)
     config = copy.deepcopy(base_cfg)
     config.vocab_size = tokenizer.vocab_size
@@ -54,6 +54,10 @@ def pretrain(args):
         print(f"Enabling Maximal Update Parametrization (muP) with base_width={config.d_base}")
 
     model = ChessTransformer(config, pad_token_id=tokenizer.pad_id).to(device)
+    if getattr(args, "resume", None) and Path(args.resume).exists():
+        print(f"Resuming model weights from {args.resume}...")
+        ckpt = torch.load(args.resume, map_location=device)
+        model.load_state_dict(ckpt["state_dict"] if "state_dict" in ckpt else ckpt)
     print(f"Model ({args.config}) params: {model.count_params():,}")
 
     train_path = Path(args.data_dir) / "positions_train.jsonl"
@@ -152,7 +156,7 @@ def pretrain(args):
 def main():
     parser = argparse.ArgumentParser(description="Pretrain Chess Transformer.")
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--config", type=str, default="small", choices=["tiny", "small", "medium"])
+    parser.add_argument("--config", type=str, default="small", choices=["tiny", "small", "medium", "large"])
     parser.add_argument("--use-mup", action="store_true", help="Enable Maximal Update Parametrization (muP)")
     parser.add_argument("--data-dir", type=str, default="data/standard")
     parser.add_argument("--output", type=str, default="runs/pretrain")
@@ -164,6 +168,7 @@ def main():
     parser.add_argument("--max-seq-len", type=int, default=512)
     parser.add_argument("--eval-interval", type=int, default=250)
     parser.add_argument("--num-workers", type=int, default=0)
+    parser.add_argument("--resume", type=str, default=None, help="Path to checkpoint to resume weights from")
     parser.add_argument("--gpu", type=int, default=1)
     args = parser.parse_args()
     pretrain(args)

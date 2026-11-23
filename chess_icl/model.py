@@ -94,9 +94,10 @@ class ChessTransformer(nn.Module):
     """Decoder-only transformer for W/D/L classification.
 
     Configs:
-        tiny:   d=128, h=4, L=4,  ff=512  → ~1.0M params
-        small:  d=256, h=8, L=8,  ff=1024 → ~6.4M params
-        medium: d=384, h=8, L=12, ff=1536 → ~21M params
+        tiny:   d=128,  h=4,  L=4,  ff=512  → ~1.0M params
+        small:  d=256,  h=8,  L=8,  ff=1024 → ~6.4M params
+        medium: d=384,  h=8,  L=12, ff=1536 → ~21M params
+        large:  d=1024, h=16, L=16, ff=4096 → ~205M params
     """
 
     def __init__(self, config: ModelConfig, pad_token_id: int = 0):
@@ -261,3 +262,4 @@ class ChessTransformer(nn.Module):
 TINY = ModelConfig(d_model=128, n_heads=4, n_layers=4, d_ff=512, d_base=128)
 SMALL = ModelConfig(d_model=256, n_heads=8, n_layers=8, d_ff=1024, d_base=128)
 MEDIUM = ModelConfig(d_model=384, n_heads=8, n_layers=12, d_ff=1536, d_base=128)
+LARGE = ModelConfig(d_model=1024, n_heads=16, n_layers=16, d_ff=4096, d_base=128)

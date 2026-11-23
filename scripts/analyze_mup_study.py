@@ -10,10 +10,20 @@ import numpy as np
 
 
 def plot_mup_pretrain_loss(pretrain_dir: Path, output_path: Path):
-    """Plot pretraining loss and validation accuracy curves for Tiny, Small, and Medium under muP."""
-    scales = ["tiny", "small", "medium"]
-    labels = {"tiny": "Tiny (1.3M, d=128)", "small": "Small (7.4M, d=256)", "medium": "Medium (22.9M, d=384)"}
-    colors = {"tiny": "#1f77b4", "small": "#ff7f0e", "medium": "#2ca02c"}
+    """Plot pretraining loss and validation accuracy curves for Tiny, Small, Medium, and Large under muP."""
+    scales = ["tiny", "small", "medium", "large"]
+    labels = {
+        "tiny": "Tiny (1.3M, d=128)",
+        "small": "Small (7.4M, d=256)",
+        "medium": "Medium (22.9M, d=384)",
+        "large": "Large (205.9M, d=1024)",
+    }
+    colors = {
+        "tiny": "#1f77b4",
+        "small": "#ff7f0e",
+        "medium": "#2ca02c",
+        "large": "#d62728",
+    }
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
 
@@ -55,9 +65,19 @@ def plot_model_scaling_icl(results_dir: Path, output_path: Path):
     """Plot ICL Accuracy vs Number of Demonstrations (K) across model sizes."""
     fig, axes = plt.subplots(1, 3, figsize=(16, 5), sharey=True)
 
-    scales = ["tiny", "small", "medium"]
-    scale_labels = {"tiny": "Tiny (1.3M)", "small": "Small (7.4M)", "medium": "Medium (22.9M)"}
-    colors = {"tiny": "#1f77b4", "small": "#ff7f0e", "medium": "#2ca02c"}
+    scales = ["tiny", "small", "medium", "large"]
+    scale_labels = {
+        "tiny": "Tiny (1.3M)",
+        "small": "Small (7.4M)",
+        "medium": "Medium (22.9M)",
+        "large": "Large (205.9M)",
+    }
+    colors = {
+        "tiny": "#1f77b4",
+        "small": "#ff7f0e",
+        "medium": "#2ca02c",
+        "large": "#d62728",
+    }
     k_vals = [0, 1, 2, 4, 8, 16]
 
     target_groups = [
@@ -109,7 +129,7 @@ def plot_model_scaling_icl(results_dir: Path, output_path: Path):
 
 def generate_mup_latex_table(results_dir: Path, output_path: Path):
     """Generate a clean publication LaTeX table comparing model sizes under muP."""
-    scales = ["tiny", "small", "medium"]
+    scales = ["tiny", "small", "medium", "large"]
     variants = [
         ("short_knight", "Move", "Short Knight"),
         ("mobile_king", "Move", "Mobile King"),
@@ -149,10 +169,10 @@ def generate_mup_latex_table(results_dir: Path, output_path: Path):
         r"\begin{table*}[t]",
         r"\centering",
         r"\small",
-        r"\begin{tabular}{ll|ccc|ccc|ccc}",
+        r"\begin{tabular}{ll|ccc|ccc|ccc|ccc}",
         r"\toprule",
-        r" & & \multicolumn{3}{c}{\textbf{Tiny (1.3M)}} & \multicolumn{3}{c}{\textbf{Small (7.4M)}} & \multicolumn{3}{c}{\textbf{Medium (22.9M)}} \\",
-        r"\textbf{Variant} & \textbf{Category} & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ \\",
+        r" & & \multicolumn{3}{c}{\textbf{Tiny (1.3M)}} & \multicolumn{3}{c}{\textbf{Small (7.4M)}} & \multicolumn{3}{c}{\textbf{Medium (22.9M)}} & \multicolumn{3}{c}{\textbf{Large (205.9M)}} \\",
+        r"\textbf{Variant} & \textbf{Category} & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ \\",
         r"\midrule",
     ]
 

@@ -3,7 +3,7 @@
 import copy
 import pytest
 import torch
-from chess_icl.model import ChessTransformer, TINY, SMALL, MEDIUM, ModelConfig
+from chess_icl.model import ChessTransformer, TINY, SMALL, MEDIUM, LARGE, ModelConfig
 
 
 def test_model_shapes():
@@ -62,8 +62,10 @@ def test_overfit_small_batch():
 def test_parameter_counts():
     t_model = ChessTransformer(TINY)
     s_model = ChessTransformer(SMALL)
+    l_model = ChessTransformer(LARGE)
     assert t_model.count_params() < 2_000_000
     assert 4_000_000 < s_model.count_params() < 10_000_000
+    assert 190_000_000 < l_model.count_params() < 220_000_000
 
 
 def test_mup_coordinate_check():
@@ -86,20 +88,28 @@ def test_mup_coordinate_check():
     med_cfg.use_mup = True
     med_model = ChessTransformer(med_cfg)
 
+    large_cfg = copy.deepcopy(LARGE)
+    large_cfg.vocab_size = 128
+    large_cfg.use_mup = True
+    large_model = ChessTransformer(large_cfg)
+
     with torch.no_grad():
         tiny_logits = tiny_model(input_ids)
         small_logits = small_model(input_ids)
         med_logits = med_model(input_ids)
+        large_logits = large_model(input_ids)
 
     # Logits should have O(1) std across all widths (no explosion)
     assert 0.01 < tiny_logits.std().item() < 2.0
     assert 0.01 < small_logits.std().item() < 2.0
     assert 0.01 < med_logits.std().item() < 2.0
+    assert 0.01 < large_logits.std().item() < 2.0
 
     # Ensure no NaNs or Infs
     assert torch.isfinite(tiny_logits).all()
     assert torch.isfinite(small_logits).all()
     assert torch.isfinite(med_logits).all()
+    assert torch.isfinite(large_logits).all()
 
 
 def test_mup_optimizer_groups():
@@ -118,6 +128,12 @@ def test_mup_optimizer_groups():
     small_model = ChessTransformer(small_cfg)
     small_opt = small_model.get_optimizer(base_lr=base_lr)
 
+    # Large: d_model = 1024, d_base = 128 -> r = 8.0
+    large_cfg = copy.deepcopy(LARGE)
+    large_cfg.use_mup = True
+    large_model = ChessTransformer(large_cfg)
+    large_opt = large_model.get_optimizer(base_lr=base_lr)
+
     # In Tiny, hidden lr is base_lr / 1.0 = 1e-3
     tiny_hidden_lr = tiny_opt.param_groups[1]["lr"]
     assert pytest.approx(tiny_hidden_lr, rel=1e-5) == base_lr
@@ -126,9 +142,14 @@ def test_mup_optimizer_groups():
     small_hidden_lr = small_opt.param_groups[1]["lr"]
     assert pytest.approx(small_hidden_lr, rel=1e-5) == base_lr / 2.0
 
+    # In Large, hidden lr is base_lr / 8.0 = 1.25e-4
+    large_hidden_lr = large_opt.param_groups[1]["lr"]
+    assert pytest.approx(large_hidden_lr, rel=1e-5) == base_lr / 8.0
+
     # Embedding and readout lr should remain base_lr
     assert pytest.approx(tiny_opt.param_groups[0]["lr"], rel=1e-5) == base_lr
     assert pytest.approx(small_opt.param_groups[0]["lr"], rel=1e-5) == base_lr
+    assert pytest.approx(large_opt.param_groups[0]["lr"], rel=1e-5) == base_lr
 
 
 def test_mup_overfit():
