@@ -127,22 +127,11 @@ class VariantBoard:
 
     def _leaves_king_in_check(self, move: chess.Move) -> bool:
         """Check if making a move would leave our king in check."""
-        board_copy = self.board.copy()
-        board_copy.push(move)
-        return board_copy.is_check()
+        return self.board.is_into_check(move)
 
     def _filter_legal(self, moves: list[chess.Move]) -> list[chess.Move]:
-        """Filter moves that would leave king in check using python-chess internals."""
-        legal = []
-        for move in moves:
-            board_copy = self.board.copy()
-            # Try the move - if it results in king being capturable, it's illegal
-            board_copy.push(move)
-            # After pushing, it's the opponent's turn. Check if the opponent can
-            # capture our king (meaning we left ourselves in check)
-            if not board_copy.was_into_check():
-                legal.append(move)
-        return legal
+        """Filter moves that would leave king in check using bitboards."""
+        return [m for m in moves if not self.board.is_into_check(m)]
 
     def __repr__(self) -> str:
         return f"VariantBoard({self.variant.name}, move={self._move_count})"
