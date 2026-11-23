@@ -1,0 +1,33 @@
+# Chess ICL Experiment Matrix
+experiments:
+  main:
+    k_values: [0, 1, 2, 4, 8, 16]
+    seeds: [42, 123, 456]
+    configs:
+      - "move_variants"
+      - "all_variants"
+      - "chess_only"
+
+variants:
+  train:
+    - diagonal_rook
+    - straight_bishop
+    - weakened_queen
+    - extended_pawn
+  test:
+    - short_knight
+    - mobile_king
+    - piece_capture
+    - forward_pawn_capture
+    - dark_square_immunity
+    - blocked_squares
+    - long_board
+    - knight_army
+    - antichess
+
+ablations:
+  demo_quality:
+    k_values: [4, 8]
+    policies: ["heuristic", "random"]
+  model_scaling:
+    configs: ["tiny", "small"]
