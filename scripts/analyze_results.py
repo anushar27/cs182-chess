@@ -172,6 +172,49 @@ def generate_comprehensive_latex_table(model_results: dict[str, list[dict]], out
     print(f"Saved LaTeX table: {output_path}")
 
 
+def plot_model_scaling_study(results_dir: Path, output_path: Path):
+    """Plot In-Context Accuracy vs K comparing Tiny (1.3M), Small (7.4M), and Medium (23M)."""
+    scale_files = {
+        "Tiny (1.3M)": results_dir / "scaling_tiny_all_variants_seed42.json",
+        "Small (7.4M)": results_dir / "all_variants_seed42.json",
+        "Medium (23M)": results_dir / "scaling_medium_all_variants_seed42.json",
+    }
+
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+    k_values = [0, 1, 2, 4, 8, 16]
+    colors = {"Tiny (1.3M)": "#ff7f0e", "Small (7.4M)": "#1f77b4", "Medium (23M)": "#2ca02c"}
+
+    for idx, var in enumerate(["antichess", "piece_capture"]):
+        ax = axes[idx]
+        for name, path in scale_files.items():
+            if not path.exists():
+                continue
+            with open(path) as f:
+                data = json.load(f)
+            entries = data.get("main_results", [])
+            k_acc = defaultdict(list)
+            for e in entries:
+                if e["variant"] == var:
+                    k_acc[e["K"]].append(e["accuracy"])
+
+            means = [np.mean(k_acc[k]) * 100 if k_acc[k] else 0.0 for k in k_values]
+            ax.plot(k_values, means, marker="o", linewidth=2.5, label=name, color=colors[name])
+
+        ax.axhline(y=33.33, color="gray", linestyle="--", alpha=0.5, label="Random (33.3%)" if idx == 0 else "")
+        ax.set_title(f"Model Scaling on {var.replace('_', ' ').title()}", fontsize=13, fontweight="bold")
+        ax.set_xlabel("Demonstrations (K)", fontsize=11)
+        ax.set_ylabel("Evaluation Accuracy (%)", fontsize=11)
+        ax.set_ylim(0, 75)
+        ax.grid(True, alpha=0.3)
+        ax.legend(fontsize=10)
+
+    plt.tight_layout()
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    plt.savefig(output_path, dpi=300)
+    plt.close()
+    print(f"Saved figure: {output_path}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Analyze Chess ICL evaluation results.")
     parser.add_argument("--results-dir", type=str, default="runs/results")
@@ -199,6 +242,7 @@ def main():
     plot_model_comparison_by_k(model_results, out_dir / "k_vs_accuracy_comparison.png")
     plot_cross_category_transfer(model_results, out_dir / "cross_category_transfer.png")
     generate_comprehensive_latex_table(model_results, out_dir / "comprehensive_table.tex")
+    plot_model_scaling_study(res_dir, out_dir / "model_scaling_comparison.png")
     print(f"All analysis figures and tables generated in {out_dir}")
 
 

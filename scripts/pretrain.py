@@ -116,8 +116,11 @@ def pretrain(args):
 
                 if val_loss < best_val_loss:
                     best_val_loss = val_loss
-                    best_ckpt_path = out_dir / f"chess_base_seed{args.seed}.pt"
+                    best_ckpt_path = out_dir / f"chess_base_{args.config}_seed{args.seed}.pt"
                     model.save(best_ckpt_path)
+                    # Also save default alias for backward compatibility
+                    if args.config == "small":
+                        model.save(out_dir / f"chess_base_seed{args.seed}.pt")
                     print(f"  -> Saved best checkpoint: {best_ckpt_path}")
 
             if step >= args.max_steps:
@@ -126,13 +129,15 @@ def pretrain(args):
             break
 
     # Save final logs
-    with open(out_dir / f"pretrain_log_seed{args.seed}.json", "w") as f:
+    with open(out_dir / f"pretrain_log_{args.config}_seed{args.seed}.json", "w") as f:
         json.dump(log_history, f, indent=2)
 
     # Save final checkpoint if none saved
-    final_ckpt = out_dir / f"chess_base_seed{args.seed}.pt"
+    final_ckpt = out_dir / f"chess_base_{args.config}_seed{args.seed}.pt"
     if not final_ckpt.exists():
         model.save(final_ckpt)
+        if args.config == "small":
+            model.save(out_dir / f"chess_base_seed{args.seed}.pt")
     print(f"Pretraining complete. Checkpoint saved to {final_ckpt}")
 
 
