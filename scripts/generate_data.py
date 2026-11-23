@@ -331,6 +331,22 @@ def generate_standard_dataset(
     print(f"[standard] Complete: {len(train_pos)} train pos, {len(val_pos)} val pos, {len(all_games)} games.")
 
 
+def _gen_task(args_tuple):
+    v_name, out_base, count, seed = args_tuple
+    out_base = Path(out_base)
+    if v_name == "standard":
+        generate_standard_dataset(out_base / "standard", count=max(count * 2, 5000), seed=seed)
+    else:
+        generate_variant_dataset(
+            v_name,
+            out_base / v_name,
+            heuristic_count=count,
+            random_count=min(500, count // 4),
+            eval_pos_count=500,
+            seed=seed,
+        )
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generate chess ICL datasets.")
     parser.add_argument("--variant", type=str, default="standard", help="Variant name or 'standard' or 'all'")
@@ -348,23 +364,11 @@ def main():
     if args.all_variants or args.variant == "all":
         from concurrent.futures import ProcessPoolExecutor
 
-        def _gen_task(v_name):
-            if v_name == "standard":
-                generate_standard_dataset(out_base / "standard", count=max(args.count * 2, 5000), seed=args.seed)
-            else:
-                generate_variant_dataset(
-                    v_name,
-                    out_base / v_name,
-                    heuristic_count=args.count,
-                    random_count=min(500, args.count // 4),
-                    eval_pos_count=500,
-                    seed=args.seed,
-                )
-
         all_names = ["standard"] + list(VARIANTS.keys())
+        tasks = [(name, str(out_base), args.count, args.seed) for name in all_names]
         print(f"Parallelizing data generation for {len(all_names)} targets across CPU workers...")
         with ProcessPoolExecutor(max_workers=min(len(all_names), 32)) as executor:
-            list(executor.map(_gen_task, all_names))
+            list(executor.map(_gen_task, tasks))
         print("All datasets generated successfully!")
     elif args.variant == "standard":
         generate_standard_dataset(out_base / "standard", count=args.count, seed=args.seed, pgn_path=args.pgn_path)

@@ -3,9 +3,9 @@
 # Automatically distributes jobs across available GPUs (e.g. 8x H100)
 
 set -e
-export TMPDIR=/tmp
-export MPLCONFIGDIR=/tmp/matplotlib
-mkdir -p /tmp/matplotlib runs/logs runs/pretrain runs/variant_train runs/results runs/analysis
+mkdir -p runs/cache/tmp runs/cache/matplotlib runs/logs runs/pretrain runs/variant_train runs/results runs/analysis
+export TMPDIR="$(pwd)/runs/cache/tmp"
+export MPLCONFIGDIR="$(pwd)/runs/cache/matplotlib"
 
 echo "=========================================================="
 echo " Starting Full Chess ICL Research Pipeline"
