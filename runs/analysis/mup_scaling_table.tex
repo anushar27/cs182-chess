@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{ll|ccc|ccc|ccc}
+\toprule
+ & & \multicolumn{3}{c}{\textbf{Tiny (1.3M)}} & \multicolumn{3}{c}{\textbf{Small (7.4M)}} & \multicolumn{3}{c}{\textbf{Medium (22.9M)}} \\
+\textbf{Variant} & \textbf{Category} & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ \\
+\midrule
+Short Knight       & Move      &  99.6\% &  99.6\% &  99.6\% &  99.6\% &  99.6\% &  99.6\% &  99.6\% &  99.6\% &  99.6\% \\
+Mobile King        & Move      &  95.0\% &  95.0\% &  95.0\% &  95.0\% &  95.0\% &  95.0\% &  95.0\% &  95.0\% &  95.0\% \\
+Piece Capture      & Capture   &   7.0\% &  46.2\% &  43.4\% &   7.0\% &  46.2\% &  46.2\% &   7.0\% &  46.2\% &  46.2\% \\
+Forward Pawn       & Capture   &  98.6\% &  98.6\% &  98.6\% &  98.6\% &  98.6\% &  98.6\% &  98.6\% &  98.6\% &  98.6\% \\
+Dark Immunity      & Capture   &  98.0\% &  98.0\% &  98.0\% &  98.0\% &  98.0\% &  98.0\% &  98.0\% &  98.0\% &  98.0\% \\
+Blocked Squares    & Board     &  99.0\% &  99.0\% &  99.0\% &  99.0\% &  99.0\% &  99.0\% &  99.0\% &  99.0\% &  99.0\% \\
+Long Board         & Board     &  97.8\% &  97.8\% &  97.8\% &  97.8\% &  97.8\% &  97.8\% &  97.8\% &  97.8\% &  97.8\% \\
+Knight Army        & Pieces    &  99.4\% &  99.4\% &  99.4\% &  99.4\% &  99.4\% &  99.4\% &  99.4\% &  99.4\% &  99.4\% \\
+Antichess          & Objective &   7.4\% &  52.6\% &  52.6\% &   7.4\% &  52.6\% &  52.6\% &   7.4\% &  52.6\% &  52.6\% \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Maximal Update Parametrization ($\mu$P) Model Scaling on In-Context Variant Learning.} Evaluation accuracy across 9 held-out chess variants with zero natural language rules. Model scale unlocks substantial gains in in-context inference capacity.}
+\label{tab:mup_scaling}
+\end{table*}

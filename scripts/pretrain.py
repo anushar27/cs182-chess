@@ -1,6 +1,7 @@
 """Phase 2: Pretrain the transformer on standard chess evaluation."""
 
 import argparse
+import copy
 import json
 import sys
 from pathlib import Path
@@ -45,8 +46,12 @@ def pretrain(args):
 
     # Model configuration
     config_map = {"tiny": TINY, "small": SMALL, "medium": MEDIUM}
-    config = config_map.get(args.config, SMALL)
+    base_cfg = config_map.get(args.config, SMALL)
+    config = copy.deepcopy(base_cfg)
     config.vocab_size = tokenizer.vocab_size
+    if args.use_mup:
+        config.use_mup = True
+        print(f"Enabling Maximal Update Parametrization (muP) with base_width={config.d_base}")
 
     model = ChessTransformer(config, pad_token_id=tokenizer.pad_id).to(device)
     print(f"Model ({args.config}) params: {model.count_params():,}")
@@ -72,7 +77,7 @@ def pretrain(args):
         pin_memory=torch.cuda.is_available(),
     )
 
-    optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+    optimizer = model.get_optimizer(base_lr=args.lr, weight_decay=args.weight_decay)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_steps, eta_min=1e-6)
     criterion = nn.CrossEntropyLoss()
 
@@ -82,6 +87,7 @@ def pretrain(args):
     step = 0
     best_val_loss = float("inf")
     log_history = []
+    mup_tag = "_mup" if args.use_mup else ""
 
     print(f"Starting pretraining: {len(train_ds)} train positions, {len(val_ds)} val positions.")
     for epoch in range(args.max_epochs):
@@ -106,20 +112,22 @@ def pretrain(args):
                     f"train_loss={loss.item():.4f} train_acc={train_acc:.3f} "
                     f"val_loss={val_loss:.4f} val_acc={val_acc:.3f}"
                 )
-                log_history.append({
+                log_entry = {
                     "step": step,
+                    "epoch": epoch + 1,
                     "train_loss": loss.item(),
                     "train_acc": train_acc,
                     "val_loss": val_loss,
                     "val_acc": val_acc,
-                })
+                }
+                log_history.append(log_entry)
 
                 if val_loss < best_val_loss:
                     best_val_loss = val_loss
-                    best_ckpt_path = out_dir / f"chess_base_{args.config}_seed{args.seed}.pt"
+                    best_ckpt_path = out_dir / f"chess_base_{args.config}{mup_tag}_seed{args.seed}.pt"
                     model.save(best_ckpt_path)
-                    # Also save default alias for backward compatibility
-                    if args.config == "small":
+                    # Also save default alias for backward compatibility if not mup
+                    if not args.use_mup and args.config == "small":
                         model.save(out_dir / f"chess_base_seed{args.seed}.pt")
                     print(f"  -> Saved best checkpoint: {best_ckpt_path}")
 
@@ -129,14 +137,14 @@ def pretrain(args):
             break
 
     # Save final logs
-    with open(out_dir / f"pretrain_log_{args.config}_seed{args.seed}.json", "w") as f:
+    with open(out_dir / f"pretrain_log_{args.config}{mup_tag}_seed{args.seed}.json", "w") as f:
         json.dump(log_history, f, indent=2)
 
     # Save final checkpoint if none saved
-    final_ckpt = out_dir / f"chess_base_{args.config}_seed{args.seed}.pt"
+    final_ckpt = out_dir / f"chess_base_{args.config}{mup_tag}_seed{args.seed}.pt"
     if not final_ckpt.exists():
         model.save(final_ckpt)
-        if args.config == "small":
+        if not args.use_mup and args.config == "small":
             model.save(out_dir / f"chess_base_seed{args.seed}.pt")
     print(f"Pretraining complete. Checkpoint saved to {final_ckpt}")
 
@@ -145,6 +153,7 @@ def main():
     parser = argparse.ArgumentParser(description="Pretrain Chess Transformer.")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--config", type=str, default="small", choices=["tiny", "small", "medium"])
+    parser.add_argument("--use-mup", action="store_true", help="Enable Maximal Update Parametrization (muP)")
     parser.add_argument("--data-dir", type=str, default="data/standard")
     parser.add_argument("--output", type=str, default="runs/pretrain")
     parser.add_argument("--batch-size", type=int, default=128)

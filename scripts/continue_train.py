@@ -32,6 +32,9 @@ def continue_train(args):
         raise FileNotFoundError(f"Checkpoint not found: {pretrain_ckpt}")
 
     model = ChessTransformer.load(pretrain_ckpt, map_location=device).to(device)
+    if args.use_mup:
+        model.config.use_mup = True
+        print(f"muP enabled for continue-training (base_width={model.config.d_base})")
     tokenizer = ChessTokenizer()
     model.pad_token_id = tokenizer.pad_id
 
@@ -69,8 +72,8 @@ def continue_train(args):
         pin_memory=torch.cuda.is_available(),
     )
 
-    # Lower learning rate for continue-training (1/10 of pretraining)
-    optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+    # Optimizer with muP parameter groups or standard groups
+    optimizer = model.get_optimizer(base_lr=args.lr, weight_decay=args.weight_decay)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_steps, eta_min=1e-7)
     criterion = nn.CrossEntropyLoss()
 
@@ -105,8 +108,7 @@ def continue_train(args):
             if step % args.log_interval == 0:
                 avg_loss = running_loss / args.log_interval
                 avg_acc = running_acc / args.log_interval
-                running_loss = 0.0
-                running_acc = 0.0
+                running_loss, running_acc = 0.0, 0.0
                 print(f"Step {step}/{args.max_steps} | loss={avg_loss:.4f} acc={avg_acc:.3f}")
                 log_history.append({"step": step, "loss": avg_loss, "acc": avg_acc})
 
@@ -131,6 +133,7 @@ def main():
     parser.add_argument("--config", type=str, required=True, choices=["move_variants", "all_variants", "chess_only"])
     parser.add_argument("--pretrain-checkpoint", type=str, required=True)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--use-mup", action="store_true", help="Enable/force Maximal Update Parametrization (muP)")
     parser.add_argument("--data-dir", type=str, default="data")
     parser.add_argument("--output", type=str, default="runs/variant_train")
     parser.add_argument("--batch-size", type=int, default=32)
