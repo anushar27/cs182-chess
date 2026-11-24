@@ -108,10 +108,22 @@ def play_game(
                 return self.board.is_game_over(claim_draw=True) or self._move_count >= max_moves
 
             def result_for_white(self):
+                if self._move_count >= max_moves:
+                    score = evaluate_material(self.board, chess.WHITE)
+                    if score >= 3:
+                        return "win"
+                    if score <= -3:
+                        return "loss"
+                    return "draw"
                 r = self.board.result(claim_draw=True)
                 if r == "1-0":
                     return "win"
                 if r == "0-1":
+                    return "loss"
+                score = evaluate_material(self.board, chess.WHITE)
+                if score >= 3:
+                    return "win"
+                if score <= -3:
                     return "loss"
                 return "draw"
 
@@ -158,16 +170,16 @@ def play_game(
         "move_count": len(moves_played),
     }
 
-    # Label positions from the perspective of side to move
+    # Label positions from the perspective of side to move using position material evaluation
     labeled_positions = []
     for pos in positions:
         side = pos["side_to_move"]
-        if white_result == "draw":
-            lbl = "draw"
-        elif white_result == "win":
-            lbl = "win" if side == "w" else "loss"
+        b = chess.Board(pos["fen"])
+        mat = evaluate_material(b, chess.WHITE if side == "w" else chess.BLACK)
+        if variant_name == "antichess":
+            lbl = "win" if mat <= -3 else ("loss" if mat >= 3 else "draw")
         else:
-            lbl = "loss" if side == "w" else "win"
+            lbl = "win" if mat >= 3 else ("loss" if mat <= -3 else "draw")
 
         labeled_positions.append({
             "fen": pos["fen"],
@@ -217,11 +229,18 @@ def generate_variant_dataset(
         for g in rand_games:
             f.write(json.dumps(g) + "\n")
 
-    # Sample held-out evaluation positions
-    if len(all_eval_positions) > eval_pos_count:
-        eval_positions = rng.sample(all_eval_positions, eval_pos_count)
-    else:
-        eval_positions = all_eval_positions
+    # Sample held-out evaluation positions with balanced classes
+    wins = [p for p in all_eval_positions if p["label"] == "win"]
+    draws = [p for p in all_eval_positions if p["label"] == "draw"]
+    losses = [p for p in all_eval_positions if p["label"] == "loss"]
+
+    per_class = eval_pos_count // 3
+    k_win = min(len(wins), per_class)
+    k_draw = min(len(draws), per_class)
+    k_loss = min(len(losses), per_class)
+
+    eval_positions = rng.sample(wins, k_win) + rng.sample(draws, k_draw) + rng.sample(losses, k_loss)
+    rng.shuffle(eval_positions)
 
     with open(output_dir / "positions_eval.jsonl", "w", encoding="utf-8") as f:
         for p in eval_positions:
@@ -310,11 +329,22 @@ def generate_standard_dataset(
             all_games.append(game)
             all_positions.extend(positions)
 
-    # Train / Val split (85% train, 15% val)
-    rng.shuffle(all_positions)
-    split_idx = int(len(all_positions) * 0.85)
-    train_pos = all_positions[:split_idx]
-    val_pos = all_positions[split_idx:]
+    # Balance train/val positions across classes
+    wins = [p for p in all_positions if p["label"] == "win"]
+    draws = [p for p in all_positions if p["label"] == "draw"]
+    losses = [p for p in all_positions if p["label"] == "loss"]
+
+    min_class = min(len(wins), len(draws), len(losses))
+    if min_class > 0:
+        balanced = rng.sample(wins, min_class) + rng.sample(draws, min_class) + rng.sample(losses, min_class)
+        rng.shuffle(balanced)
+    else:
+        balanced = all_positions
+        rng.shuffle(balanced)
+
+    split_idx = int(len(balanced) * 0.85)
+    train_pos = balanced[:split_idx]
+    val_pos = balanced[split_idx:]
 
     with open(output_dir / "positions_train.jsonl", "w", encoding="utf-8") as f:
         for p in train_pos:
@@ -332,7 +362,7 @@ def generate_standard_dataset(
 
 
 def _gen_task(args_tuple):
-    v_name, out_base, count, seed = args_tuple
+    v_name, out_base, count, seed, eval_pos_count = args_tuple
     out_base = Path(out_base)
     if v_name == "standard":
         generate_standard_dataset(out_base / "standard", count=max(count * 2, 5000), seed=seed)
@@ -342,7 +372,7 @@ def _gen_task(args_tuple):
             out_base / v_name,
             heuristic_count=count,
             random_count=min(500, count // 4),
-            eval_pos_count=500,
+            eval_pos_count=eval_pos_count,
             seed=seed,
         )
 
@@ -354,6 +384,7 @@ def main():
     parser.add_argument("--source", type=str, default="selfplay", choices=["selfplay", "lichess"])
     parser.add_argument("--pgn-path", type=str, default=None, help="Path to PGN file if source=lichess")
     parser.add_argument("--count", type=int, default=2000, help="Number of games to generate")
+    parser.add_argument("--eval-pos-count", type=int, default=2000, help="Number of eval positions per variant")
     parser.add_argument("--policy", type=str, default="heuristic", choices=["heuristic", "random"])
     parser.add_argument("--output-dir", type=str, default="data", help="Output directory")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
@@ -365,7 +396,7 @@ def main():
         from concurrent.futures import ProcessPoolExecutor
 
         all_names = ["standard"] + list(VARIANTS.keys())
-        tasks = [(name, str(out_base), args.count, args.seed) for name in all_names]
+        tasks = [(name, str(out_base), args.count, args.seed, args.eval_pos_count) for name in all_names]
         print(f"Parallelizing data generation for {len(all_names)} targets across CPU workers...")
         with ProcessPoolExecutor(max_workers=min(len(all_names), 32)) as executor:
             list(executor.map(_gen_task, tasks))
@@ -378,7 +409,7 @@ def main():
             out_base / args.variant,
             heuristic_count=args.count,
             random_count=500 if args.policy == "heuristic" else args.count,
-            eval_pos_count=500,
+            eval_pos_count=args.eval_pos_count,
             seed=args.seed,
         )
 

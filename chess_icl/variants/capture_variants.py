@@ -50,8 +50,6 @@ class PieceCaptureBoard(VariantBoard):
         return False
 
     def result_for_white(self) -> str:
-        if self._move_count >= self._max_moves:
-            return "draw"
         white_king = any(
             self.board.piece_at(sq)
             for sq in chess.SQUARES
@@ -70,6 +68,13 @@ class PieceCaptureBoard(VariantBoard):
             return "win"
         if not white_king:
             return "loss"
+        if self._move_count >= self._max_moves:
+            score = self.evaluate_material(chess.WHITE)
+            if score >= 3:
+                return "win"
+            if score <= -3:
+                return "loss"
+            return "draw"
         return "draw"
 
 

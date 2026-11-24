@@ -64,15 +64,48 @@ class VariantBoard:
             return True
         return self.board.is_game_over(claim_draw=True)
 
+    def evaluate_material(self, color: chess.Color) -> int:
+        """Evaluate material advantage from the perspective of `color`."""
+        piece_values = {
+            chess.PAWN: 1,
+            chess.KNIGHT: 3,
+            chess.BISHOP: 3,
+            chess.ROOK: 5,
+            chess.QUEEN: 9,
+            chess.KING: 0,
+        }
+        score = 0
+        for sq in chess.SQUARES:
+            piece = self.board.piece_at(sq)
+            if piece is not None:
+                val = piece_values.get(piece.piece_type, 0)
+                if piece.color == color:
+                    score += val
+                else:
+                    score -= val
+        return score
+
     def result_for_white(self) -> str:
         """Return 'win', 'loss', or 'draw' from White's perspective."""
         if self._move_count >= self._max_moves:
+            score = self.evaluate_material(chess.WHITE)
+            if score >= 3:
+                return "win"
+            if score <= -3:
+                return "loss"
             return "draw"
         r = self.board.result(claim_draw=True)
         if r == "1-0":
             return "win"
         if r == "0-1":
             return "loss"
+        if self.board.is_game_over(claim_draw=True):
+            score = self.evaluate_material(chess.WHITE)
+            if score >= 3:
+                return "win"
+            if score <= -3:
+                return "loss"
+            return "draw"
         return "draw"
 
     def fen(self) -> str:

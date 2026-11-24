@@ -45,9 +45,6 @@ class AntichessBoard(VariantBoard):
 
     def result_for_white(self) -> str:
         """In antichess, losing all pieces = winning."""
-        if self._move_count >= self._max_moves:
-            return "draw"
-
         white_pieces = sum(
             1 for sq in chess.SQUARES
             if self.board.piece_at(sq) is not None
@@ -66,10 +63,18 @@ class AntichessBoard(VariantBoard):
 
         # Stalemate: the stalemated player wins
         if not self.legal_moves():
-            # Side to move is stalemated
             if self.board.turn == chess.WHITE:
                 return "win"  # White can't move → White wins
             else:
                 return "loss"  # Black can't move → Black wins
+
+        if self._move_count >= self._max_moves:
+            score = self.evaluate_material(chess.WHITE)
+            # In antichess, having LESS material is winning
+            if score <= -3:
+                return "win"
+            if score >= 3:
+                return "loss"
+            return "draw"
 
         return "draw"

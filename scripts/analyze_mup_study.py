@@ -62,21 +62,30 @@ def plot_mup_pretrain_loss(pretrain_dir: Path, output_path: Path):
 
 
 def plot_model_scaling_icl(results_dir: Path, output_path: Path):
-    """Plot ICL Accuracy vs Number of Demonstrations (K) across model sizes."""
-    fig, axes = plt.subplots(1, 3, figsize=(16, 5), sharey=True)
+    """Plot ICL Accuracy vs Number of Demonstrations (K) across model sizes and LLM baseline."""
+    fig, axes = plt.subplots(1, 3, figsize=(18, 5.5), sharey=True)
 
-    scales = ["tiny", "small", "medium", "large"]
+    scales = ["tiny", "small", "medium", "large", "qwen_7b"]
     scale_labels = {
         "tiny": "Tiny (1.3M)",
         "small": "Small (7.4M)",
         "medium": "Medium (22.9M)",
         "large": "Large (205.9M)",
+        "qwen_7b": "Qwen2.5-7B-Instruct (Zero-Shot LLM)",
     }
     colors = {
         "tiny": "#1f77b4",
         "small": "#ff7f0e",
         "medium": "#2ca02c",
         "large": "#d62728",
+        "qwen_7b": "#9467bd",
+    }
+    linestyles = {
+        "tiny": "-",
+        "small": "-",
+        "medium": "-",
+        "large": "-",
+        "qwen_7b": "--",
     }
     k_vals = [0, 1, 2, 4, 8, 16]
 
@@ -88,13 +97,19 @@ def plot_model_scaling_icl(results_dir: Path, output_path: Path):
 
     for title, grp, ax in target_groups:
         for scale in scales:
-            res_file = results_dir / f"eval_{scale}_mup_all_variants.json"
+            if scale == "qwen_7b":
+                res_file = results_dir / "eval_qwen_7b_icl.json"
+            else:
+                res_file = results_dir / f"eval_{scale}_mup_all_variants.json"
+                if not res_file.exists():
+                    alt_files = list(results_dir.glob(f"eval_{scale}*_all_variants*.json"))
+                    if alt_files:
+                        res_file = alt_files[0]
+                    else:
+                        continue
+
             if not res_file.exists():
-                alt_files = list(results_dir.glob(f"eval_{scale}*_all_variants*.json"))
-                if alt_files:
-                    res_file = alt_files[0]
-                else:
-                    continue
+                continue
 
             with open(res_file) as f:
                 raw = json.load(f)
@@ -109,16 +124,28 @@ def plot_model_scaling_icl(results_dir: Path, output_path: Path):
                     continue
                 k_accs[e["K"]].append(e["accuracy"])
 
-            means = [np.mean(k_accs[k]) * 100 if k_accs[k] else 0.0 for k in k_vals]
-            ax.plot(k_vals, means, marker="o", linewidth=2, label=scale_labels[scale], color=colors[scale])
+            # Filter valid K values
+            valid_k = [k for k in k_vals if k in k_accs and len(k_accs[k]) > 0]
+            if not valid_k:
+                continue
+            means = [np.mean(k_accs[k]) * 100 for k in valid_k]
+            ax.plot(
+                valid_k,
+                means,
+                marker="o" if scale != "qwen_7b" else "s",
+                linewidth=2.5 if scale in ["large", "qwen_7b"] else 1.8,
+                linestyle=linestyles[scale],
+                label=scale_labels[scale],
+                color=colors[scale],
+            )
 
-        ax.axhline(y=33.33, color="gray", linestyle="--", alpha=0.5, label="Chance Baseline (33.3%)")
+        ax.axhline(y=33.33, color="gray", linestyle=":", alpha=0.7, label="Chance Baseline (33.3%)")
         ax.set_title(title, fontsize=11, fontweight="bold")
         ax.set_xlabel("Number of Demonstrations (K)")
         ax.set_ylabel("Accuracy (%)")
-        ax.set_ylim(0, 100)
+        ax.set_ylim(15, 100)
         ax.grid(True, alpha=0.3)
-        ax.legend(fontsize=9)
+        ax.legend(fontsize=8, loc="upper right" if grp != "radical" else "lower right")
 
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -128,9 +155,15 @@ def plot_model_scaling_icl(results_dir: Path, output_path: Path):
 
 
 def generate_mup_latex_table(results_dir: Path, output_path: Path):
-    """Generate a clean publication LaTeX table comparing model sizes under muP."""
-    scales = ["tiny", "small", "medium", "large"]
-    variants = [
+    """Generate a clean publication LaTeX table comparing model sizes under muP across all 13 variants."""
+    scales = ["tiny", "small", "medium", "large", "qwen_7b"]
+    train_variants = [
+        ("diagonal_rook", "Move", "Diagonal Rook"),
+        ("straight_bishop", "Move", "Straight Bishop"),
+        ("weakened_queen", "Move", "Weakened Queen"),
+        ("extended_pawn", "Move", "Extended Pawn"),
+    ]
+    test_variants = [
         ("short_knight", "Move", "Short Knight"),
         ("mobile_king", "Move", "Mobile King"),
         ("piece_capture", "Capture", "Piece Capture"),
@@ -145,13 +178,19 @@ def generate_mup_latex_table(results_dir: Path, output_path: Path):
     # Map scale -> variant -> K -> acc
     data = defaultdict(lambda: defaultdict(dict))
     for scale in scales:
-        res_file = results_dir / f"eval_{scale}_mup_all_variants.json"
+        if scale == "qwen_7b":
+            res_file = results_dir / "eval_qwen_7b_icl.json"
+        else:
+            res_file = results_dir / f"eval_{scale}_mup_all_variants.json"
+            if not res_file.exists():
+                alt = list(results_dir.glob(f"eval_{scale}*_all_variants*.json"))
+                if alt:
+                    res_file = alt[0]
+                else:
+                    continue
+
         if not res_file.exists():
-            alt = list(results_dir.glob(f"eval_{scale}*_all_variants*.json"))
-            if alt:
-                res_file = alt[0]
-            else:
-                continue
+            continue
 
         with open(res_file) as f:
             raw = json.load(f)
@@ -169,25 +208,60 @@ def generate_mup_latex_table(results_dir: Path, output_path: Path):
         r"\begin{table*}[t]",
         r"\centering",
         r"\small",
-        r"\begin{tabular}{ll|ccc|ccc|ccc|ccc}",
+        r"\begin{tabular}{ll|ccc|ccc|ccc|ccc|cc}",
         r"\toprule",
-        r" & & \multicolumn{3}{c}{\textbf{Tiny (1.3M)}} & \multicolumn{3}{c}{\textbf{Small (7.4M)}} & \multicolumn{3}{c}{\textbf{Medium (22.9M)}} & \multicolumn{3}{c}{\textbf{Large (205.9M)}} \\",
-        r"\textbf{Variant} & \textbf{Category} & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ \\",
+        r" & & \multicolumn{3}{c}{\textbf{Tiny (1.3M)}} & \multicolumn{3}{c}{\textbf{Small (7.4M)}} & \multicolumn{3}{c}{\textbf{Medium (22.9M)}} & \multicolumn{3}{c}{\textbf{Large (205.9M)}} & \multicolumn{2}{c}{\textbf{Qwen-7B (LLM)}} \\",
+        r"\textbf{Variant} & \textbf{Category} & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ & $K=8$ & $K=0$ & $K=4$ \\",
         r"\midrule",
+        r"\multicolumn{16}{l}{\textit{In-Distribution Training Variants}} \\",
     ]
 
-    for v_code, cat, v_disp in variants:
+    for v_code, cat, v_disp in train_variants:
         row = [f"{v_disp:<18}", f"{cat:<9}"]
-        for scale in scales:
+        for scale in ["tiny", "small", "medium", "large"]:
             for k in [0, 4, 8]:
                 val = data[scale].get(v_code, {}).get(k, 0.0)
                 row.append(f"{val:5.1f}\\%" if val > 0 else "   --  ")
+        for k in [0, 4]:
+            val = data["qwen_7b"].get(v_code, {}).get(k, 0.0)
+            row.append(f"{val:5.1f}\\%" if val > 0 else "   --  ")
+        lines.append(" & ".join(row) + r" \\")
+
+    lines.extend([
+        r"\midrule",
+        r"\multicolumn{16}{l}{\textit{Out-of-Distribution Held-Out Test Variants}} \\",
+    ])
+
+    for v_code, cat, v_disp in test_variants:
+        row = [f"{v_disp:<18}", f"{cat:<9}"]
+        for scale in ["tiny", "small", "medium", "large"]:
+            for k in [0, 4, 8]:
+                val = data[scale].get(v_code, {}).get(k, 0.0)
+                row.append(f"{val:5.1f}\\%" if val > 0 else "   --  ")
+        for k in [0, 4]:
+            val = data["qwen_7b"].get(v_code, {}).get(k, 0.0)
+            row.append(f"{val:5.1f}\\%" if val > 0 else "   --  ")
+        lines.append(" & ".join(row) + r" \\")
+
+    # Mean summary rows
+    lines.append(r"\midrule")
+    for group_name, v_list in [("In-Distribution Mean (4)", train_variants), ("Out-of-Distribution Mean (9)", test_variants), ("Overall Mean (13)", train_variants + test_variants)]:
+        row = [f"\\textbf{{{group_name}}}", "All"]
+        for scale in ["tiny", "small", "medium", "large"]:
+            for k in [0, 4, 8]:
+                vals = [data[scale].get(vc, {}).get(k, 0.0) for vc, _, _ in v_list if data[scale].get(vc, {}).get(k, 0.0) > 0]
+                m_val = np.mean(vals) if vals else 0.0
+                row.append(f"\\textbf{{{m_val:5.1f}\\%}}" if m_val > 0 else "   --  ")
+        for k in [0, 4]:
+            vals = [data["qwen_7b"].get(vc, {}).get(k, 0.0) for vc, _, _ in v_list if data["qwen_7b"].get(vc, {}).get(k, 0.0) > 0]
+            m_val = np.mean(vals) if vals else 0.0
+            row.append(f"\\textbf{{{m_val:5.1f}\\%}}" if m_val > 0 else "   --  ")
         lines.append(" & ".join(row) + r" \\")
 
     lines.extend([
         r"\bottomrule",
         r"\end{tabular}",
-        r"\caption{\textbf{Maximal Update Parametrization ($\mu$P) Model Scaling on In-Context Variant Learning.} Evaluation accuracy across 9 held-out chess variants with zero natural language rules. Model scale unlocks substantial gains in in-context inference capacity.}",
+        r"\caption{\textbf{Model Scaling on In-Context Variant Learning: Domain-Specific muP Transformers vs General LLM.} Evaluation accuracy across 13 chess variants on 1,998 balanced evaluation positions per variant (Chance = 33.3\%). Domain-pretrained muP transformers scale monotonically from 1.3M to 205.8M, while general-purpose Qwen2.5-7B-Instruct remains at chance baseline without domain spatial representations.}",
         r"\label{tab:mup_scaling}",
         r"\end{table*}",
     ])

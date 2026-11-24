@@ -15,7 +15,7 @@ from chess_icl.data import ChessTokenizer, load_positions, load_games
 from chess_icl.dataset import ChessEvalDataset
 from chess_icl.model import ChessTransformer
 from chess_icl.evaluate import compute_accuracy, demo_quality_comparison, position_reevaluation_test
-from chess_icl.variants import TEST_VARIANTS, VARIANTS
+from chess_icl.variants import TEST_VARIANTS, TRAIN_VARIANTS, VARIANTS
 
 
 def evaluate_variant(
@@ -65,6 +65,7 @@ def evaluate_variant(
             entry = {
                 "variant": variant_name,
                 "category": VARIANTS[variant_name].category.name if variant_name in VARIANTS else "UNKNOWN",
+                "split": "train" if variant_name in TRAIN_VARIANTS else "test",
                 "K": K,
                 "seed": seed,
                 "accuracy": metrics["accuracy"],
@@ -87,7 +88,12 @@ def run_eval(args):
     model.pad_token_id = tokenizer.pad_id
 
     data_dir = Path(args.data_dir)
-    test_variants = args.test_variants if args.test_variants else TEST_VARIANTS
+    if args.test_variants and len(args.test_variants) == 1 and args.test_variants[0] == "all":
+        test_variants = list(VARIANTS.keys())
+    elif args.test_variants:
+        test_variants = args.test_variants
+    else:
+        test_variants = list(VARIANTS.keys())
 
     all_results = []
     for var in test_variants:

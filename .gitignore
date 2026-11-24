@@ -4,6 +4,7 @@ __pycache__/
 .DS_Store
 data/*
 !data/.gitkeep
+data_large/
 runs/*
 !runs/.gitkeep
 !runs/analysis/
