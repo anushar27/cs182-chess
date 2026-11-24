@@ -1,0 +1,240 @@
+{
+  "checkpoint": "runs/variant_medium_all_mup/all_variants_seed42.pt",
+  "results": {
+    "diagonal_rook": {
+      "1": {
+        "clean": {
+          "accuracy": 0.829662996329663
+        },
+        "inverted": {
+          "accuracy": 0.829662996329663,
+          "flipped_to_inverted": 0.23640306973640304
+        },
+        "scrambled": {
+          "accuracy": 0.8388388388388388
+        },
+        "all_draw": {
+          "accuracy": 0.829662996329663
+        }
+      },
+      "2": {
+        "clean": {
+          "accuracy": 0.7926259592926259
+        },
+        "inverted": {
+          "accuracy": 0.794627961294628,
+          "flipped_to_inverted": 0.21521521521521522
+        },
+        "scrambled": {
+          "accuracy": 0.8064731398064732
+        },
+        "all_draw": {
+          "accuracy": 0.7876209542876209
+        }
+      },
+      "4": {
+        "clean": {
+          "accuracy": 0.716383049716383
+        },
+        "inverted": {
+          "accuracy": 0.7165498832165499,
+          "flipped_to_inverted": 0.19803136469803137
+        },
+        "scrambled": {
+          "accuracy": 0.7102102102102101
+        },
+        "all_draw": {
+          "accuracy": 0.7070403737070404
+        }
+      }
+    },
+    "straight_bishop": {
+      "1": {
+        "clean": {
+          "accuracy": 0.7020353687020354
+        },
+        "inverted": {
+          "accuracy": 0.6998665331998666,
+          "flipped_to_inverted": 0.2002002002002002
+        },
+        "scrambled": {
+          "accuracy": 0.7188855522188855
+        },
+        "all_draw": {
+          "accuracy": 0.7027027027027027
+        }
+      },
+      "2": {
+        "clean": {
+          "accuracy": 0.7268935602268937
+        },
+        "inverted": {
+          "accuracy": 0.7252252252252253,
+          "flipped_to_inverted": 0.22439105772439105
+        },
+        "scrambled": {
+          "accuracy": 0.7292292292292292
+        },
+        "all_draw": {
+          "accuracy": 0.7432432432432433
+        }
+      },
+      "4": {
+        "clean": {
+          "accuracy": 0.6968635301968634
+        },
+        "inverted": {
+          "accuracy": 0.6970303636970304,
+          "flipped_to_inverted": 0.22989656322989657
+        },
+        "scrambled": {
+          "accuracy": 0.6880213546880213
+        },
+        "all_draw": {
+          "accuracy": 0.6911911911911912
+        }
+      }
+    },
+    "mobile_king": {
+      "1": {
+        "clean": {
+          "accuracy": 0.8680347013680346
+        },
+        "inverted": {
+          "accuracy": 0.8672005338672005,
+          "flipped_to_inverted": 0.2510844177510844
+        },
+        "scrambled": {
+          "accuracy": 0.8713713713713713
+        },
+        "all_draw": {
+          "accuracy": 0.8475141808475142
+        }
+      },
+      "2": {
+        "clean": {
+          "accuracy": 0.8306639973306641
+        },
+        "inverted": {
+          "accuracy": 0.8314981648314982,
+          "flipped_to_inverted": 0.2529195862529196
+        },
+        "scrambled": {
+          "accuracy": 0.8256589923256591
+        },
+        "all_draw": {
+          "accuracy": 0.8278278278278278
+        }
+      },
+      "4": {
+        "clean": {
+          "accuracy": 0.7689356022689356
+        },
+        "inverted": {
+          "accuracy": 0.7707707707707708,
+          "flipped_to_inverted": 0.22555889222555892
+        },
+        "scrambled": {
+          "accuracy": 0.7667667667667667
+        },
+        "all_draw": {
+          "accuracy": 0.7587587587587588
+        }
+      }
+    },
+    "piece_capture": {
+      "1": {
+        "clean": {
+          "accuracy": 0.8148148148148148
+        },
+        "inverted": {
+          "accuracy": 0.8161494828161495,
+          "flipped_to_inverted": 0.25875875875875876
+        },
+        "scrambled": {
+          "accuracy": 0.8034701368034701
+        },
+        "all_draw": {
+          "accuracy": 0.7547547547547547
+        }
+      },
+      "2": {
+        "clean": {
+          "accuracy": 0.8488488488488489
+        },
+        "inverted": {
+          "accuracy": 0.8441775108441775,
+          "flipped_to_inverted": 0.3109776443109777
+        },
+        "scrambled": {
+          "accuracy": 0.8204871538204871
+        },
+        "all_draw": {
+          "accuracy": 0.7952952952952952
+        }
+      },
+      "4": {
+        "clean": {
+          "accuracy": 0.6431431431431432
+        },
+        "inverted": {
+          "accuracy": 0.6478144811478145,
+          "flipped_to_inverted": 0.22989656322989657
+        },
+        "scrambled": {
+          "accuracy": 0.6428094761428095
+        },
+        "all_draw": {
+          "accuracy": 0.5975975975975976
+        }
+      }
+    },
+    "antichess": {
+      "1": {
+        "clean": {
+          "accuracy": 0.1730063396730063
+        },
+        "inverted": {
+          "accuracy": 0.17300633967300635,
+          "flipped_to_inverted": 0.6793460126793461
+        },
+        "scrambled": {
+          "accuracy": 0.1886886886886887
+        },
+        "all_draw": {
+          "accuracy": 0.20420420420420418
+        }
+      },
+      "2": {
+        "clean": {
+          "accuracy": 0.24624624624624625
+        },
+        "inverted": {
+          "accuracy": 0.2457457457457457,
+          "flipped_to_inverted": 0.7008675342008676
+        },
+        "scrambled": {
+          "accuracy": 0.25175175175175174
+        },
+        "all_draw": {
+          "accuracy": 0.24107440774107444
+        }
+      },
+      "4": {
+        "clean": {
+          "accuracy": 0.22806139472806142
+        },
+        "inverted": {
+          "accuracy": 0.2292292292292292,
+          "flipped_to_inverted": 0.6194527861194528
+        },
+        "scrambled": {
+          "accuracy": 0.21688355021688355
+        },
+        "all_draw": {
+          "accuracy": 0.1896896896896897
+        }
+      }
+    }
+  }
+}

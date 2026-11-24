@@ -1,0 +1,150 @@
+{
+  "overall_material_mean": 1.0,
+  "in_distribution_material_mean": 1.0,
+  "out_of_distribution_material_mean": 1.0,
+  "variants": {
+    "diagonal_rook": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "straight_bishop": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "weakened_queen": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "extended_pawn": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "short_knight": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "mobile_king": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "piece_capture": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "forward_pawn_capture": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "dark_square_immunity": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "blocked_squares": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "long_board": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "knight_army": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    },
+    "antichess": {
+      "total_samples": 1998,
+      "material_heuristic_acc": 1.0,
+      "demo_majority_acc": {
+        "1": 0.3333333333333333,
+        "2": 0.3333333333333333,
+        "4": 0.3333333333333333,
+        "8": 0.3333333333333333
+      },
+      "random_chance": 0.3333333333333333
+    }
+  }
+}
