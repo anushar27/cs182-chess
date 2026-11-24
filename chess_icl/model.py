@@ -263,3 +263,5 @@ TINY = ModelConfig(d_model=128, n_heads=4, n_layers=4, d_ff=512, d_base=128)
 SMALL = ModelConfig(d_model=256, n_heads=8, n_layers=8, d_ff=1024, d_base=128)
 MEDIUM = ModelConfig(d_model=384, n_heads=8, n_layers=12, d_ff=1536, d_base=128)
 LARGE = ModelConfig(d_model=1024, n_heads=16, n_layers=16, d_ff=4096, d_base=128)
+XLARGE = ModelConfig(d_model=2048, n_heads=16, n_layers=16, d_ff=6144, d_base=128)
+

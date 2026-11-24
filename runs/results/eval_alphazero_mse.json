@@ -1,0 +1,812 @@
+[
+  {
+    "variant": "short_knight",
+    "k": 0,
+    "seed": 42,
+    "value_mse": 0.6555804394559377,
+    "value_sign_accuracy": 0.4066666666666667,
+    "legal_move_rate": 0.16,
+    "num_positions": 150
+  },
+  {
+    "variant": "short_knight",
+    "k": 0,
+    "seed": 123,
+    "value_mse": 0.6555804394559377,
+    "value_sign_accuracy": 0.4066666666666667,
+    "legal_move_rate": 0.16,
+    "num_positions": 150
+  },
+  {
+    "variant": "short_knight",
+    "k": 1,
+    "seed": 42,
+    "value_mse": 0.6120095951085,
+    "value_sign_accuracy": 0.26,
+    "legal_move_rate": 0.03333333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "short_knight",
+    "k": 1,
+    "seed": 123,
+    "value_mse": 0.6270249813044427,
+    "value_sign_accuracy": 0.32,
+    "legal_move_rate": 0.06666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "short_knight",
+    "k": 2,
+    "seed": 42,
+    "value_mse": 0.6130788145472646,
+    "value_sign_accuracy": 0.18,
+    "legal_move_rate": 0.02666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "short_knight",
+    "k": 2,
+    "seed": 123,
+    "value_mse": 0.6444368356004808,
+    "value_sign_accuracy": 0.3466666666666667,
+    "legal_move_rate": 0.02666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "short_knight",
+    "k": 4,
+    "seed": 42,
+    "value_mse": 0.6092929100664675,
+    "value_sign_accuracy": 0.36,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "short_knight",
+    "k": 4,
+    "seed": 123,
+    "value_mse": 0.6543593091036775,
+    "value_sign_accuracy": 0.36,
+    "legal_move_rate": 0.013333333333333334,
+    "num_positions": 150
+  },
+  {
+    "variant": "short_knight",
+    "k": 8,
+    "seed": 42,
+    "value_mse": 0.8428770424234803,
+    "value_sign_accuracy": 0.41333333333333333,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "short_knight",
+    "k": 8,
+    "seed": 123,
+    "value_mse": 0.7226836137954538,
+    "value_sign_accuracy": 0.41333333333333333,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "mobile_king",
+    "k": 0,
+    "seed": 42,
+    "value_mse": 0.7392331543153572,
+    "value_sign_accuracy": 0.35333333333333333,
+    "legal_move_rate": 0.15333333333333332,
+    "num_positions": 150
+  },
+  {
+    "variant": "mobile_king",
+    "k": 0,
+    "seed": 123,
+    "value_mse": 0.7392331543153572,
+    "value_sign_accuracy": 0.35333333333333333,
+    "legal_move_rate": 0.15333333333333332,
+    "num_positions": 150
+  },
+  {
+    "variant": "mobile_king",
+    "k": 1,
+    "seed": 42,
+    "value_mse": 0.7690456408019682,
+    "value_sign_accuracy": 0.31333333333333335,
+    "legal_move_rate": 0.38,
+    "num_positions": 150
+  },
+  {
+    "variant": "mobile_king",
+    "k": 1,
+    "seed": 123,
+    "value_mse": 0.8478209723773025,
+    "value_sign_accuracy": 0.36,
+    "legal_move_rate": 0.37333333333333335,
+    "num_positions": 150
+  },
+  {
+    "variant": "mobile_king",
+    "k": 2,
+    "seed": 42,
+    "value_mse": 0.8312973263751142,
+    "value_sign_accuracy": 0.4533333333333333,
+    "legal_move_rate": 0.2733333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "mobile_king",
+    "k": 2,
+    "seed": 123,
+    "value_mse": 0.7254728730087205,
+    "value_sign_accuracy": 0.42,
+    "legal_move_rate": 0.24,
+    "num_positions": 150
+  },
+  {
+    "variant": "mobile_king",
+    "k": 4,
+    "seed": 42,
+    "value_mse": 0.914316745061592,
+    "value_sign_accuracy": 0.49333333333333335,
+    "legal_move_rate": 0.05333333333333334,
+    "num_positions": 150
+  },
+  {
+    "variant": "mobile_king",
+    "k": 4,
+    "seed": 123,
+    "value_mse": 0.7738126615270153,
+    "value_sign_accuracy": 0.5,
+    "legal_move_rate": 0.18666666666666668,
+    "num_positions": 150
+  },
+  {
+    "variant": "mobile_king",
+    "k": 8,
+    "seed": 42,
+    "value_mse": 0.8489415907332072,
+    "value_sign_accuracy": 0.49333333333333335,
+    "legal_move_rate": 0.08,
+    "num_positions": 150
+  },
+  {
+    "variant": "mobile_king",
+    "k": 8,
+    "seed": 123,
+    "value_mse": 0.6340563078929423,
+    "value_sign_accuracy": 0.3,
+    "legal_move_rate": 0.11333333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "piece_capture",
+    "k": 0,
+    "seed": 42,
+    "value_mse": 0.6974098756762505,
+    "value_sign_accuracy": 0.36,
+    "legal_move_rate": 0.18,
+    "num_positions": 150
+  },
+  {
+    "variant": "piece_capture",
+    "k": 0,
+    "seed": 123,
+    "value_mse": 0.6974098756762505,
+    "value_sign_accuracy": 0.36,
+    "legal_move_rate": 0.18,
+    "num_positions": 150
+  },
+  {
+    "variant": "piece_capture",
+    "k": 1,
+    "seed": 42,
+    "value_mse": 0.6823579127225561,
+    "value_sign_accuracy": 0.4066666666666667,
+    "legal_move_rate": 0.4266666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "piece_capture",
+    "k": 1,
+    "seed": 123,
+    "value_mse": 0.7457490049168976,
+    "value_sign_accuracy": 0.42,
+    "legal_move_rate": 0.24666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "piece_capture",
+    "k": 2,
+    "seed": 42,
+    "value_mse": 0.5803551068416275,
+    "value_sign_accuracy": 0.44,
+    "legal_move_rate": 0.15333333333333332,
+    "num_positions": 150
+  },
+  {
+    "variant": "piece_capture",
+    "k": 2,
+    "seed": 123,
+    "value_mse": 0.7225799687816048,
+    "value_sign_accuracy": 0.36,
+    "legal_move_rate": 0.18666666666666668,
+    "num_positions": 150
+  },
+  {
+    "variant": "piece_capture",
+    "k": 4,
+    "seed": 42,
+    "value_mse": 0.6525695150275773,
+    "value_sign_accuracy": 0.44,
+    "legal_move_rate": 0.06,
+    "num_positions": 150
+  },
+  {
+    "variant": "piece_capture",
+    "k": 4,
+    "seed": 123,
+    "value_mse": 0.9736424960165512,
+    "value_sign_accuracy": 0.46,
+    "legal_move_rate": 0.28,
+    "num_positions": 150
+  },
+  {
+    "variant": "piece_capture",
+    "k": 8,
+    "seed": 42,
+    "value_mse": 0.7664129038005546,
+    "value_sign_accuracy": 0.46,
+    "legal_move_rate": 0.04,
+    "num_positions": 150
+  },
+  {
+    "variant": "piece_capture",
+    "k": 8,
+    "seed": 123,
+    "value_mse": 0.7411695403402783,
+    "value_sign_accuracy": 0.4533333333333333,
+    "legal_move_rate": 0.24666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 0,
+    "seed": 42,
+    "value_mse": 0.7062547483323667,
+    "value_sign_accuracy": 0.3466666666666667,
+    "legal_move_rate": 0.08666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 0,
+    "seed": 123,
+    "value_mse": 0.7062547483323667,
+    "value_sign_accuracy": 0.3466666666666667,
+    "legal_move_rate": 0.08666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 1,
+    "seed": 42,
+    "value_mse": 0.624177476826143,
+    "value_sign_accuracy": 0.29333333333333333,
+    "legal_move_rate": 0.08,
+    "num_positions": 150
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 1,
+    "seed": 123,
+    "value_mse": 0.6685260637178154,
+    "value_sign_accuracy": 0.29333333333333333,
+    "legal_move_rate": 0.10666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 2,
+    "seed": 42,
+    "value_mse": 0.7075287600017918,
+    "value_sign_accuracy": 0.38666666666666666,
+    "legal_move_rate": 0.013333333333333334,
+    "num_positions": 150
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 2,
+    "seed": 123,
+    "value_mse": 0.610684073484913,
+    "value_sign_accuracy": 0.30666666666666664,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 4,
+    "seed": 42,
+    "value_mse": 0.7171743630600199,
+    "value_sign_accuracy": 0.32,
+    "legal_move_rate": 0.013333333333333334,
+    "num_positions": 150
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 4,
+    "seed": 123,
+    "value_mse": 0.5966677124056671,
+    "value_sign_accuracy": 0.29333333333333333,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 8,
+    "seed": 42,
+    "value_mse": 0.6090324241493351,
+    "value_sign_accuracy": 0.4533333333333333,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 8,
+    "seed": 123,
+    "value_mse": 0.6286370928878358,
+    "value_sign_accuracy": 0.4533333333333333,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 0,
+    "seed": 42,
+    "value_mse": 0.7526509350852898,
+    "value_sign_accuracy": 0.38666666666666666,
+    "legal_move_rate": 0.16666666666666666,
+    "num_positions": 150
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 0,
+    "seed": 123,
+    "value_mse": 0.7526509350852898,
+    "value_sign_accuracy": 0.38666666666666666,
+    "legal_move_rate": 0.16666666666666666,
+    "num_positions": 150
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 1,
+    "seed": 42,
+    "value_mse": 0.5974941868231202,
+    "value_sign_accuracy": 0.26,
+    "legal_move_rate": 0.12,
+    "num_positions": 150
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 1,
+    "seed": 123,
+    "value_mse": 0.6260610916920274,
+    "value_sign_accuracy": 0.2866666666666667,
+    "legal_move_rate": 0.09333333333333334,
+    "num_positions": 150
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 2,
+    "seed": 42,
+    "value_mse": 0.6396061956106458,
+    "value_sign_accuracy": 0.34,
+    "legal_move_rate": 0.08666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 2,
+    "seed": 123,
+    "value_mse": 0.5946074240789432,
+    "value_sign_accuracy": 0.32,
+    "legal_move_rate": 0.12666666666666668,
+    "num_positions": 150
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 4,
+    "seed": 42,
+    "value_mse": 0.5797620553048005,
+    "value_sign_accuracy": 0.32,
+    "legal_move_rate": 0.04,
+    "num_positions": 150
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 4,
+    "seed": 123,
+    "value_mse": 0.5714969042884126,
+    "value_sign_accuracy": 0.32,
+    "legal_move_rate": 0.08666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 8,
+    "seed": 42,
+    "value_mse": 0.5806592826081315,
+    "value_sign_accuracy": 0.4533333333333333,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 8,
+    "seed": 123,
+    "value_mse": 0.6314753937588765,
+    "value_sign_accuracy": 0.4533333333333333,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 0,
+    "seed": 42,
+    "value_mse": 0.6764392611138389,
+    "value_sign_accuracy": 0.36,
+    "legal_move_rate": 0.16,
+    "num_positions": 150
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 0,
+    "seed": 123,
+    "value_mse": 0.6764392611138389,
+    "value_sign_accuracy": 0.36,
+    "legal_move_rate": 0.16,
+    "num_positions": 150
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 1,
+    "seed": 42,
+    "value_mse": 0.5919130598039194,
+    "value_sign_accuracy": 0.32,
+    "legal_move_rate": 0.16,
+    "num_positions": 150
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 1,
+    "seed": 123,
+    "value_mse": 0.6706127587738121,
+    "value_sign_accuracy": 0.3,
+    "legal_move_rate": 0.17333333333333334,
+    "num_positions": 150
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 2,
+    "seed": 42,
+    "value_mse": 0.6562530854614038,
+    "value_sign_accuracy": 0.4,
+    "legal_move_rate": 0.12666666666666668,
+    "num_positions": 150
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 2,
+    "seed": 123,
+    "value_mse": 0.7900547938243073,
+    "value_sign_accuracy": 0.41333333333333333,
+    "legal_move_rate": 0.11333333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 4,
+    "seed": 42,
+    "value_mse": 0.6301751644642573,
+    "value_sign_accuracy": 0.36,
+    "legal_move_rate": 0.02666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 4,
+    "seed": 123,
+    "value_mse": 0.7905751015197189,
+    "value_sign_accuracy": 0.46,
+    "legal_move_rate": 0.1,
+    "num_positions": 150
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 8,
+    "seed": 42,
+    "value_mse": 0.6113905127896767,
+    "value_sign_accuracy": 0.46,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 8,
+    "seed": 123,
+    "value_mse": 0.6231043961429966,
+    "value_sign_accuracy": 0.46,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "long_board",
+    "k": 0,
+    "seed": 42,
+    "value_mse": 0.7406674194849239,
+    "value_sign_accuracy": 0.37333333333333335,
+    "legal_move_rate": 0.13333333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "long_board",
+    "k": 0,
+    "seed": 123,
+    "value_mse": 0.7406674194849239,
+    "value_sign_accuracy": 0.37333333333333335,
+    "legal_move_rate": 0.13333333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "long_board",
+    "k": 1,
+    "seed": 42,
+    "value_mse": 0.7895211739395352,
+    "value_sign_accuracy": 0.38666666666666666,
+    "legal_move_rate": 0.1,
+    "num_positions": 150
+  },
+  {
+    "variant": "long_board",
+    "k": 1,
+    "seed": 123,
+    "value_mse": 0.712148943621499,
+    "value_sign_accuracy": 0.37333333333333335,
+    "legal_move_rate": 0.16666666666666666,
+    "num_positions": 150
+  },
+  {
+    "variant": "long_board",
+    "k": 2,
+    "seed": 42,
+    "value_mse": 0.8606872992902843,
+    "value_sign_accuracy": 0.4266666666666667,
+    "legal_move_rate": 0.17333333333333334,
+    "num_positions": 150
+  },
+  {
+    "variant": "long_board",
+    "k": 2,
+    "seed": 123,
+    "value_mse": 0.9228051784116658,
+    "value_sign_accuracy": 0.43333333333333335,
+    "legal_move_rate": 0.10666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "long_board",
+    "k": 4,
+    "seed": 42,
+    "value_mse": 0.6738881477386769,
+    "value_sign_accuracy": 0.31333333333333335,
+    "legal_move_rate": 0.013333333333333334,
+    "num_positions": 150
+  },
+  {
+    "variant": "long_board",
+    "k": 4,
+    "seed": 123,
+    "value_mse": 0.7346962595158486,
+    "value_sign_accuracy": 0.3466666666666667,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "long_board",
+    "k": 8,
+    "seed": 42,
+    "value_mse": 0.5956756214357446,
+    "value_sign_accuracy": 0.18666666666666668,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "long_board",
+    "k": 8,
+    "seed": 123,
+    "value_mse": 0.5867212855234984,
+    "value_sign_accuracy": 0.14666666666666667,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "knight_army",
+    "k": 0,
+    "seed": 42,
+    "value_mse": 0.715159043287823,
+    "value_sign_accuracy": 0.3333333333333333,
+    "legal_move_rate": 0.5133333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "knight_army",
+    "k": 0,
+    "seed": 123,
+    "value_mse": 0.715159043287823,
+    "value_sign_accuracy": 0.3333333333333333,
+    "legal_move_rate": 0.5133333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "knight_army",
+    "k": 1,
+    "seed": 42,
+    "value_mse": 0.5265234787928231,
+    "value_sign_accuracy": 0.35333333333333333,
+    "legal_move_rate": 0.31333333333333335,
+    "num_positions": 150
+  },
+  {
+    "variant": "knight_army",
+    "k": 1,
+    "seed": 123,
+    "value_mse": 0.5135798383819903,
+    "value_sign_accuracy": 0.3333333333333333,
+    "legal_move_rate": 0.35333333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "knight_army",
+    "k": 2,
+    "seed": 42,
+    "value_mse": 0.5670152149934345,
+    "value_sign_accuracy": 0.28,
+    "legal_move_rate": 0.03333333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "knight_army",
+    "k": 2,
+    "seed": 123,
+    "value_mse": 0.518442412668982,
+    "value_sign_accuracy": 0.25333333333333335,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "knight_army",
+    "k": 4,
+    "seed": 42,
+    "value_mse": 0.5129796131102734,
+    "value_sign_accuracy": 0.37333333333333335,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "knight_army",
+    "k": 4,
+    "seed": 123,
+    "value_mse": 0.4724027210896413,
+    "value_sign_accuracy": 0.31333333333333335,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "knight_army",
+    "k": 8,
+    "seed": 42,
+    "value_mse": 0.5057295093679595,
+    "value_sign_accuracy": 0.32666666666666666,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "knight_army",
+    "k": 8,
+    "seed": 123,
+    "value_mse": 0.5399978672332281,
+    "value_sign_accuracy": 0.3333333333333333,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "antichess",
+    "k": 0,
+    "seed": 42,
+    "value_mse": 0.6954655066762131,
+    "value_sign_accuracy": 0.3333333333333333,
+    "legal_move_rate": 0.07333333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "antichess",
+    "k": 0,
+    "seed": 123,
+    "value_mse": 0.6954655066762131,
+    "value_sign_accuracy": 0.3333333333333333,
+    "legal_move_rate": 0.07333333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "antichess",
+    "k": 1,
+    "seed": 42,
+    "value_mse": 0.7045310493855396,
+    "value_sign_accuracy": 0.2866666666666667,
+    "legal_move_rate": 0.08666666666666667,
+    "num_positions": 150
+  },
+  {
+    "variant": "antichess",
+    "k": 1,
+    "seed": 123,
+    "value_mse": 0.6148423821916044,
+    "value_sign_accuracy": 0.35333333333333333,
+    "legal_move_rate": 0.1,
+    "num_positions": 150
+  },
+  {
+    "variant": "antichess",
+    "k": 2,
+    "seed": 42,
+    "value_mse": 0.6800663981750856,
+    "value_sign_accuracy": 0.37333333333333335,
+    "legal_move_rate": 0.04,
+    "num_positions": 150
+  },
+  {
+    "variant": "antichess",
+    "k": 2,
+    "seed": 123,
+    "value_mse": 0.5840258637420397,
+    "value_sign_accuracy": 0.34,
+    "legal_move_rate": 0.13333333333333333,
+    "num_positions": 150
+  },
+  {
+    "variant": "antichess",
+    "k": 4,
+    "seed": 42,
+    "value_mse": 0.5900463749299142,
+    "value_sign_accuracy": 0.28,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "antichess",
+    "k": 4,
+    "seed": 123,
+    "value_mse": 0.6289180520491788,
+    "value_sign_accuracy": 0.4,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "antichess",
+    "k": 8,
+    "seed": 42,
+    "value_mse": 0.716468261072171,
+    "value_sign_accuracy": 0.49333333333333335,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  },
+  {
+    "variant": "antichess",
+    "k": 8,
+    "seed": 123,
+    "value_mse": 0.5857156023835735,
+    "value_sign_accuracy": 0.44666666666666666,
+    "legal_move_rate": 0.0,
+    "num_positions": 150
+  }
+]

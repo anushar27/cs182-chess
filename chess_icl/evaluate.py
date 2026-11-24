@@ -75,16 +75,19 @@ def position_reevaluation_test(
 
     correct_flips = 0
     label_map = {"win": 0, "draw": 1, "loss": 2}
+    batch_size = 64
 
-    with torch.no_grad():
-        for pos in flipped_positions:
-            input_ids = tokenizer.encode_input(demos[:K], pos["fen"])
-            inp_t = torch.tensor([input_ids], dtype=torch.long, device=device)
+    with torch.inference_mode(), torch.amp.autocast('cuda', dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
+        for i in range(0, len(flipped_positions), batch_size):
+            batch_pos = flipped_positions[i : i + batch_size]
+            batch_inps = [tokenizer.encode_input(demos[:K], pos["fen"]) for pos in batch_pos]
+            max_len = max(len(inp) for inp in batch_inps)
+            padded = [inp + [tokenizer.pad_id] * (max_len - len(inp)) for inp in batch_inps]
+            inp_t = torch.tensor(padded, dtype=torch.long, device=device)
             logits = model(inp_t)
-            pred = logits.argmax(-1).item()
-            target = label_map.get(pos["variant_label"], 1)
-            if pred == target:
-                correct_flips += 1
+            preds = logits.argmax(-1).cpu().tolist()
+            targets = [label_map.get(pos["variant_label"], 1) for pos in batch_pos]
+            correct_flips += sum(1 for pr, tr in zip(preds, targets) if pr == tr)
 
     return {
         "flip_accuracy": correct_flips / len(flipped_positions),
@@ -99,6 +102,7 @@ def demo_quality_comparison(
     variant_dir: Union[str, Path],
     K_values: Sequence[int] = (4, 8),
     device: str = "cuda" if torch.cuda.is_available() else "cpu",
+    batch_size: int = 64,
 ) -> dict[int, dict[str, float]]:
     """Experiment 3: Compare accuracy with strong (heuristic) vs weak (random) demos."""
     v_dir = Path(variant_dir)
@@ -110,20 +114,22 @@ def demo_quality_comparison(
     results = {}
 
     model.eval()
-    with torch.no_grad():
+    with torch.inference_mode(), torch.amp.autocast('cuda', dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
         for K in K_values:
             for demo_type, pool in [("strong", strong_demos), ("weak", weak_demos)]:
                 demos = pool[:K]
                 correct, total = 0, 0
-                for pos in eval_positions:
-                    input_ids = tokenizer.encode_input(demos, pos["fen"])
-                    inp_t = torch.tensor([input_ids], dtype=torch.long, device=device)
+                for i in range(0, len(eval_positions), batch_size):
+                    batch_pos = eval_positions[i : i + batch_size]
+                    batch_inps = [tokenizer.encode_input(demos, p["fen"]) for p in batch_pos]
+                    max_len = max(len(inp) for inp in batch_inps)
+                    padded = [inp + [tokenizer.pad_id] * (max_len - len(inp)) for inp in batch_inps]
+                    inp_t = torch.tensor(padded, dtype=torch.long, device=device)
                     logits = model(inp_t)
-                    pred = logits.argmax(-1).item()
-                    target = label_map.get(pos.get("label", "draw"), 1)
-                    if pred == target:
-                        correct += 1
-                    total += 1
+                    preds = logits.argmax(-1).cpu().tolist()
+                    targets = [label_map.get(p.get("label", "draw"), 1) for p in batch_pos]
+                    correct += sum(1 for pr, tr in zip(preds, targets) if pr == tr)
+                    total += len(batch_pos)
 
                 acc = correct / total if total > 0 else 0.0
                 if K not in results:

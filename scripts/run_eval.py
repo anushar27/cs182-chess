@@ -56,7 +56,7 @@ def evaluate_variant(
                 ]
                 inp_t = torch.tensor(padded_batch, dtype=torch.long, device=device)
 
-                with torch.no_grad():
+                with torch.inference_mode(), torch.amp.autocast('cuda', dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
                     logits = model(inp_t)
                     preds = logits.argmax(-1).cpu().tolist()
                     predictions.extend(preds)
@@ -112,28 +112,30 @@ def run_eval(args):
         all_results.extend(res)
 
     # Experiment 3: Demo quality comparison (heuristic vs random)
-    print("\nRunning Experiment 3: Demo quality comparison...")
     demo_quality_results = {}
-    for var in test_variants:
-        v_dir = data_dir / var
-        if (v_dir / "games_demo_weak.jsonl").exists():
-            dq = demo_quality_comparison(model, tokenizer, v_dir, K_values=[4, 8], device=device)
-            demo_quality_results[var] = dq
-            print(f"[{var}] Demo quality (K=4,8): {dq}")
+    if not getattr(args, "skip_auxiliary", False):
+        print("\nRunning Experiment 3: Demo quality comparison...")
+        for var in test_variants:
+            v_dir = data_dir / var
+            if (v_dir / "games_demo_weak.jsonl").exists():
+                dq = demo_quality_comparison(model, tokenizer, v_dir, K_values=[4, 8], device=device)
+                demo_quality_results[var] = dq
+                print(f"[{var}] Demo quality (K=4,8): {dq}")
 
     # Experiment 4: Position re-evaluation test (Antichess & reversed outcome positions)
-    print("\nRunning Experiment 4: Position re-evaluation test...")
     reeval_results = {}
-    if (data_dir / "antichess").exists() and (data_dir / "standard").exists():
-        std_pos = load_positions(data_dir / "standard" / "positions_val.jsonl")
-        antichess_pos = load_positions(data_dir / "antichess" / "positions_eval.jsonl")
-        antichess_demos = load_games(data_dir / "antichess" / "games_demo.jsonl")
-        for K in [0, 4, 8, 16]:
-            rev = position_reevaluation_test(
-                model, tokenizer, std_pos, antichess_pos, antichess_demos, K=K, device=device
-            )
-            reeval_results[f"antichess_K{K}"] = rev
-            print(f"[antichess] Re-evaluation K={K}: {rev}")
+    if not getattr(args, "skip_auxiliary", False):
+        print("\nRunning Experiment 4: Position re-evaluation test...")
+        if (data_dir / "antichess").exists() and (data_dir / "standard").exists():
+            std_pos = load_positions(data_dir / "standard" / "positions_val.jsonl")
+            antichess_pos = load_positions(data_dir / "antichess" / "positions_eval.jsonl")
+            antichess_demos = load_games(data_dir / "antichess" / "games_demo.jsonl")
+            for K in [0, 4, 8, 16]:
+                rev = position_reevaluation_test(
+                    model, tokenizer, std_pos, antichess_pos, antichess_demos, K=K, device=device
+                )
+                reeval_results[f"antichess_K{K}"] = rev
+                print(f"[antichess] Re-evaluation K={K}: {rev}")
 
     output_data = {
         "checkpoint": args.checkpoint,
@@ -159,6 +161,7 @@ def main():
     parser.add_argument("--output", type=str, default="runs/results/eval_results.json")
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--max-seq-len", type=int, default=2048)
+    parser.add_argument("--skip-auxiliary", action="store_true", help="Skip demo quality and re-evaluation auxiliary tests")
     parser.add_argument("--gpu", type=int, default=1)
     args = parser.parse_args()
     run_eval(args)

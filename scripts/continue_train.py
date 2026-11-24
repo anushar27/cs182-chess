@@ -91,8 +91,9 @@ def continue_train(args):
         for input_ids, labels in dataloader:
             input_ids, labels = input_ids.to(device), labels.to(device)
 
-            logits = model(input_ids)
-            loss = criterion(logits, labels)
+            with torch.cuda.amp.autocast(dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
+                logits = model(input_ids)
+                loss = criterion(logits, labels)
 
             optimizer.zero_grad()
             loss.backward()

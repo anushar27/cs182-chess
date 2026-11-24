@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader
 
 from chess_icl.data import ChessTokenizer
 from chess_icl.dataset import ChessPretrainDataset
-from chess_icl.model import ChessTransformer, TINY, SMALL, MEDIUM, LARGE, ModelConfig
+from chess_icl.model import ChessTransformer, TINY, SMALL, MEDIUM, LARGE, XLARGE, ModelConfig
 
 
 def evaluate(model, dataloader, criterion, device):
@@ -24,8 +24,9 @@ def evaluate(model, dataloader, criterion, device):
     with torch.inference_mode():
         for input_ids, labels in dataloader:
             input_ids, labels = input_ids.to(device), labels.to(device)
-            logits = model(input_ids)
-            total_loss += criterion(logits, labels).item() * len(labels)
+            with torch.amp.autocast('cuda', dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
+                logits = model(input_ids)
+                total_loss += criterion(logits, labels).item() * len(labels)
             correct += (logits.argmax(-1) == labels).sum().item()
             total += len(labels)
     model.train()
@@ -45,7 +46,7 @@ def pretrain(args):
     tokenizer = ChessTokenizer()
 
     # Model configuration
-    config_map = {"tiny": TINY, "small": SMALL, "medium": MEDIUM, "large": LARGE}
+    config_map = {"tiny": TINY, "small": SMALL, "medium": MEDIUM, "large": LARGE, "xlarge": XLARGE}
     base_cfg = config_map.get(args.config, SMALL)
     config = copy.deepcopy(base_cfg)
     config.vocab_size = tokenizer.vocab_size
@@ -98,8 +99,9 @@ def pretrain(args):
         model.train()
         for input_ids, labels in train_dl:
             input_ids, labels = input_ids.to(device), labels.to(device)
-            logits = model(input_ids)
-            loss = criterion(logits, labels)
+            with torch.amp.autocast('cuda', dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
+                logits = model(input_ids)
+                loss = criterion(logits, labels)
 
             optimizer.zero_grad()
             loss.backward()
@@ -156,7 +158,7 @@ def pretrain(args):
 def main():
     parser = argparse.ArgumentParser(description="Pretrain Chess Transformer.")
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--config", type=str, default="small", choices=["tiny", "small", "medium", "large"])
+    parser.add_argument("--config", type=str, default="small", choices=["tiny", "small", "medium", "large", "xlarge"])
     parser.add_argument("--use-mup", action="store_true", help="Enable Maximal Update Parametrization (muP)")
     parser.add_argument("--data-dir", type=str, default="data/standard")
     parser.add_argument("--output", type=str, default="runs/pretrain")
