@@ -1,0 +1,12 @@
+{
+  "comparison": "Exact counts, probabilities, every seed, every continuation move, final FEN, status and termination match; timing fields excluded. Original generation includes additional games/dedup/audit, so its wall time is not a direct speedup denominator.",
+  "optimized_label_seconds_including_startup": 58.29109622165561,
+  "optimized_query_digest_excluding_timing": "d2a95925adb08249b1a2ef98d2c04ead4d86df9948e5fefc74cce8c02b10d11d",
+  "optimized_worker_elapsed_seconds_including_root_replay": 817.0448565483093,
+  "passed": true,
+  "reference_continuations": 2464,
+  "reference_file_sha256": "ddd70bde93ef0b80bec55c5906aacce3ac3d287a83406ce85130f5289ab506cd",
+  "reference_original_generation_seconds": 83.32071764022112,
+  "reference_queries": 77,
+  "workers": 32
+}

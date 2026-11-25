@@ -1,0 +1,15 @@
+{
+  "id": "fresh_families_large_v1",
+  "seed": 2026112501,
+  "variants": ["standard", "antichess", "diagonal_rook", "straight_bishop", "weakened_queen", "extended_pawn", "short_knight", "mobile_king", "piece_capture", "forward_pawn_capture", "dark_square_immunity", "blocked_squares", "extended_initial_pawn", "knight_army"],
+  "policy_id": "terminal_aware_v1",
+  "source_families": {"train": 256, "validation": 64, "test": 64},
+  "demo_families": {"train": 128, "validation": 64, "test": 64},
+  "replicates": 32,
+  "horizons": [2560, 5120, 10240],
+  "near_distance": 2,
+  "workers": 48,
+  "label_shard_roots": 32,
+  "reference_dataset": "results/terminal_evaluation_rules_v2.dataset.json",
+  "reference_labels": ["results/high_r_test_labels_rules_v2.json"]
+}

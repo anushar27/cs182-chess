@@ -1,0 +1,294 @@
+{
+  "exclusions": 4,
+  "exploratory_only": true,
+  "generation_seconds": 83.32071764022112,
+  "integrity": {
+    "families": 84,
+    "implementation": "exact pigeonhole Hamming index",
+    "near_distance": 2,
+    "passed": true,
+    "queries": 77,
+    "scope": "all demo states vs roots; cross-fold query roots"
+  },
+  "rows": [
+    {
+      "continuations": 192,
+      "mean_plies": 134.8125,
+      "projected_worker_hours_per_million_continuations": 22.95424160331971,
+      "queries": 6,
+      "root_outcome_counts": {
+        "D": 90,
+        "L": 51,
+        "W": 51
+      },
+      "seconds_per_ply": 0.0006129644489342675,
+      "sides": {
+        "black": 3,
+        "white": 3
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 6,
+      "variant": "standard"
+    },
+    {
+      "continuations": 192,
+      "mean_plies": 34.729166666666664,
+      "projected_worker_hours_per_million_continuations": 3.3696844723265342,
+      "queries": 6,
+      "root_outcome_counts": {
+        "D": 1,
+        "L": 110,
+        "W": 81
+      },
+      "seconds_per_ply": 0.00034929902628555795,
+      "sides": {
+        "black": 3,
+        "white": 3
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 6,
+      "variant": "antichess"
+    },
+    {
+      "continuations": 192,
+      "mean_plies": 161.890625,
+      "projected_worker_hours_per_million_continuations": 83.29884417536151,
+      "queries": 6,
+      "root_outcome_counts": {
+        "D": 43,
+        "L": 64,
+        "W": 85
+      },
+      "seconds_per_ply": 0.0018523360387996614,
+      "sides": {
+        "black": 3,
+        "white": 3
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 6,
+      "variant": "diagonal_rook"
+    },
+    {
+      "continuations": 192,
+      "mean_plies": 125.47916666666667,
+      "projected_worker_hours_per_million_continuations": 97.00137321488,
+      "queries": 6,
+      "root_outcome_counts": {
+        "D": 19,
+        "L": 88,
+        "W": 85
+      },
+      "seconds_per_ply": 0.002782971491205589,
+      "sides": {
+        "black": 3,
+        "white": 3
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 6,
+      "variant": "straight_bishop"
+    },
+    {
+      "continuations": 192,
+      "mean_plies": 222.875,
+      "projected_worker_hours_per_million_continuations": 102.34022915095989,
+      "queries": 6,
+      "root_outcome_counts": {
+        "D": 77,
+        "L": 65,
+        "W": 50
+      },
+      "seconds_per_ply": 0.0016530558606548762,
+      "sides": {
+        "black": 3,
+        "white": 3
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 6,
+      "variant": "weakened_queen"
+    },
+    {
+      "continuations": 192,
+      "mean_plies": 105.81770833333333,
+      "projected_worker_hours_per_million_continuations": 69.02096039050741,
+      "queries": 6,
+      "root_outcome_counts": {
+        "D": 26,
+        "L": 76,
+        "W": 90
+      },
+      "seconds_per_ply": 0.0023481462726740528,
+      "sides": {
+        "black": 3,
+        "white": 3
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 6,
+      "variant": "extended_pawn"
+    },
+    {
+      "continuations": 192,
+      "mean_plies": 184.13541666666666,
+      "projected_worker_hours_per_million_continuations": 95.0798113060753,
+      "queries": 6,
+      "root_outcome_counts": {
+        "D": 58,
+        "L": 69,
+        "W": 65
+      },
+      "seconds_per_ply": 0.0018588891094291804,
+      "sides": {
+        "black": 3,
+        "white": 3
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 6,
+      "variant": "short_knight"
+    },
+    {
+      "continuations": 192,
+      "mean_plies": 228.19791666666666,
+      "projected_worker_hours_per_million_continuations": 92.864781903767,
+      "queries": 6,
+      "root_outcome_counts": {
+        "D": 192
+      },
+      "seconds_per_ply": 0.0014650143162432954,
+      "sides": {
+        "black": 3,
+        "white": 3
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 6,
+      "variant": "mobile_king"
+    },
+    {
+      "continuations": 128,
+      "mean_plies": 77.8984375,
+      "projected_worker_hours_per_million_continuations": 61.689389614103774,
+      "queries": 4,
+      "root_outcome_counts": {
+        "D": 4,
+        "L": 50,
+        "W": 74
+      },
+      "seconds_per_ply": 0.0028509147261236607,
+      "sides": {
+        "black": 2,
+        "white": 2
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 4,
+      "variant": "piece_capture"
+    },
+    {
+      "continuations": 192,
+      "mean_plies": 146.58854166666666,
+      "projected_worker_hours_per_million_continuations": 58.64046083405372,
+      "queries": 6,
+      "root_outcome_counts": {
+        "D": 58,
+        "L": 62,
+        "W": 72
+      },
+      "seconds_per_ply": 0.0014401238773671323,
+      "sides": {
+        "black": 3,
+        "white": 3
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 6,
+      "variant": "forward_pawn_capture"
+    },
+    {
+      "continuations": 192,
+      "mean_plies": 423.5260416666667,
+      "projected_worker_hours_per_million_continuations": 308.7887130580687,
+      "queries": 6,
+      "root_outcome_counts": {
+        "D": 152,
+        "L": 23,
+        "W": 17
+      },
+      "seconds_per_ply": 0.00262472494639174,
+      "sides": {
+        "black": 3,
+        "white": 3
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 6,
+      "variant": "dark_square_immunity"
+    },
+    {
+      "continuations": 160,
+      "mean_plies": 195.86875,
+      "projected_worker_hours_per_million_continuations": 72.87191669456661,
+      "queries": 5,
+      "root_outcome_counts": {
+        "D": 123,
+        "L": 18,
+        "W": 19
+      },
+      "seconds_per_ply": 0.0013393606693280055,
+      "sides": {
+        "black": 2,
+        "white": 3
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 5,
+      "variant": "blocked_squares"
+    },
+    {
+      "continuations": 128,
+      "mean_plies": 116.8359375,
+      "projected_worker_hours_per_million_continuations": 79.50193328724708,
+      "queries": 4,
+      "root_outcome_counts": {
+        "D": 20,
+        "L": 53,
+        "W": 55
+      },
+      "seconds_per_ply": 0.0024496483355910034,
+      "sides": {
+        "black": 2,
+        "white": 2
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 4,
+      "variant": "extended_initial_pawn"
+    },
+    {
+      "continuations": 128,
+      "mean_plies": 153.3984375,
+      "projected_worker_hours_per_million_continuations": 133.57184109433243,
+      "queries": 4,
+      "root_outcome_counts": {
+        "D": 35,
+        "L": 53,
+        "W": 40
+      },
+      "seconds_per_ply": 0.003134703558760804,
+      "sides": {
+        "black": 2,
+        "white": 2
+      },
+      "terminal_demo_games": 3,
+      "unresolved_fraction": 0.0,
+      "usable_complete_labels": 4,
+      "variant": "knight_army"
+    }
+  ],
+  "timing_note": "Elapsed continuation time includes sharing/scheduling; not measured CPU core time. Benchmark seed2026112500; main seed2026112501 is separate."
+}
