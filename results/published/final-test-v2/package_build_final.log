@@ -1,0 +1,10 @@
+WARNING: The directory '/data/backups/rganapa/Sebastian/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Processing /data/backups/rganapa/Sebastian/Documents/Codex/2026-11-24/files-mentioned-by-the-user-chess/outputs/cs182-chess
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: chess-icl-v2
+  Building wheel for chess-icl-v2 (pyproject.toml): started
+  Building wheel for chess-icl-v2 (pyproject.toml): finished with status 'done'
+  Created wheel for chess-icl-v2: filename=chess_icl_v2-0.1.0-py3-none-any.whl size=39214 sha256=52609a77c2caddcc4c587a5f2a50f15d0f9efbf7682e6a0e2cc12c5f42c29b5b
+  Stored in directory: /data/backups/rganapa/Sebastian/tmp/pip-ephem-wheel-cache-7z3hw4km/wheels/b7/dc/28/a75f45fa2e49df4288788985172923328aa61e524af8fd682f
+Successfully built chess-icl-v2

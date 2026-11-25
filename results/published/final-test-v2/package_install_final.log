@@ -1,0 +1,4 @@
+WARNING: The directory '/data/backups/rganapa/Sebastian/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Processing /data/backups/rganapa/Sebastian/Documents/Codex/2026-11-24/files-mentioned-by-the-user-chess/work/final-wheel/chess_icl_v2-0.1.0-py3-none-any.whl
+Installing collected packages: chess-icl-v2
+Successfully installed chess-icl-v2-0.1.0

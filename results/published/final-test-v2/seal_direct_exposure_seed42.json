@@ -1,0 +1,52 @@
+{
+  "checkpoint_sha256": "d4dbeb2a250311d3dd3c15a004a8d5212f23800c1204678ebcf0210b26a39b84",
+  "confirmatory_gates_passed": false,
+  "dataset_sha256": "b572fccd2c1da52a7850a253513789468c9b75390cf09f29255cdea0960b8341",
+  "exploratory": true,
+  "gates_sha256": "b81c81d082b1cd42aa20200cfaf5cfcc3a91bdfea10836724501964aa5cea754",
+  "protocol": {
+    "bootstrap": "model seeds, then five demo draws, then source families, stratify by rule,1000 replicates",
+    "checkpoint_note": "Four-rule/standard gradients unaffected by the capture repair; all-rule reference retrained on corrected data",
+    "checkpoint_selection": "macro validation NLL over four familiar rules and K0/1, evaluation every40 updates,200 updates total",
+    "claim_limits": [
+      "pretraining contamination possible",
+      "exploratory dataset/policy selection",
+      "no claim of optimal play",
+      "report controls and negative results",
+      "do not use Stage0 testfold as unseen test",
+      "All13 project rules exposed to gradients; no held-out transfer claim"
+    ],
+    "cohorts": [
+      "length_matched_controls",
+      "all_root_prediction"
+    ],
+    "conditions": [
+      "zero",
+      "relevant",
+      "mismatched",
+      "corrupt_outcomes",
+      "corrupt_trajectories"
+    ],
+    "created_utc": "2026-11-25T03:07:40.597568+00:00",
+    "dataset": "terminal_evaluation_rules_v2.dataset.json",
+    "demo_draws": 5,
+    "heldout_variants": [],
+    "id": "terminal_policy_rules_v2_direct_exposure_reference",
+    "k_values": [
+      0,
+      1
+    ],
+    "label_noise": "separate independent R256 subset, first2 test family hashes per rule, seed2026112410",
+    "matching": "K1 exhaustive foreign-demo length-ranked search; exact10% full-input demo-token admission; fixed24 extra validation/test demos per rule; no truncation",
+    "model_seeds": [
+      42
+    ],
+    "policy_id": "terminal_aware_v1",
+    "primary_metric": "macro paired soft NLL(K0)-NLL(relevant K1)",
+    "rule_revision": {
+      "piece_capture": "research_rules_v2_royal_conversion"
+    },
+    "stage": "exploratory"
+  },
+  "protocol_sha256": "89d84e43e9508684965e58a79ec1e74374b73bec222729863db45eaa7d69b3bc"
+}

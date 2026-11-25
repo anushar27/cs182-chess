@@ -1,0 +1,19 @@
+{
+  "config": {
+    "source_head_before_publication_commit": "650bd67923cb748762d0aa1f267c16a309094c91",
+    "stage": "completed_exploratory_test"
+  },
+  "config_sha256": "aff5b87aad22b87568e736fb86daf7be18f2ab42b3bd9c8a29e4a7658c6c49d7",
+  "packages": {
+    "chess": "1.11.2",
+    "numpy": "2.2.6",
+    "peft": "0.14.0",
+    "pytest": "8.3.5",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0"
+  },
+  "platform": "Linux-5.15.0-164-generic-x86_64-with-glibc2.35",
+  "python": "3.12.12",
+  "source_sha256": "7f5dc69ab77bacb40437ac5818215f87decb4aa6fc05ee215b87f2320d659b83",
+  "utc": "2026-11-25T05:02:53.216781+00:00"
+}

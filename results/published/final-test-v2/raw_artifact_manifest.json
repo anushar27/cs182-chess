@@ -1,0 +1,185 @@
+{
+  "artifacts": [
+    {
+      "bytes": 93186124,
+      "path": "results/terminal_policy_rules_v2.dataset.json",
+      "sha256": "ad5f71b0c0abfb06fb4592966b13cc6b9b1e10ccf44de368f527c5be94c26771"
+    },
+    {
+      "bytes": 95786370,
+      "path": "results/terminal_evaluation_rules_v2.dataset.json",
+      "sha256": "5462d39d5c220d1a6af4fcd745615b25b8ff30e696e2f265a3bf8fb6c98153a7"
+    },
+    {
+      "bytes": 70107276,
+      "path": "results/high_r_test_labels_rules_v2.json",
+      "sha256": "20b506f795abc9bd7df104ef31cf79d0fcb3f5512d7f190c53570e269cb0626b"
+    },
+    {
+      "bytes": 4459988,
+      "path": "results/qwen_validation_seed42.json",
+      "sha256": "851c430da9131afc4e20eda5eee1f6d9f91f8591fbcc0f3d1637183028a04e7f"
+    },
+    {
+      "bytes": 4474981,
+      "path": "results/qwen_validation_seed123.json",
+      "sha256": "628c02fb8ff101712e36fe6c06d17827ccb0051a14e03e60973070bc18c65d0d"
+    },
+    {
+      "bytes": 4480914,
+      "path": "results/qwen_validation_seed456.json",
+      "sha256": "694695203ff471049da43043876a75e274c15d6cdcd01d075767bcda211a922f"
+    },
+    {
+      "bytes": 4850217,
+      "path": "results/qwen_test_seed42.json",
+      "sha256": "18b46d5e1f5e8ce6f4b9e9bda7d104ef76a78b3c505268a74ade9a143e375bc7"
+    },
+    {
+      "bytes": 4853993,
+      "path": "results/qwen_test_seed123.json",
+      "sha256": "7de7fa71c56ae8a8d0a0b2eb332d1ca757b5da1bbca8476735f790d84e73d20a"
+    },
+    {
+      "bytes": 4865485,
+      "path": "results/qwen_test_seed456.json",
+      "sha256": "ddbd12adde1e460e1e51a9a7220a3ea9eb34557139ba77142de82525a07bd2f1"
+    },
+    {
+      "bytes": 1415832,
+      "path": "results/qwen_test_coverage_seed42.json",
+      "sha256": "55c899cf2a60113990674260c6ba1b1696cd61fa61e38592b3ee5b6461e091b0"
+    },
+    {
+      "bytes": 1420073,
+      "path": "results/qwen_test_coverage_seed123.json",
+      "sha256": "2e382d96f71d633081aad4d2b93de05f80eaf214d797d868cc495ae0be6c7ca0"
+    },
+    {
+      "bytes": 1421142,
+      "path": "results/qwen_test_coverage_seed456.json",
+      "sha256": "c0107217aec97194f6cb5c2efb69c9fb1fdd62e7961151c6b68fdc39a3495b8a"
+    },
+    {
+      "bytes": 4820934,
+      "path": "results/direct_exposure_test_seed42.json",
+      "sha256": "121bc07f7abeeb96a5cb30663596502bc50deaf4a72b6e41fab3729b609263c4"
+    },
+    {
+      "bytes": 1407054,
+      "path": "results/direct_exposure_test_coverage_seed42.json",
+      "sha256": "9efbb43000e98ff2e0bebbafcc84ead29451b63a6c409b7015d9ef85fb962f96"
+    },
+    {
+      "bytes": 17145103,
+      "path": "results/qwen_test_baselines.json",
+      "sha256": "0ad6d14f161dd821c7ba9ad621902512d8615ab616378f47e02c55761852bdad"
+    },
+    {
+      "bytes": 9431634,
+      "path": "results/qwen_coverage_baselines.json",
+      "sha256": "5d6c1f3d0bea17c41266aee7d970f5fa34a085ddab0b4fae07304db84e481a7f"
+    },
+    {
+      "bytes": 2936318,
+      "path": "results/qwen_warmup_seed42/best.pt",
+      "sha256": "cccddcb39030f0371dfc217b53bc32f166aa086210a5185f6bdc214eaa38de51"
+    },
+    {
+      "bytes": 2936318,
+      "path": "results/qwen_warmup_seed123/best.pt",
+      "sha256": "f7212d355daef207c0a90631dd0b79d65fdc978c05576795ad7070de020c459c"
+    },
+    {
+      "bytes": 2936318,
+      "path": "results/qwen_warmup_seed456/best.pt",
+      "sha256": "882989f3ad5caf34d8538f0119060eaeda462fef93b40a26c41329c8d2d3c4a6"
+    },
+    {
+      "bytes": 2936318,
+      "path": "results/qwen_familiar_seed42/best.pt",
+      "sha256": "4fa7dd47a31a3ed47ee0709b93da0c82a8835c09c1a6d489968914699f39c508"
+    },
+    {
+      "bytes": 2936318,
+      "path": "results/qwen_familiar_seed123/best.pt",
+      "sha256": "b505959d1cc608de1efd6374178bd325c2b542046ea3f3a1289c49e142ee6309"
+    },
+    {
+      "bytes": 2936318,
+      "path": "results/qwen_familiar_seed456/best.pt",
+      "sha256": "84f673f5bb9609c23d5df701c8515ce230b627d78b69849603ac335cb4c15a9a"
+    },
+    {
+      "bytes": 2936318,
+      "path": "results/qwen_direct_exposure_seed42/best.pt",
+      "sha256": "d4dbeb2a250311d3dd3c15a004a8d5212f23800c1204678ebcf0210b26a39b84"
+    },
+    {
+      "bytes": 4820328,
+      "path": "results/padded_batch_diagnostics/direct_exposure_test_seed42.json",
+      "sha256": "60afebc359a8dd4a3b13339b698a4cb4b5ee9ccd4f7192968b87bf4c5cd964a9"
+    },
+    {
+      "bytes": 1974,
+      "path": "results/padded_batch_diagnostics/initial_partial_numerical_audit.json",
+      "sha256": "5c339f1e888d001263cceed67dd91c7f03006c8fc97d388c3836c58fdc997cb1"
+    },
+    {
+      "bytes": 4849130,
+      "path": "results/padded_batch_diagnostics/qwen_test_seed42.json",
+      "sha256": "1b0c5799cb30e1a046c217960a026a2e829268ef5f0916a1a69a424756fcbb1b"
+    },
+    {
+      "bytes": 1406361,
+      "path": "results/padded_batch_diagnostics/direct_exposure_test_coverage_seed42.json",
+      "sha256": "d84eced17d4b135d42e110d4597376d21b620db2e31773deb31a5c436cdb2dfa"
+    },
+    {
+      "bytes": 4865599,
+      "path": "results/padded_batch_diagnostics/qwen_test_seed456.json",
+      "sha256": "a2ffab3882038438ba208759c737d8967843b9267058ff7b189d9d70d8c5966e"
+    },
+    {
+      "bytes": 1420571,
+      "path": "results/padded_batch_diagnostics/qwen_test_coverage_seed456.json",
+      "sha256": "7957410eb5ca663e6b0327535a7601f6d622b245053bd4501df2a54e43c0c30a"
+    },
+    {
+      "bytes": 1420519,
+      "path": "results/padded_batch_diagnostics/qwen_test_coverage_seed123.json",
+      "sha256": "c98b38eca8a8992e3cd2057d0fe820c6f663bb01f7fde138f09bd25b5308c092"
+    },
+    {
+      "bytes": 4854403,
+      "path": "results/padded_batch_diagnostics/qwen_test_seed123.json",
+      "sha256": "d2ff3b7ff544666fe60f2bde09141d6d15991ac86fd0e0659da01ff929ae68ad"
+    },
+    {
+      "bytes": 1414454,
+      "path": "results/padded_batch_diagnostics/qwen_test_coverage_seed42.json",
+      "sha256": "1ae82ce89320863001a2c815511bfa0b234651b6a6243c6c93503ae048f381d6"
+    },
+    {
+      "bytes": 670282,
+      "path": "results/canonical_qwen_seed42.cache.json",
+      "sha256": "4c02996885a0ee646f788b39bb8b9bc6dc98c6de7ba76fa0906aedc8064d31c9"
+    },
+    {
+      "bytes": 670455,
+      "path": "results/canonical_direct_exposure_seed42.cache.json",
+      "sha256": "8c20842c42fb08cc1989ad44d33e6d665f75dbab7ef0d4adff066f6cf39c8400"
+    },
+    {
+      "bytes": 670245,
+      "path": "results/canonical_qwen_seed456.cache.json",
+      "sha256": "8eaebde51622b68bca4988639533f4f185fea7c20649a9606fd8c4e1b2d54449"
+    },
+    {
+      "bytes": 670321,
+      "path": "results/canonical_qwen_seed123.cache.json",
+      "sha256": "9ec5f32b85d35353b7b72e6f61a3a8bfc9f2c88215d19ecebf0306e4fc502efc"
+    }
+  ],
+  "notes": "SHA256 hashes are exact file bytes; dataset semantic digests in reports use canonical JSON. Full prediction rows, traces, checkpoint binaries and diagnostic padded outputs are in the local ZIP."
+}

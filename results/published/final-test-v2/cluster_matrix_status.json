@@ -1,0 +1,50 @@
+{
+  "complete": true,
+  "gpu_mapping": {
+    "123": 3,
+    "42": 1,
+    "456": 5
+  },
+  "runs": {
+    "familiar_seed123": {
+      "checkpoint_sha256": "b505959d1cc608de1efd6374178bd325c2b542046ea3f3a1289c49e142ee6309",
+      "gpu": 3,
+      "seconds": 206.97676745057106,
+      "status": "complete",
+      "validation_nll": 1.1005533800653158
+    },
+    "familiar_seed42": {
+      "checkpoint_sha256": "4fa7dd47a31a3ed47ee0709b93da0c82a8835c09c1a6d489968914699f39c508",
+      "gpu": 1,
+      "seconds": 200.26492472738028,
+      "status": "complete",
+      "validation_nll": 1.081594964925778
+    },
+    "familiar_seed456": {
+      "checkpoint_sha256": "84f673f5bb9609c23d5df701c8515ce230b627d78b69849603ac335cb4c15a9a",
+      "gpu": 5,
+      "seconds": 337.49830700829625,
+      "status": "complete",
+      "validation_nll": 1.0905721866172502
+    },
+    "warmup_seed123": {
+      "checkpoint_sha256": "f7212d355daef207c0a90631dd0b79d65fdc978c05576795ad7070de020c459c",
+      "gpu": 3,
+      "seconds": 16.480726331472397,
+      "status": "complete",
+      "validation_nll": 1.234268466968833
+    },
+    "warmup_seed42": {
+      "gpu": 1,
+      "status": "already_complete"
+    },
+    "warmup_seed456": {
+      "checkpoint_sha256": "882989f3ad5caf34d8538f0119060eaeda462fef93b40a26c41329c8d2d3c4a6",
+      "gpu": 5,
+      "seconds": 21.153984870761633,
+      "status": "complete",
+      "validation_nll": 1.165793266736305
+    }
+  },
+  "started_unix": 1795575913.784206
+}

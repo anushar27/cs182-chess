@@ -16,7 +16,7 @@ snapshot. Restricted execution hid the GPU devices. Approved host execution on
 `{env['host']}` confirmed **{env['gpu_count']} H10080GB GPUs and{env['logical_cpus']} logical CPUs**,
 driver580.95.05, PyTorch{env['torch']} and CUDA{env['cuda']}. The earlier negative
 scratch result remains a result; it was not evidence that the host lacked GPUs.
-[Environment](../results/cluster_environment.json), [decisions](DECISIONS.md).
+[Environment](../results/published/validated-core-v2/cluster_environment.json), [decisions](DECISIONS.md).
 
 ## Actual Qwen-7B CUDA profile
 
@@ -32,7 +32,7 @@ timing rather than inferring a smooth throughput curve from five updates.
     for row in profile['rows']:
         if row['status']=='passed':text+=f"| {row['tokens']} | {row['seconds']:.3f} | {row['peak_allocated_bytes']/2**30:.3f} | {row['peak_reserved_bytes']/2**30:.3f} |\n"
     text+='''
-[Raw profile](../results/h100_profile.json), [warnings/log](../results/h100_profile.log).
+[Raw profile](../results/published/validated-core-v2/h100_profile.json); full warnings/log in the local artifact ZIP.
 The SDPA sliding-window warning was retained and inspected: use_sliding_window
 is false; configured sliding_window131072 exceeds native context32768. No context
 extension or custom attention mask was introduced.
@@ -64,11 +64,9 @@ same-root small policy probe is the paired diagnostic.
         counts=[sum(q['label']['counts_wdl'][i] for q in qs) for i in range(3)]
         text+=f"| {variant} | {len(qs)} | {counts[0]} | {counts[1]} | {counts[2]} | {sum(q['label']['unresolved'] for q in qs)} |\n"
     text+='''
-[Corrected data](../results/terminal_policy_rules_v2.dataset.json),
-[evaluation pool](../results/terminal_evaluation_rules_v2.dataset.json),
+[Corrected-data/evaluation manifest](../results/published/final-test-v2/raw_artifact_manifest.json),
 [artifact status](ARTIFACT_STATUS.md),
-[config](../configs/v2_terminal_pilot.json),
-[generation log](../results/terminal_generation.log).
+[config](../configs/v2_terminal_pilot.json); full generation log in the artifact ZIP.
 Labels are root-player W/D/L under this policy. They are not engine strength,
 material adjudications or optimal-play outcomes. Test labels were not used to
 train or select checkpoints; the high-R subset selection uses family hashes only.
@@ -99,7 +97,7 @@ previously illustrative2,000-update full matrix. No positive-result stopping rul
 Training time is the instrumented optimization/validation loop, excluding model
 loading and episode construction. GPU sharing and other users' workloads can
 change timing. No unrelated processes were stopped. The actual GPU selection and
-checkpoint hashes are in [the matrix status](../results/cluster_matrix_status.json).
+checkpoint hashes are in [the matrix status](../results/published/final-test-v2/cluster_matrix_status.json).
 Parent manifests record the union of all gradient-exposed rules, so an exposed
 parent cannot accidentally count as held-out transfer.
 
@@ -128,8 +126,14 @@ registered primaryK1 analysis.
             for key,v in a['gains'].items():
                 if 'macro_gain' in v:
                     exposure,condition,k=key.split('|');text+=f"| {exposure} | {condition}K{k} | {v['macro_gain']:.6f} | [{v['ci95'][0]:.6f}, {v['ci95'][1]:.6f}] |\n"
-            text+=f'\n[Full aggregate](../results/qwen_{split}_aggregate.json). The hierarchy covers model seeds, demo draws and source families; Monte Carlo target noise is separate.\n'
+            text+=f'\n[Full aggregate](../results/published/final-test-v2/qwen_{split}_aggregate.json). The hierarchy covers model seeds, demo draws and source families; Monte Carlo target noise is separate.\n'
         else:text+=f'\n**{split.capitalize()} aggregate: pending completion of all frozen evaluations.**\n'
+    timings=list(r.glob('canonical_*.timing.json'))
+    if timings:
+        text+='\n## Numerical inference audit\n\nOriginal batch8 test outputs are retained as diagnostics. Final test inputs were reconstructed and hash-checked, then evaluated individually without padding; validation checkpoint selection is unchanged. No weights/targets/cohorts were changed.\n\n| Run | Unique inputs | Rescore wall seconds | Max probability change from padded | Mean absolute change |\n|---|---:|---:|---:|---:|\n'
+        for path in sorted(timings):
+            t=read_json(path);text+=f"| {path.name.removeprefix('canonical_').removesuffix('.timing.json')} | {t['unique_inputs']} | {t['total_seconds']:.2f} | {t['max_change_from_padded_probability']:.6f} | {t['mean_change_from_padded_probability']:.6f} |\n"
+        text+='\nEvery run verified unchanged parameter versions and an uncached repeated output. The final eleven-report audit passes; overlapping primary/coverage inputs now have exactly identical probabilities. See the [complete study](EXPLORATORY_STUDY.md) for negative results, baselines, exclusions and independent R256 sensitivity.\n'
     text+='''
 ## Scope and limitations
 
@@ -138,7 +142,7 @@ measured cluster experiment. It does not establish optimal play, a scaling law,
 a full-powered confirmatory result or a validated μP study. Simulator checks are
 sampled; four in-house rules lack an independent-engine equivalence proof. Query
 histories may reveal rules already atK0, and setup/barrier geometry is observable.
-A low-R/high-R analysis must report its actual root/family counts and uncertainty.
+The independent high-R analysis covers56 roots/28 families (53 roots/27 families in the matched-control cohort), with its actual counts and uncertainty reported separately.
 The manuscript should distinguish this exploratory study from a newly preregistered,
 larger confirmatory experiment. Every positive/negative condition belongs in the
 results, including failed feasibility stages and discarded controls.

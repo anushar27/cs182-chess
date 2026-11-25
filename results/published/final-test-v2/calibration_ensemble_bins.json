@@ -1,0 +1,383 @@
+{
+  "bins": [
+    {
+      "bin": 2,
+      "class": "Win",
+      "condition": "zero",
+      "mean_prediction": 0.2761510873834292,
+      "mean_target": 0.2125,
+      "roots": 10,
+      "side": "white"
+    },
+    {
+      "bin": 3,
+      "class": "Win",
+      "condition": "zero",
+      "mean_prediction": 0.35498186891925515,
+      "mean_target": 0.3186141304347826,
+      "roots": 46,
+      "side": "white"
+    },
+    {
+      "bin": 4,
+      "class": "Win",
+      "condition": "zero",
+      "mean_prediction": 0.44653752222657206,
+      "mean_target": 0.42421875,
+      "roots": 40,
+      "side": "white"
+    },
+    {
+      "bin": 5,
+      "class": "Win",
+      "condition": "zero",
+      "mean_prediction": 0.5173981964588165,
+      "mean_target": 0.371875,
+      "roots": 10,
+      "side": "white"
+    },
+    {
+      "bin": 2,
+      "class": "Win",
+      "condition": "relevant",
+      "mean_prediction": 0.2752240433142736,
+      "mean_target": 0.16105769230769232,
+      "roots": 13,
+      "side": "white"
+    },
+    {
+      "bin": 3,
+      "class": "Win",
+      "condition": "relevant",
+      "mean_prediction": 0.35298548199820745,
+      "mean_target": 0.34099264705882354,
+      "roots": 68,
+      "side": "white"
+    },
+    {
+      "bin": 4,
+      "class": "Win",
+      "condition": "relevant",
+      "mean_prediction": 0.43193838360408937,
+      "mean_target": 0.5026041666666666,
+      "roots": 24,
+      "side": "white"
+    },
+    {
+      "bin": 5,
+      "class": "Win",
+      "condition": "relevant",
+      "mean_prediction": 0.5622972806294759,
+      "mean_target": 0.125,
+      "roots": 1,
+      "side": "white"
+    },
+    {
+      "bin": 1,
+      "class": "Draw",
+      "condition": "zero",
+      "mean_prediction": 0.17157770185798835,
+      "mean_target": 0.18478260869565216,
+      "roots": 23,
+      "side": "white"
+    },
+    {
+      "bin": 2,
+      "class": "Draw",
+      "condition": "zero",
+      "mean_prediction": 0.24269885080631337,
+      "mean_target": 0.23106060606060605,
+      "roots": 33,
+      "side": "white"
+    },
+    {
+      "bin": 3,
+      "class": "Draw",
+      "condition": "zero",
+      "mean_prediction": 0.3518148031972704,
+      "mean_target": 0.3964285714285714,
+      "roots": 35,
+      "side": "white"
+    },
+    {
+      "bin": 4,
+      "class": "Draw",
+      "condition": "zero",
+      "mean_prediction": 0.4348776009347704,
+      "mean_target": 0.6625,
+      "roots": 15,
+      "side": "white"
+    },
+    {
+      "bin": 1,
+      "class": "Draw",
+      "condition": "relevant",
+      "mean_prediction": 0.1770242393016815,
+      "mean_target": 0.03125,
+      "roots": 1,
+      "side": "white"
+    },
+    {
+      "bin": 2,
+      "class": "Draw",
+      "condition": "relevant",
+      "mean_prediction": 0.27599192145324886,
+      "mean_target": 0.15267857142857144,
+      "roots": 35,
+      "side": "white"
+    },
+    {
+      "bin": 3,
+      "class": "Draw",
+      "condition": "relevant",
+      "mean_prediction": 0.34776090829644674,
+      "mean_target": 0.3472222222222222,
+      "roots": 54,
+      "side": "white"
+    },
+    {
+      "bin": 4,
+      "class": "Draw",
+      "condition": "relevant",
+      "mean_prediction": 0.44158568115284047,
+      "mean_target": 0.72265625,
+      "roots": 16,
+      "side": "white"
+    },
+    {
+      "bin": 2,
+      "class": "Loss",
+      "condition": "zero",
+      "mean_prediction": 0.2714130848914653,
+      "mean_target": 0.23817567567567569,
+      "roots": 37,
+      "side": "white"
+    },
+    {
+      "bin": 3,
+      "class": "Loss",
+      "condition": "zero",
+      "mean_prediction": 0.33390616110845467,
+      "mean_target": 0.3482789855072464,
+      "roots": 69,
+      "side": "white"
+    },
+    {
+      "bin": 2,
+      "class": "Loss",
+      "condition": "relevant",
+      "mean_prediction": 0.2690523360013252,
+      "mean_target": 0.2505580357142857,
+      "roots": 56,
+      "side": "white"
+    },
+    {
+      "bin": 3,
+      "class": "Loss",
+      "condition": "relevant",
+      "mean_prediction": 0.3348424777388573,
+      "mean_target": 0.37625,
+      "roots": 50,
+      "side": "white"
+    },
+    {
+      "bin": 2,
+      "class": "Win",
+      "condition": "zero",
+      "mean_prediction": 0.2837024380763372,
+      "mean_target": 0.15625,
+      "roots": 2,
+      "side": "black"
+    },
+    {
+      "bin": 3,
+      "class": "Win",
+      "condition": "zero",
+      "mean_prediction": 0.3543771889393892,
+      "mean_target": 0.21722560975609756,
+      "roots": 41,
+      "side": "black"
+    },
+    {
+      "bin": 4,
+      "class": "Win",
+      "condition": "zero",
+      "mean_prediction": 0.4453281438818164,
+      "mean_target": 0.3762254901960784,
+      "roots": 51,
+      "side": "black"
+    },
+    {
+      "bin": 5,
+      "class": "Win",
+      "condition": "zero",
+      "mean_prediction": 0.5222745582912908,
+      "mean_target": 0.35511363636363635,
+      "roots": 11,
+      "side": "black"
+    },
+    {
+      "bin": 2,
+      "class": "Win",
+      "condition": "relevant",
+      "mean_prediction": 0.2736040132741133,
+      "mean_target": 0.15625,
+      "roots": 4,
+      "side": "black"
+    },
+    {
+      "bin": 3,
+      "class": "Win",
+      "condition": "relevant",
+      "mean_prediction": 0.35382493177270585,
+      "mean_target": 0.2665441176470588,
+      "roots": 51,
+      "side": "black"
+    },
+    {
+      "bin": 4,
+      "class": "Win",
+      "condition": "relevant",
+      "mean_prediction": 0.4341418268729229,
+      "mean_target": 0.34885204081632654,
+      "roots": 49,
+      "side": "black"
+    },
+    {
+      "bin": 5,
+      "class": "Win",
+      "condition": "relevant",
+      "mean_prediction": 0.5003373483816783,
+      "mean_target": 1.0,
+      "roots": 1,
+      "side": "black"
+    },
+    {
+      "bin": 1,
+      "class": "Draw",
+      "condition": "zero",
+      "mean_prediction": 0.16594065295962188,
+      "mean_target": 0.19471153846153846,
+      "roots": 26,
+      "side": "black"
+    },
+    {
+      "bin": 2,
+      "class": "Draw",
+      "condition": "zero",
+      "mean_prediction": 0.24626590875354973,
+      "mean_target": 0.25253378378378377,
+      "roots": 37,
+      "side": "black"
+    },
+    {
+      "bin": 3,
+      "class": "Draw",
+      "condition": "zero",
+      "mean_prediction": 0.3512233865983558,
+      "mean_target": 0.4346590909090909,
+      "roots": 33,
+      "side": "black"
+    },
+    {
+      "bin": 4,
+      "class": "Draw",
+      "condition": "zero",
+      "mean_prediction": 0.42565069264835775,
+      "mean_target": 0.75,
+      "roots": 9,
+      "side": "black"
+    },
+    {
+      "bin": 1,
+      "class": "Draw",
+      "condition": "relevant",
+      "mean_prediction": 0.1885814771056175,
+      "mean_target": 0.171875,
+      "roots": 2,
+      "side": "black"
+    },
+    {
+      "bin": 2,
+      "class": "Draw",
+      "condition": "relevant",
+      "mean_prediction": 0.24943525185951818,
+      "mean_target": 0.21682692307692308,
+      "roots": 65,
+      "side": "black"
+    },
+    {
+      "bin": 3,
+      "class": "Draw",
+      "condition": "relevant",
+      "mean_prediction": 0.34793222117991673,
+      "mean_target": 0.5366071428571428,
+      "roots": 35,
+      "side": "black"
+    },
+    {
+      "bin": 4,
+      "class": "Draw",
+      "condition": "relevant",
+      "mean_prediction": 0.43918845123714867,
+      "mean_target": 0.7604166666666666,
+      "roots": 3,
+      "side": "black"
+    },
+    {
+      "bin": 2,
+      "class": "Loss",
+      "condition": "zero",
+      "mean_prediction": 0.275324389459641,
+      "mean_target": 0.2782012195121951,
+      "roots": 41,
+      "side": "black"
+    },
+    {
+      "bin": 3,
+      "class": "Loss",
+      "condition": "zero",
+      "mean_prediction": 0.3318740952582587,
+      "mean_target": 0.404265873015873,
+      "roots": 63,
+      "side": "black"
+    },
+    {
+      "bin": 4,
+      "class": "Loss",
+      "condition": "zero",
+      "mean_prediction": 0.40248339374860126,
+      "mean_target": 0.3125,
+      "roots": 1,
+      "side": "black"
+    },
+    {
+      "bin": 2,
+      "class": "Loss",
+      "condition": "relevant",
+      "mean_prediction": 0.2735269817213217,
+      "mean_target": 0.2734375,
+      "roots": 32,
+      "side": "black"
+    },
+    {
+      "bin": 3,
+      "class": "Loss",
+      "condition": "relevant",
+      "mean_prediction": 0.33969890346278003,
+      "mean_target": 0.3894589552238806,
+      "roots": 67,
+      "side": "black"
+    },
+    {
+      "bin": 4,
+      "class": "Loss",
+      "condition": "relevant",
+      "mean_prediction": 0.41481471392843455,
+      "mean_target": 0.390625,
+      "roots": 6,
+      "side": "black"
+    }
+  ],
+  "description": "Average probabilities over three model seeds and, for K1, five context draws per root; ten equal-width bins. Descriptive ensemble, not the primary mean-of-seed NLL. No uncertainty intervals; sparse-bin counts must accompany interpretation."
+}

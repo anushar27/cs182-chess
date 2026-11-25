@@ -6,6 +6,17 @@ optimal or strong play. Full demonstration games plus the complete query state
 are the only model input; rule names/descriptions and query labels are excluded.
 Evaluation freezes all model and adapter weights.
 
+**Completed H100 study:** three primary Qwen-7B seeds and one all-rule exposure
+reference, 614 R32 roots, and 56 independent R256 test roots. The K1 experiment
+does **not demonstrate beneficial rule-specific ICL**: paired NLL gain is
+−0.034650 for familiar rules and −0.013547 for held-out rules; relevance advantages
+over matched foreign-rule context have intervals spanning zero. These are small
+exploratory results under the declared policy. See the [full study and intervals](docs/EXPLORATORY_STUDY.md),
+[publication snapshot](results/published/final-test-v2/), [CSV/LaTeX tables](tables/),
+and [figure captions](figures/README.md). All 51 tests and the complete prediction
+audit pass. Full raw data, predictions, traces and checkpoints are in the local
+research-artifact ZIP, with exact hashes in the snapshot.
+
 Implementation lives in `chess_icl_v2/`. The original material-label package,
 scripts, tests, configurations and results are preserved in
 [`archive/legacy_material_labels/`](archive/README.md). Their material/centipawn targets
@@ -17,6 +28,7 @@ results are recorded in [CLUSTER_RESULTS.md](docs/CLUSTER_RESULTS.md).
 
 ## Read before using results
 
+- [Completed exploratory study: methods, results and interpretation](docs/EXPLORATORY_STUDY.md)
 - [Actual cluster results](docs/CLUSTER_RESULTS.md)
 - [Artifact validity and superseded runs](docs/ARTIFACT_STATUS.md)
 - [Historical Stage0 results](archive/development_stage0/RESULTS.md)
@@ -26,9 +38,11 @@ results are recorded in [CLUSTER_RESULTS.md](docs/CLUSTER_RESULTS.md).
 - [Analysis plan and confirmatory protocol](docs/ANALYSIS_PLAN.md)
 - [Reproduction and cluster operations](docs/REPRODUCING.md)
 
-The checked-in sample is exploratory and small. Main training is gated, not
-silently launched from insufficient or censored data. The initial CPU-stage findings are retained separately. GPU profiles and subsequent
-Qwen runs use the actual H100 host; see the cluster report for completed runs.
+The study is exploratory and small. Its explicit exploratory seal preserves the
+negative scratch-pilot gate; simulator/data/R/hardware gates pass. The initial
+CPU-stage findings are retained separately. Final test inference uses individually
+scored unpadded episodes after the documented numerical audit; original padded
+reports are retained as diagnostics. Checkpoint selection was not repeated.
 
 ## Install and verify
 
@@ -41,8 +55,9 @@ pytest tests/test_v2*.py -q
 python -m chess_icl_v2.cli audit --output results/my_audit.json
 ```
 
-The pinned PyTorch wheel should match the cluster's CUDA runtime. Local validation
-used torch 2.6.0+cpu; dependency locks are recorded in `results/environment.txt`.
+The pinned PyTorch wheel should match the cluster's CUDA runtime. Completed H100
+runs used torch 2.6.0+cu124; the earlier CPU stage used torch 2.6.0+cpu. Both package
+records are retained in the full artifact bundle and published environment record.
 
 ## Generate, extend and inspect
 

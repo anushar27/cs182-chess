@@ -1,6 +1,7 @@
 """Add independent evaluation demos; hold all query roots/labels/checkpoints fixed."""
 from concurrent.futures import ProcessPoolExecutor
 import multiprocessing
+import argparse
 import time
 from chess_icl_v2.common import digest,provenance,read_json,write_json
 from chess_icl_v2.data import family_seeds
@@ -9,10 +10,13 @@ from chess_icl_v2.scalable import _game,fast_audit
 from chess_icl_v2.state import State
 
 if __name__=='__main__':
-    data=read_json('results/terminal_policy.dataset.json');parent=digest(data);start=time.perf_counter()
+    parser=argparse.ArgumentParser();parser.add_argument('--data',default='results/terminal_policy_rules_v2.dataset.json')
+    parser.add_argument('--output',default='results/terminal_evaluation_rules_v2.dataset.json')
+    parser.add_argument('--design-output',default='results/extra_demo_design.json');args=parser.parse_args()
+    data=read_json(args.data);parent=digest(data);start=time.perf_counter()
     design={'seed':2026112403,'extra_per_evaluation_fold':24,'policy':'terminal_aware_v1','max_plies':2560,
             'scope':['validation','test'],'selection':'fixed number of independently seeded full games; reject entire near-conflicting or unfinished games'}
-    write_json('results/extra_demo_design.json',{'parent_dataset_sha256':parent,'provenance':provenance(design)})
+    write_json(args.design_output,{'parent_dataset_sha256':parent,'provenance':provenance(design)})
     roots=NearIndex(2)
     for q in data['queries']:roots.add(geometry(State.from_dict(q['state']).board()))
     jobs=[(v,'terminal_aware_v1',seed,fam,split,'demonstration',2560)
@@ -30,5 +34,5 @@ if __name__=='__main__':
     data.setdefault('extensions',[]).append({'kind':'independent_evaluation_demos','parent_dataset_sha256':parent,
         'provenance':provenance(design),'accepted':added,'attempted':len(jobs),'seconds':time.perf_counter()-start})
     data['integrity']=fast_audit(data)
-    write_json('results/terminal_evaluation.dataset.json',data)
+    write_json(args.output,data)
     print('saved evaluation data',added,'extra demos',flush=True)

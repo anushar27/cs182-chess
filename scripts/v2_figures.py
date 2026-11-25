@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from chess_icl_v2.common import read_json
+from chess_icl_v2.common import read_json,write_json
 
 ROOT=Path(__file__).resolve().parents[1]
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.spines.top':False,'axes.spines.right':False,
@@ -58,6 +58,7 @@ def main():
             save(fig,'test_relevance_gain')
     paths=[r/f'qwen_test_coverage_seed{s}.json' for s in (42,123,456)]
     if all(p.exists() for p in paths):
+        bin_records=[]
         by_key=defaultdict(list);targets={};sides={}
         for p in paths:
             for row in read_json(p)['rows']:
@@ -71,13 +72,17 @@ def main():
                     records=[(np.mean(pred,axis=0)[c],targets[qid][c]) for (qid,cond),pred in by_key.items() if cond==condition and sides[qid]==side]
                     for b in range(10):
                         selected=[(p,t) for p,t in records if min(int(p*10),9)==b]
-                        if selected:x.append(np.mean([p for p,t in selected]));y.append(np.mean([t for p,t in selected]))
+                        if selected:
+                            x.append(np.mean([p for p,t in selected]));y.append(np.mean([t for p,t in selected]))
+                            bin_records.append({'side':side,'class':cl,'condition':condition,'bin':b,'roots':len(selected),
+                                                'mean_prediction':float(x[-1]),'mean_target':float(y[-1])})
                     ax.plot(x,y,'o-',color=color,label='K=0' if condition=='zero' else 'Relevant K=1',markersize=4)
                 ax.set_title(f'{side.title()} to move · {cl}');ax.set_xlim(0,1);ax.set_ylim(0,1);ax.grid(alpha=.15)
                 if i==1:ax.set_xlabel('Mean predicted probability')
                 if c==0:ax.set_ylabel('Mean empirical probability')
         axes[0,0].legend(frameon=False,fontsize=8);fig.suptitle('Descriptive calibration: three-seed/context-mean predictor, R=32 targets',y=1.02)
         fig.tight_layout();save(fig,'test_calibration_ensemble')
+        write_json(r/'calibration_ensemble_bins.json',{'description':'Average probabilities over three model seeds and, for K1, five context draws per root; ten equal-width bins. Descriptive ensemble, not the primary mean-of-seed NLL. No uncertainty intervals; sparse-bin counts must accompany interpretation.','bins':bin_records})
 
 
 if __name__=='__main__':main()

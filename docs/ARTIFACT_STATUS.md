@@ -17,6 +17,10 @@ rules and corrected evaluation controls listed below.
 | qwen_validation/test/test_coverage_seed*.json | Final corrected-data evaluations when present; separate matched-control and all-root prediction cohorts |
 | seals/ | Frozen checkpoint/data/protocol bindings; explicitly exploratory, with all data/hardware gates and the negative pilot flag preserved |
 | cluster_environment.json, h100_profile.json | Actual CUDA/H100 evidence; supersedes the restricted shell's apparent missing-device diagnosis |
+| canonical_*seed*.cache.json, *.timing.json | Final test input probabilities from unpadded batch1, checkpoint/backend fingerprints, measured rescore cost and unchanged-weight/repeat checks |
+| qwen_test/coverage_baselines.json, baseline_fit_validation.json | Exact-cohort baseline predictions and independent deterministic refit checks; trained only on73 exposed training roots |
+| qwen_test_aggregate.json, final_analysis.json, high_r_analysis.json | Final three-seed test comparisons, all slices/interventions, and independent R256 sensitivity analysis |
+| published/final-test-v2/ | Immutable completed evaluation snapshot, separate from the earlier validated-core snapshot |
 
 ## Retained history, not final evidence for the corrected capture rule
 
@@ -33,6 +37,11 @@ before any optimizer updates; no trained checkpoint resulted.
 - `qwen_validation_matching_v1_seed*` records the first64-candidate sampler and
 its67 excluded roots. Subsequent matching feasibility files document the control
 repair before any final test scores were opened.
+- `padded_batch_diagnostics/` retains the original padded test predictions and the
+initial partial numerical audit. They are diagnostics, not the final test numbers.
+Canonical unpadded re-scoring changes floating-point inference only. The original
+validation outputs retain their padded procedure because that was used for
+checkpoint selection; do not silently present them as canonical test results.
 - Uniform Stage0 and the original scratch pilot are development history. Their
 capture-variant labels/controls are superseded. Standard/antichess preliminary
 results and the scratch model's four-rule gradients remain valid for their stated

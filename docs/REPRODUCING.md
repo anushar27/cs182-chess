@@ -1,9 +1,62 @@
 # Reproduction and cluster runbook
 
+## Completed experiment and final analysis
+
+The measured study uses Python3.12.12, PyTorch2.6.0+cu124, CUDA12.4 and H10080GB.
+The CPU wheel mentioned in the historical section below was replaced before GPU
+profiling/training. See the published environment files for exact dependencies.
+The completed experiment is described in [EXPLORATORY_STUDY.md](EXPLORATORY_STUDY.md),
+with its actual configs and compact records under `results/published/`.
+
+The local `chess_icl_research_artifacts.zip` supplies the exact raw datasets,
+R32/R256 traces, all individual predictions, checkpoint adapters/head, logs and
+historical failures. The pinned Qwen base weights are downloaded separately.
+Verify the ZIP checksum and per-file manifest. Do not mix old capture-v1 data
+with corrected capture-v2 data. Repair provenance documents which roots were
+retained. Fresh generation under the final rules can differ from a historical
+global deduplication run; use the archived exact data for the reported results.
+
+To repeat the final analysis with those raw artifacts, run from the repository
+root with the pinned environment. These commands do not retrain or select models:
+
+```bash
+python scripts/v2_validate_high_r.py
+python scripts/v2_validate_baselines.py
+python scripts/v2_validate_artifacts.py
+for phase in validation test test_coverage; do
+  python scripts/v2_aggregate.py \
+    results/qwen_${phase}_seed42.json \
+    results/qwen_${phase}_seed123.json \
+    results/qwen_${phase}_seed456.json \
+    --output results/qwen_${phase}_aggregate.json
+done
+python scripts/v2_high_r_analysis.py
+python scripts/v2_final_report.py
+python scripts/v2_cluster_report.py
+python scripts/v2_figures.py
+```
+
+For an independent GPU re-score of the saved test episodes, preserve the padded
+diagnostics and canonical caches, then use `scripts/v2_canonicalize_test.py --seed 42`,
+repeat for123/456, and add `--direct --seed 42` for the
+all-rule reference. Use host GPU access, set `HF_HOME` to the real weight cache,
+`CUBLAS_WORKSPACE_CONFIG=:4096:8`, `HF_HUB_OFFLINE=1` after download and choose an
+available GPU with `CUDA_VISIBLE_DEVICES`. Delete/move only the relevant canonical
+cache if intentionally repeating every forward pass; cache fingerprints reject
+different model/backend identities. The general evaluator also defaults to
+unpadded single-episode inference. Historical validation selection remains batch8.
+
+Publication snapshots are immutable: `v2_publish_final.py` rejects an existing
+snapshot directory. `--bundle-only` builds the full local deliverable without
+rewriting either publication snapshot. The original H100 matrix used the full
+dataset hash before capture repair, with unchanged standard/four-rule subsets;
+the final launcher defaults to corrected data. No numerical identity across
+different CUDA/library/hardware builds is promised.
+
 ## Local environment and run record
 
 Start in the repository root. For cluster scripts, set `export HF_HOME="$PWD/work/hf-cache"`
-before tokenizer/model downloads; scripts respect an existing HF_HOME. Install the package as shown in README_V2. Python
+before tokenizer/model downloads; scripts respect an existing HF_HOME. Install the package as shown in README. Python
 3.12.12, chess1.11.2, numpy2.2.6, pytest8.3.5, torch2.6.0+cpu,
 transformers4.49.0, peft0.14.0, accelerate1.4.0 and pyffish0.0.91 were used locally.
 The entire resolved package list is stored with results. Do not treat that CPU

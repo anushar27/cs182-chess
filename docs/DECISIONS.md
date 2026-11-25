@@ -258,3 +258,38 @@ and an uncached repeat, and recompute metrics. No weights, target labels, select
 checkpoints, root cohorts or matching conditions change. Validation checkpoint
 selection remains the originally declared padded validation procedure; it is not
 retuned after this numerical check.
+
+D47. Use marginal Wilson95% intervals for the independent R256 count summary.
+Plug-in SE remains reported but can vanish at observed0/1; Wilson intervals make
+that finite-sample boundary uncertainty visible. These are marginal class
+intervals, not a simultaneous multinomial region. Keep the declared seed/draw/
+family bootstrap conditional on observed labels and report independent R256
+re-scoring as a separate sensitivity analysis. Do not imply that the bootstrap
+integrates Monte Carlo label noise. Hash selection retains56 roots/28 families;
+matched controls retain53 roots/27 families. No model/label retuning follows.
+
+D48. Final test publication uses all three primary seeds and the corrected
+one-seed all-rule reference, K0/1 and five draws. Preserve the full206-root matched
+cohort and the separate211-root coverage cohort, with all exclusions. All11 model
+reports pass the final audit; overlapping canonical outputs are exactly equal.
+All51 regression tests and an installed-wheel audit across14 adapters pass.
+The original cross-batch discrepancy reached about0.044; switching to the chosen
+unpadded convention changed a probability by at most0.077508. Retain both sets
+and their exact hashes. Report the negative context result and inconclusive
+relevance advantage. Do not tune a second model against these test scores.
+
+D49. Call rollout timing worker elapsed time, not measured CPU core time. Summed
+per-continuation clocks include sharing and scheduling. A million-continuation
+worker-hour extrapolation omits source/demo generation, deduplication, audit and
+startup. The original217.97-second generation phase excludes the later capture
+repair and demo extension. Preserve per-run GPU loop/rescore timing without
+claiming dedicated-GPU throughput or a total project dollar cost.
+
+D50. Publish final CSV/LaTeX tables, SVG figures and a separate immutable completed
+test snapshot. Keep the first validated-core snapshot intact. Bundle all raw
+results, traces, adapter/head checkpoints, numerical diagnostics and failed stages
+locally; exclude base-model downloads, virtual environments and credentials.
+Calibration figures average seeds/draws before binning, so label them descriptive
+ensemble figures and retain per-bin root counts. They are not the primary
+mean-of-model NLL. The published exposure-reference comparison uses the primary
+model's rule groups only for comparison; all13 reference rules were trained.

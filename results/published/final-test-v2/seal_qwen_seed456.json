@@ -1,0 +1,63 @@
+{
+  "checkpoint_sha256": "84f673f5bb9609c23d5df701c8515ce230b627d78b69849603ac335cb4c15a9a",
+  "confirmatory_gates_passed": false,
+  "dataset_sha256": "b572fccd2c1da52a7850a253513789468c9b75390cf09f29255cdea0960b8341",
+  "exploratory": true,
+  "gates_sha256": "b81c81d082b1cd42aa20200cfaf5cfcc3a91bdfea10836724501964aa5cea754",
+  "protocol": {
+    "bootstrap": "model seeds, then five demo draws, then source families, stratify by rule,1000 replicates",
+    "checkpoint_note": "Four-rule/standard gradients unaffected by the capture repair; all-rule reference retrained on corrected data",
+    "checkpoint_selection": "macro validation NLL over four familiar rules and K0/1, evaluation every40 updates,200 updates total",
+    "claim_limits": [
+      "pretraining contamination possible",
+      "exploratory dataset/policy selection",
+      "no claim of optimal play",
+      "report controls and negative results",
+      "do not use Stage0 testfold as unseen test"
+    ],
+    "cohorts": [
+      "length_matched_controls",
+      "all_root_prediction"
+    ],
+    "conditions": [
+      "zero",
+      "relevant",
+      "mismatched",
+      "corrupt_outcomes",
+      "corrupt_trajectories"
+    ],
+    "created_utc": "2026-11-25T03:07:40.597568+00:00",
+    "dataset": "terminal_evaluation_rules_v2.dataset.json",
+    "demo_draws": 5,
+    "heldout_variants": [
+      "antichess",
+      "short_knight",
+      "mobile_king",
+      "piece_capture",
+      "forward_pawn_capture",
+      "dark_square_immunity",
+      "blocked_squares",
+      "extended_initial_pawn",
+      "knight_army"
+    ],
+    "id": "terminal_policy_rules_v2_matching_v2_frozen_test",
+    "k_values": [
+      0,
+      1
+    ],
+    "label_noise": "separate independent R256 subset, first2 test family hashes per rule, seed2026112410",
+    "matching": "K1 exhaustive foreign-demo length-ranked search; exact10% full-input demo-token admission; fixed24 extra validation/test demos per rule; no truncation",
+    "model_seeds": [
+      42,
+      123,
+      456
+    ],
+    "policy_id": "terminal_aware_v1",
+    "primary_metric": "macro paired soft NLL(K0)-NLL(relevant K1)",
+    "rule_revision": {
+      "piece_capture": "research_rules_v2_royal_conversion"
+    },
+    "stage": "exploratory"
+  },
+  "protocol_sha256": "37b702b52ad30cc96a89344ef939ccef7c6d14919726d0d5220911c532cdb8b6"
+}

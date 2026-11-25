@@ -1,0 +1,93 @@
+{
+  "complete_matrix": true,
+  "cross_cohort_canonical_consistency": {
+    "direct_exposure_seed42": {
+      "max_probability_difference": 0.0,
+      "mean_probability_difference": 0.0
+    },
+    "qwen_seed123": {
+      "max_probability_difference": 0.0,
+      "mean_probability_difference": 0.0
+    },
+    "qwen_seed42": {
+      "max_probability_difference": 0.0,
+      "mean_probability_difference": 0.0
+    },
+    "qwen_seed456": {
+      "max_probability_difference": 0.0,
+      "mean_probability_difference": 0.0
+    }
+  },
+  "dataset_sha256": "b572fccd2c1da52a7850a253513789468c9b75390cf09f29255cdea0960b8341",
+  "errors": [],
+  "missing_reports": [],
+  "passed": true,
+  "reports": {
+    "direct_exposure_test_coverage_seed42.json": {
+      "cohort": "all_root_prediction",
+      "excluded_roots": 0,
+      "predictions": 1266,
+      "unique_roots": 211
+    },
+    "direct_exposure_test_seed42.json": {
+      "cohort": "length_matched_controls",
+      "excluded_roots": 5,
+      "predictions": 4326,
+      "unique_roots": 206
+    },
+    "qwen_test_coverage_seed123.json": {
+      "cohort": "all_root_prediction",
+      "excluded_roots": 0,
+      "predictions": 1266,
+      "unique_roots": 211
+    },
+    "qwen_test_coverage_seed42.json": {
+      "cohort": "all_root_prediction",
+      "excluded_roots": 0,
+      "predictions": 1266,
+      "unique_roots": 211
+    },
+    "qwen_test_coverage_seed456.json": {
+      "cohort": "all_root_prediction",
+      "excluded_roots": 0,
+      "predictions": 1266,
+      "unique_roots": 211
+    },
+    "qwen_test_seed123.json": {
+      "cohort": "length_matched_controls",
+      "excluded_roots": 5,
+      "predictions": 4326,
+      "unique_roots": 206
+    },
+    "qwen_test_seed42.json": {
+      "cohort": "length_matched_controls",
+      "excluded_roots": 5,
+      "predictions": 4326,
+      "unique_roots": 206
+    },
+    "qwen_test_seed456.json": {
+      "cohort": "length_matched_controls",
+      "excluded_roots": 5,
+      "predictions": 4326,
+      "unique_roots": 206
+    },
+    "qwen_validation_seed123.json": {
+      "cohort": "length_matched_controls",
+      "excluded_roots": 9,
+      "predictions": 3948,
+      "unique_roots": 188
+    },
+    "qwen_validation_seed42.json": {
+      "cohort": "length_matched_controls",
+      "excluded_roots": 9,
+      "predictions": 3948,
+      "unique_roots": 188
+    },
+    "qwen_validation_seed456.json": {
+      "cohort": "length_matched_controls",
+      "excluded_roots": 9,
+      "predictions": 3948,
+      "unique_roots": 188
+    }
+  }
+}

@@ -46,8 +46,8 @@ def main():
                             'excluded_roots':len(ev['exclusions']),'cohort':ev['cohort']}
     # Canonical outputs must be identical across cohorts for the exact same input.
     numerical={}
-    for seed in (42,123,456):
-        primary=r/f'qwen_test_seed{seed}.json';coverage=r/f'qwen_test_coverage_seed{seed}.json'
+    for prefix,seed in [('qwen',42),('qwen',123),('qwen',456),('direct_exposure',42)]:
+        primary=r/f'{prefix}_test_seed{seed}.json';coverage=r/f'{prefix}_test_coverage_seed{seed}.json'
         if primary.exists() and coverage.exists():
             a={tuple(row[k] for k in ('query_id','condition','k','draw')):row for row in read_json(primary)['rows'] if row['condition'] in ('zero','relevant')}
             diffs=[]
@@ -56,7 +56,7 @@ def main():
                 if key in a:
                     if a[key]['input_sha256']!=row['input_sha256']:errors.append('Coverage input mismatch')
                     diffs.extend(np.abs(np.array(a[key]['prediction'])-row['prediction']).tolist())
-            numerical[str(seed)]={'max_probability_difference':max(diffs,default=0.),'mean_probability_difference':float(np.mean(diffs)) if diffs else None}
+            numerical[f'{prefix}_seed{seed}']={'max_probability_difference':max(diffs,default=0.),'mean_probability_difference':float(np.mean(diffs)) if diffs else None}
             if max(diffs,default=0.)!=0:errors.append('Canonical cross-cohort prediction mismatch')
     expected={f'qwen_{phase}_seed{seed}.json' for phase in ('validation','test','test_coverage') for seed in (42,123,456)} | {'direct_exposure_test_seed42.json','direct_exposure_test_coverage_seed42.json'}
     complete=expected.issubset(reports)
@@ -64,9 +64,9 @@ def main():
         if name in reports and 'validation' not in name:
             if not read_json(r/name).get('inference_policy','').startswith('canonical_unpadded'):
                 errors.append(name+': canonical inference missing')
-    report={'complete_matrix':complete,'missing_reports':sorted(expected-set(reports)),'passed':not errors and complete,'errors':errors,'dataset_sha256':datahash,'reports':reports,'cross_cohort_bfloat16_batch_sensitivity':numerical}
+    report={'complete_matrix':complete,'missing_reports':sorted(expected-set(reports)),'passed':not errors and complete,'errors':errors,'dataset_sha256':datahash,'reports':reports,'cross_cohort_canonical_consistency':numerical}
     write_json(r/'final_artifact_validation.json',report)
-    if errors:raise ValueError(sorted(set(errors)))
+    if errors or not complete:raise ValueError(sorted(set(errors))+report['missing_reports'])
     print('Validated prediction artifacts',len(reports),flush=True)
 
 

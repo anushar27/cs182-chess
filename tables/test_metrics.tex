@@ -1,0 +1,27 @@
+\begin{tabular}{lllllllllll}
+\hline
+cohort & exposure & condition & K & rows & argmax\_accuracy & brier & expected\_outcome\_brier & l1 & nll & target\_entropy \\
+\hline
+matched & familiar\_rules & corrupt\_outcomes & 1 & 915 & 0.415625 & 0.127767 & 0.665793 & 0.473420 & 1.098931 & 0.888609 \\
+matched & familiar\_rules & corrupt\_trajectories & 1 & 915 & 0.442708 & 0.131958 & 0.669984 & 0.486646 & 1.104345 & 0.888609 \\
+matched & familiar\_rules & mismatched & 1 & 915 & 0.429405 & 0.133573 & 0.671599 & 0.488954 & 1.106581 & 0.888609 \\
+matched & familiar\_rules & relevant & 1 & 915 & 0.457500 & 0.131821 & 0.669847 & 0.485561 & 1.103794 & 0.888609 \\
+matched & familiar\_rules & zero & 0 & 183 & 0.534325 & 0.109869 & 0.647895 & 0.439489 & 1.069144 & 0.888609 \\
+matched & heldout\_rules & corrupt\_outcomes & 1 & 1935 & 0.405747 & 0.224804 & 0.661852 & 0.669355 & 1.092516 & 0.716646 \\
+matched & heldout\_rules & corrupt\_trajectories & 1 & 1935 & 0.404446 & 0.223716 & 0.660765 & 0.667957 & 1.089970 & 0.716646 \\
+matched & heldout\_rules & mismatched & 1 & 1935 & 0.408855 & 0.227698 & 0.664746 & 0.669924 & 1.095761 & 0.716646 \\
+matched & heldout\_rules & relevant & 1 & 1935 & 0.412860 & 0.222578 & 0.659626 & 0.665173 & 1.088554 & 0.716646 \\
+matched & heldout\_rules & zero & 0 & 387 & 0.418210 & 0.215263 & 0.652311 & 0.657542 & 1.075007 & 0.716646 \\
+matched & standard\_control & corrupt\_outcomes & 1 & 240 & 0.429167 & 0.098613 & 0.670878 & 0.444733 & 1.106303 & 0.929958 \\
+matched & standard\_control & corrupt\_trajectories & 1 & 240 & 0.420833 & 0.095777 & 0.668042 & 0.445203 & 1.100416 & 0.929958 \\
+matched & standard\_control & mismatched & 1 & 240 & 0.404167 & 0.097209 & 0.669475 & 0.446622 & 1.102852 & 0.929958 \\
+matched & standard\_control & relevant & 1 & 240 & 0.387500 & 0.096765 & 0.669031 & 0.444811 & 1.101167 & 0.929958 \\
+matched & standard\_control & zero & 0 & 48 & 0.500000 & 0.081892 & 0.654157 & 0.410065 & 1.077991 & 0.929958 \\
+coverage & familiar\_rules & relevant & 1 & 915 & 0.457500 & 0.131821 & 0.669847 & 0.485561 & 1.103794 & 0.888609 \\
+coverage & familiar\_rules & zero & 0 & 183 & 0.534325 & 0.109869 & 0.647895 & 0.439489 & 1.069144 & 0.888609 \\
+coverage & heldout\_rules & relevant & 1 & 2010 & 0.421032 & 0.219400 & 0.658253 & 0.658809 & 1.086424 & 0.719343 \\
+coverage & heldout\_rules & zero & 0 & 402 & 0.404982 & 0.217107 & 0.655961 & 0.659958 & 1.080936 & 0.719343 \\
+coverage & standard\_control & relevant & 1 & 240 & 0.387500 & 0.096765 & 0.669031 & 0.444811 & 1.101167 & 0.929958 \\
+coverage & standard\_control & zero & 0 & 48 & 0.500000 & 0.081892 & 0.654157 & 0.410065 & 1.077991 & 0.929958 \\
+\hline
+\end{tabular}

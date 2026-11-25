@@ -1,0 +1,12 @@
+{
+  "fingerprint": "c38d27e32b2d40b39f5b64493dc2f9b9e7ea0aa401b0f5a95417042fd4dc7a7e",
+  "forward_and_transfer_seconds": 237.57237958163023,
+  "max_change_from_padded_probability": 0.05754080414772034,
+  "mean_change_from_padded_probability": 0.011234434695917053,
+  "new_forward_calls": 4208,
+  "peak_allocated_bytes": 15236116992,
+  "peak_reserved_bytes": 48840572928,
+  "total_seconds": 299.012991335243,
+  "unique_inputs": 4208,
+  "weights_and_repeat_verified": true
+}

@@ -83,7 +83,10 @@ def main():
         'forward_and_transfer_seconds':forward_seconds,'max_change_from_padded_probability':max_delta,
         'mean_change_from_padded_probability':sum_delta/max(1,n_delta),'peak_allocated_bytes':torch.cuda.max_memory_allocated(),
         'peak_reserved_bytes':torch.cuda.max_memory_reserved(),'weights_and_repeat_verified':True,'fingerprint':fingerprint}
-    write_json(r/f'canonical_{prefix}_seed{a.seed}.timing.json',timing);print(timing,flush=True)
+    write_json(r/f'canonical_{prefix}_seed{a.seed}.timing.json',timing)
+    write_json(r/f'canonical_{prefix}_seed{a.seed}.progress.json',{'status':'complete','completed':len(unique),
+        'unique_inputs':len(unique),'seconds':timing['total_seconds']})
+    print(timing,flush=True)
 
 
 if __name__=='__main__':main()
