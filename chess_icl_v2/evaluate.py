@@ -6,12 +6,13 @@ from .common import digest, read_json, write_json, provenance
 from .episodes import build_episode, paired_episodes
 from .metrics import aggregate, paired_gains, hierarchical_ci, calibration
 from .models import Predictor
+from .canonical import CanonicalCache
 from .state import State
 from .train import model_and_tokenizer, restore, file_hash
 
 
 def evaluate(data, checkpoint, output, split='validation', k_values=(0,1), draws=5, seal=None, coverage_only=False):
-    evaluation_provenance=provenance({'split':split,'k_values':list(k_values),'demo_draws':draws,'coverage_only':coverage_only,'matching':'exhaustive_K1_exact10pct_v2'})
+    evaluation_provenance=provenance({'split':split,'k_values':list(k_values),'demo_draws':draws,'coverage_only':coverage_only,'matching':'exhaustive_K1_exact10pct_v2','inference':'canonical_unpadded_batch1_v1'})
     checkpoint = Path(checkpoint)
     manifest = read_json(checkpoint.parent / 'manifest.json')
     if file_hash(checkpoint) != manifest['checkpoint_sha256']:
@@ -29,6 +30,12 @@ def evaluate(data, checkpoint, output, split='validation', k_values=(0,1), draws
     model, tokenizer = model_and_tokenizer(config)
     restore(model, checkpoint)
     predictor = Predictor(model, config['device'], tokenizer.pad_token_id)
+    versions={name:p._version for name,p in model.named_parameters()}
+    fingerprint=digest({'checkpoint':manifest['checkpoint_sha256'],'architecture':config['architecture'],
+        'torch':torch.__version__,'cuda':torch.version.cuda,
+        'device':torch.cuda.get_device_name(config['device']) if config['device'].startswith('cuda') else config['device'],
+        'policy':'unpadded_batch1_v1'})
+    cache=CanonicalCache(predictor,fingerprint,Path(output).with_suffix('.inference_cache.json'))
     rows, excluded, inference_episodes = [], [], []
     for q in data['queries']:
         if q['split'] != split:
@@ -67,12 +74,12 @@ def evaluate(data, checkpoint, output, split='validation', k_values=(0,1), draws
                          'checkpoint_sha256': manifest['checkpoint_sha256'],
                          'label_replicates': q['label']['replicates'], 'label_mc_se': q['label']['mc_standard_error']})
     if rows:
-        probabilities=predictor.predict_many(inference_episodes,config.get('inference_batch_size',8))
-        for row,p in zip(rows,probabilities):row['prediction']=p
-        # Identical batch repeats; a different padding/batch shape need not be bitwise equivalent.
-        first=sorted(inference_episodes,key=lambda ep:len(ep.input_ids))[:config.get('inference_batch_size',8)]
-        if predictor.predict_many(first,config.get('inference_batch_size',8))!=predictor.predict_many(first,config.get('inference_batch_size',8)):
+        for row,ep in zip(rows,inference_episodes):row['prediction']=cache.predict_proba(ep)
+        cache.save()
+        if predictor.predict_proba(inference_episodes[0])!=rows[0]['prediction']:
             raise ValueError('Nondeterministic frozen predictions')
+    if any(p.requires_grad or p._version!=versions[name] for name,p in model.named_parameters()):
+        raise ValueError('Parameters changed during frozen inference')
     groups = defaultdict(list)
     for row in rows:
         groups[(row['exposure'], row['condition'], row['k'])].append(row)
@@ -94,6 +101,7 @@ def evaluate(data, checkpoint, output, split='validation', k_values=(0,1), draws
               'rules_versions':{v:sorted({q['state']['rules_version'] for q in data['queries'] if q['variant']==v}) for v in data['provenance']['config']['variants']},
               'cohort': 'all_root_prediction' if coverage_only else 'length_matched_controls', 'split': split, 'dataset_sha256': digest(data), 'checkpoint_sha256': file_hash(checkpoint),
               'rows': rows, 'exclusions': excluded, 'metrics': summary, 'context_gains': gains,
-              'frozen_weights': True, 'pretraining_contamination': config['track'] == 'qwen'}
+              'frozen_weights': True, 'pretraining_contamination': config['track'] == 'qwen',
+              'inference_policy':'canonical_unpadded_batch1_cached_by_token_ids','inference_fingerprint':fingerprint}
     write_json(output, report)
     return report

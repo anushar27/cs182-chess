@@ -246,3 +246,15 @@ Stage0 report and obsolete proposal/control configs to archive/development_stage
 Keep the current W/D/L runtime, actual configs, tests, decisions and completed
 snapshots active. Preserve history rather than deleting evidence. Future completed
 stages are committed and pushed to main as requested.
+
+D46. The numerical audit found identical inputs with different BF16 probabilities
+under different padded batch compositions (maximum observed probability difference
+about0.044, mean about0.0008). Before publishing test claims, re-score the exact
+saved test inputs one episode at a time with no padding; cache by exact token-ID
+hash and a checkpoint/base/backend fingerprint. Reuse that frozen output for the
+same input across conditions/cohorts. Reconstruct and verify every original input
+hash/token count, retain padded reports as diagnostics, verify parameter versions
+and an uncached repeat, and recompute metrics. No weights, target labels, selected
+checkpoints, root cohorts or matching conditions change. Validation checkpoint
+selection remains the originally declared padded validation procedure; it is not
+retuned after this numerical check.

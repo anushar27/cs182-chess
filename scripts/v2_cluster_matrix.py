@@ -33,7 +33,7 @@ def main():
                 if read_json(out/'manifest.json')['config']!=read_json(root/config):raise ValueError('Existing config mismatch')
                 update(key,{'status':'already_complete','gpu':gpu});continue
             update(key,{'status':'running','gpu':gpu,'started_unix':time.time()})
-            cmd=[sys.executable,'-u','-m','chess_icl_v2.cli','train','--data','results/terminal_policy.dataset.json',
+            cmd=[sys.executable,'-u','-m','chess_icl_v2.cli','train','--data',os.environ.get('V2_DATA','results/terminal_policy_rules_v2.dataset.json'),
                  '--config',config,'--output',str(out)]
             if phase=='familiar':cmd+=['--initial-checkpoint',str(parent/'best.pt')]
             with (root/f'results/qwen_{phase}_seed{seed}.log').open('w') as log:

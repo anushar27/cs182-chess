@@ -44,7 +44,7 @@ def main():
             cross[crosskey]=row['input_sha256']
         reports[path.name]={'predictions':len(ev['rows']),'unique_roots':len({row['query_id'] for row in ev['rows']}),
                             'excluded_roots':len(ev['exclusions']),'cohort':ev['cohort']}
-    # Same frozen input may differ slightly in BF16 under different padded batches: quantify rather than hide it.
+    # Canonical outputs must be identical across cohorts for the exact same input.
     numerical={}
     for seed in (42,123,456):
         primary=r/f'qwen_test_seed{seed}.json';coverage=r/f'qwen_test_coverage_seed{seed}.json'
@@ -57,8 +57,13 @@ def main():
                     if a[key]['input_sha256']!=row['input_sha256']:errors.append('Coverage input mismatch')
                     diffs.extend(np.abs(np.array(a[key]['prediction'])-row['prediction']).tolist())
             numerical[str(seed)]={'max_probability_difference':max(diffs,default=0.),'mean_probability_difference':float(np.mean(diffs)) if diffs else None}
+            if max(diffs,default=0.)!=0:errors.append('Canonical cross-cohort prediction mismatch')
     expected={f'qwen_{phase}_seed{seed}.json' for phase in ('validation','test','test_coverage') for seed in (42,123,456)} | {'direct_exposure_test_seed42.json','direct_exposure_test_coverage_seed42.json'}
     complete=expected.issubset(reports)
+    for name in expected:
+        if name in reports and 'validation' not in name:
+            if not read_json(r/name).get('inference_policy','').startswith('canonical_unpadded'):
+                errors.append(name+': canonical inference missing')
     report={'complete_matrix':complete,'missing_reports':sorted(expected-set(reports)),'passed':not errors and complete,'errors':errors,'dataset_sha256':datahash,'reports':reports,'cross_cohort_bfloat16_batch_sensitivity':numerical}
     write_json(r/'final_artifact_validation.json',report)
     if errors:raise ValueError(sorted(set(errors)))

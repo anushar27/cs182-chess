@@ -1,4 +1,9 @@
-# Frozen simulator specifications, research_rules_v1
+# Frozen simulator specifications
+
+Rules use `research_rules_v1`, except capture conversion, corrected and frozen as
+`research_rules_v2_royal_conversion`. The correction checks the captured rook's
+color when distinguishing castling from a king capture; every capture-v2 dataset
+and the all-rule reference were regenerated. See [artifact status](ARTIFACT_STATUS.md).
 
 These are **research definitions**, based on the source branch at
 `e6aa1fece489ac23552e51dbed67985fc60c9f5a`. They resolve ambiguous legacy behavior

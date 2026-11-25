@@ -13,6 +13,7 @@
 | episodes.py | Deterministic full-game context selection, K/control construction, strict overflow errors, query-last guarantee, length-matched mismatched controls |
 | tokenizer.py | Scratch-only vocabulary: 64 explicit squares per state, side/castling/EP/clocks/barriers, from/to/promotion moves, White result; no rule token |
 | models.py | Tiny causal RoPE model; Qwen BF16 backbone plus last-four-layer LoRA and FP32 three-way head; query-final pooling, soft CE and frozen prediction interface |
+| canonical.py | One unpadded episode per inference call; validated probability cache bound to checkpoint/backend and exact token IDs, independent of targets and cohort |
 | train.py | Seeded training/validation only; AdamW, clipping, warmup/cosine LR, gradient accumulation, best macro validation NLL checkpoint, trainable-only serialization and warmup lineage |
 | evaluate.py | All requested K/conditions/draws on a common root cohort; frozen deterministic inference, familiar/held-out labeling, side/equal-material scores, paired gains and intervals |
 | metrics.py | Probability validation; soft NLL, vector and categorical Brier, L1, argmax/ties/class counts, macro aggregation, paired and hierarchical uncertainty |
@@ -131,3 +132,12 @@ A sampled family's numerator and denominator both travel together, preserving th
 root-weighted mean when a source family retains only one sibling. Seeds and demo
 draws are resampled at their declared levels; rules remain equally weighted.
 This avoids repeated full-table scans without changing the estimand.
+
+Final test inference uses batch1 without padding. The initial batch8 evaluations
+were repeatable within a batch, but the same input could have different BF16
+probabilities when its padded batch changed. The canonical rescore reconstructs
+each saved input and checks its original hash and length, then retains the
+original reports under `results/padded_batch_diagnostics/`. It verifies an
+uncached repeat and unchanged parameter versions. The evaluator now uses this
+policy by default; the historical validation/checkpoint-selection procedure is
+preserved. This is a documented numerical amendment, not a model retuning.
