@@ -141,6 +141,39 @@ one to three hours for full generation and audit at48 workers, subject to curren
 load, admission losses and unusually long histories. This is an estimate, not a
 reported run result. No main model training is launched by this task.
 
+## Early validation availability (LD15)
+
+The initial frozen generator schedules training labels first. After the user
+requested a longer-training plan, an early fresh validation panel became useful.
+Automatic approval review rejected a proposed checkpoint-stop of the authorized
+generator because the user had not explicitly authorized stopping it. That
+process was never signaled or interrupted; its saved game caches and frozen
+source/design remain unchanged.
+
+Instead, a separate16-worker job waits for the full root cohort to be frozen,
+then selects the first16 retained validation-family hashes per rule, all admitted
+siblings, without consulting labels. It independently computes the **same indexed
+R32 streams** as the ongoing full corpus, replay-audits every trace, and publishes
+`results/large_dataset_v1/validation_panel/snapshots/validation-panel.json`.
+These duplicate computations supply validation earlier but add **zero additional
+independent samples**. They must not be pooled with their later full-corpus
+copies. `v2_large_dataset_panel.py verify` compares every seed, move, result,
+termination, FEN, count, probability and extension prefix against those copies,
+excluding only runtime metadata.
+
+The panel manifest is a fixed validation subset, not the full final validation
+fold. Its game-index paths resolve relative to the panel output root and then to
+the parent corpus; individual game-shard paths resolve relative to the game-index
+file's directory. A training run can bind the immutable panel for online curves
+and later select among saved checkpoints using the full fresh validation fold,
+under its own separately frozen training protocol. The dataset generator itself
+does not launch model training or evaluate test-model scores.
+
+```bash
+python scripts/v2_large_dataset_panel.py build --workers 16
+python scripts/v2_large_dataset_panel.py verify
+```
+
 ## Paths, streaming and reproduction
 
 Raw output root is `results/large_dataset_v1/corpus/`:
