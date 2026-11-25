@@ -210,3 +210,46 @@ for query in iter_snapshot_queries(fixed_prefix_manifest, split="train"):
 All demonstrated games stay complete. No token-length/outcome filter is introduced
 to force largerK feasibility; future training must measure actual tokenizer lengths
 and reject infeasible episodes without removing the query or silently changingK.
+
+
+## Admitted cohort and early validation result
+
+The full prelabel cohort is now fixed: **9,922 roots from4,967 retained source
+families**, with6,604 training,1,652 validation and1,666 future-test roots.
+This admits317,504 distinctR32 continuation streams when all labels complete.
+These are admitted root/stream counts; the full labeling/audit task is still in
+progress at this snapshot. The quotas above are preserved as the requested design.
+
+| Rule/control | Train roots | Validation roots | Future-test roots | Total |
+|---|---:|---:|---:|---:|
+| standard | 489 | 122 | 121 | 732 |
+| antichess | 501 | 126 | 125 | 752 |
+| diagonal_rook | 464 | 110 | 116 | 690 |
+| straight_bishop | 496 | 116 | 118 | 730 |
+| weakened_queen | 433 | 114 | 104 | 651 |
+| extended_pawn | 494 | 122 | 128 | 744 |
+| short_knight | 456 | 119 | 124 | 699 |
+| mobile_king | 392 | 94 | 104 | 590 |
+| piece_capture | 486 | 118 | 122 | 726 |
+| forward_pawn_capture | 474 | 124 | 122 | 720 |
+| dark_square_immunity | 496 | 120 | 128 | 744 |
+| blocked_squares | 478 | 127 | 118 | 723 |
+| extended_initial_pawn | 461 | 116 | 114 | 691 |
+| knight_army | 484 | 124 | 122 | 730 |
+
+Exclusions are72 source games too short for a root pair,682 candidate roots near
+new full demonstration states and4 near historical pilot inputs. A short source
+loses two possible roots, so these758 exclusion records account for830 missing
+roots relative to the10,752 ceiling. No label outcomes entered admission.
+
+The separately published fresh validation panel is **448 roots from224 source
+families**, exactly32 roots/16 families per rule/control, with14,336 completeR32
+trace executions, zero unresolved and all replay/history-seed checks passing.
+It measured389.72s after the parent cohort was ready, excluding its earlier wait.
+These streams duplicate the eventual full-corpus validation labels and add no
+independent samples. Exact full-copy comparison is pending full generation.
+See `results/published/large-validation-panel-v1/` for the immutable completed-panel
+record. The primary four-rule+standard filter ultimately has2,376 new training
+roots (489 standard,464 diagonal rook,496 straight bishop,433 weakened queen,
+494 extended pawn); do not substitute the all-rule6,604 count when judging the
+primary500M training sample size.

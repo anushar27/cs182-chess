@@ -1,0 +1,114 @@
+{
+  "all_included_trace_replay_audits_passed": true,
+  "bound_to_full_frozen_cohort": true,
+  "critical_source_sha256": "d274007d02a85a3608f7a62e9edfb6f3882708b54cdf6397a6cbbf972440a76a",
+  "disjoint_from_historical_R32_R256_streams": true,
+  "full_corpus_duplicate_equivalence": "pending full corpus generation",
+  "generation_seconds_excluding_wait_for_parent_cohort": 389.7156958542764,
+  "groups": [
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "standard"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "antichess"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "diagonal_rook"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "straight_bishop"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "weakened_queen"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "extended_pawn"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "short_knight"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "mobile_king"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "piece_capture"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "forward_pawn_capture"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "dark_square_immunity"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "blocked_squares"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "extended_initial_pawn"
+    },
+    {
+      "families": 16,
+      "replicates": 32,
+      "roots": 32,
+      "unresolved": 0,
+      "variant": "knight_army"
+    }
+  ],
+  "independent_samples_in_addition_to_full_corpus": 0,
+  "passed": true,
+  "roots": 448,
+  "test_model_scores_opened": false,
+  "unique_panel_continuations": 14336,
+  "unresolved": 0
+}

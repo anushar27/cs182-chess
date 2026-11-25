@@ -1,0 +1,168 @@
+{
+  "complete_dataset": false,
+  "config": {
+    "demo_families": {
+      "test": 64,
+      "train": 128,
+      "validation": 64
+    },
+    "horizons": [
+      2560,
+      5120,
+      10240
+    ],
+    "id": "fresh_families_large_v1",
+    "label_shard_roots": 32,
+    "near_distance": 2,
+    "policy_id": "terminal_aware_v1",
+    "reference_dataset": "results/terminal_evaluation_rules_v2.dataset.json",
+    "reference_labels": [
+      "results/high_r_test_labels_rules_v2.json"
+    ],
+    "replicates": 32,
+    "seed": 2026112501,
+    "source_families": {
+      "test": 64,
+      "train": 256,
+      "validation": 64
+    },
+    "variants": [
+      "standard",
+      "antichess",
+      "diagonal_rook",
+      "straight_bishop",
+      "weakened_queen",
+      "extended_pawn",
+      "short_knight",
+      "mobile_king",
+      "piece_capture",
+      "forward_pawn_capture",
+      "dark_square_immunity",
+      "blocked_squares",
+      "extended_initial_pawn",
+      "knight_army"
+    ],
+    "workers": 48
+  },
+  "design_sha256": "ef9a1daa620eef826b74304e6e12dec7990bb1381a0659b25a2ac292a0601029",
+  "frozen_cohort_queries": 9922,
+  "frozen_roots_sha256": "9a12c977c8e97c502efe9461edc1cd9de4324dc7f4745b2a466c1756851fbf2d",
+  "games_index": {
+    "path": "../corpus/games_index.json",
+    "sha256": "75dd66db42ff1a9eda39d420264c85e93706dc6386cd1742bc1f20b0a24d4ba9"
+  },
+  "generation_seconds": 389.7156958542764,
+  "independent_samples_in_addition_to_full_corpus": 0,
+  "integrity": {
+    "final_full_corpus_audit_pending": true,
+    "global_cohort_geometry_frozen": true,
+    "included_games_replayed": true,
+    "included_label_traces_replayed": true,
+    "replicate0_policy_regenerated_per_root": true
+  },
+  "panel_design_sha256": "6192f9b391ea2520fee1f8a16f5d19cfff18d97e04b6ad5873992185589c53e0",
+  "queries": 448,
+  "query_shards": [
+    {
+      "bytes": 141849,
+      "path": "labels/part-00000.jsonl.gz",
+      "rows": 32,
+      "sha256": "cdeca1768cceb6bac0c982a60b3d0c178795b33422544bde0f3d6fce7adf98ba",
+      "uncompressed_jsonl_bytes": 576686
+    },
+    {
+      "bytes": 569891,
+      "path": "labels/part-00001.jsonl.gz",
+      "rows": 32,
+      "sha256": "cb6429a954efc358bb9bb675362b2ab7f015af24cb27da10466cd28ee482d27a",
+      "uncompressed_jsonl_bytes": 1959331
+    },
+    {
+      "bytes": 828072,
+      "path": "labels/part-00002.jsonl.gz",
+      "rows": 32,
+      "sha256": "a883e07d6bbb4f392a962f290e2f3bfb3bec6081f6f39632fce5417977014457",
+      "uncompressed_jsonl_bytes": 2687967
+    },
+    {
+      "bytes": 614429,
+      "path": "labels/part-00003.jsonl.gz",
+      "rows": 32,
+      "sha256": "65f13f8cd5c779329ccf9d580b950ce30872051410df24a93c0ca292199fde3c",
+      "uncompressed_jsonl_bytes": 1999230
+    },
+    {
+      "bytes": 459058,
+      "path": "labels/part-00004.jsonl.gz",
+      "rows": 32,
+      "sha256": "9adecb2db501447403cda7ee108a53765bd27ed77e70a8b5db3d8ba3769688b9",
+      "uncompressed_jsonl_bytes": 1485800
+    },
+    {
+      "bytes": 382678,
+      "path": "labels/part-00005.jsonl.gz",
+      "rows": 32,
+      "sha256": "5b3aee2af34d34eae6a95e04762557ea7f9515e5f790665d0ed77c1c14149d2f",
+      "uncompressed_jsonl_bytes": 1244241
+    },
+    {
+      "bytes": 373734,
+      "path": "labels/part-00006.jsonl.gz",
+      "rows": 32,
+      "sha256": "af4a84a102b8323a30df0f37be13c19eb350ec978109267786a3b0e9a1c91554",
+      "uncompressed_jsonl_bytes": 1212551
+    },
+    {
+      "bytes": 410280,
+      "path": "labels/part-00007.jsonl.gz",
+      "rows": 32,
+      "sha256": "d81f8c2976d79a9c53b1171189874e3117fd850f7ced7940d063960dc59bcbd8",
+      "uncompressed_jsonl_bytes": 1380688
+    },
+    {
+      "bytes": 694394,
+      "path": "labels/part-00008.jsonl.gz",
+      "rows": 32,
+      "sha256": "362bd055487d407021f1b3d94b36a80503918b8cb22472c78495f03eec2dde1e",
+      "uncompressed_jsonl_bytes": 2238362
+    },
+    {
+      "bytes": 364021,
+      "path": "labels/part-00009.jsonl.gz",
+      "rows": 32,
+      "sha256": "a17bb37519ec07236ea0212b0cdb17d24af0b368c6ed02a112c2c5712ca1c1bc",
+      "uncompressed_jsonl_bytes": 1207177
+    },
+    {
+      "bytes": 447576,
+      "path": "labels/part-00010.jsonl.gz",
+      "rows": 32,
+      "sha256": "1e446894feafe80ab22a1fc3c1c41d5cf458a8fc20101579850169e90e3df475",
+      "uncompressed_jsonl_bytes": 1456701
+    },
+    {
+      "bytes": 444911,
+      "path": "labels/part-00011.jsonl.gz",
+      "rows": 32,
+      "sha256": "f86406d05bf060ee48a617a88a71ef7c7c2be626b603a11609a7cbef08da5d9f",
+      "uncompressed_jsonl_bytes": 1443209
+    },
+    {
+      "bytes": 373477,
+      "path": "labels/part-00012.jsonl.gz",
+      "rows": 32,
+      "sha256": "77648a2afbee3c05be4a0a12994e1d716b9ca14a441485506efe6d5c4331b51e",
+      "uncompressed_jsonl_bytes": 1220017
+    },
+    {
+      "bytes": 639365,
+      "path": "labels/part-00013.jsonl.gz",
+      "rows": 32,
+      "sha256": "c91b4105f41cf92defd599cb9fcbcabdaf8b4a8f76f4a7515775b29a3056cce7",
+      "uncompressed_jsonl_bytes": 2083982
+    }
+  ],
+  "relation_to_full_corpus": "Same query IDs and indexed R32 streams. Do not pool duplicate labels. Exact comparison required after full generation.",
+  "schema": "chess_icl_v2.sharded.partial.1",
+  "test_model_scores_opened": false
+}

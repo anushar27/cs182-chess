@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="2.825" timestamp="2026-11-25T06:17:53.325322+00:00" hostname="wnckcaina01"><testcase classname="tests.test_v2_large_dataset_panel" name="test_fresh_panel_uses_identical_parent_streams_without_new_samples" time="2.736" /></testsuite></testsuites>
