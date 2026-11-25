@@ -1,0 +1,136 @@
+{
+  "best_macro_validation_nll": 1.0205275628398487,
+  "checkpoint_sha256": "d4dbeb2a250311d3dd3c15a004a8d5212f23800c1204678ebcf0210b26a39b84",
+  "config": {
+    "architecture": {
+      "alpha": 16,
+      "attention": "sdpa",
+      "gradient_checkpointing": true,
+      "last_layers": 4,
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "rank": 8,
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+    },
+    "cpu_threads": 2,
+    "device": "cuda",
+    "eval_interval": 40,
+    "gradient_accumulation": 4,
+    "inference_batch_size": 8,
+    "k_values": [
+      0,
+      1
+    ],
+    "learning_rate": 0.0001,
+    "max_tokens": 32768,
+    "mode": "pilot",
+    "seed": 42,
+    "steps": 200,
+    "strict_episode_coverage": true,
+    "track": "qwen",
+    "train_variants": [
+      "antichess",
+      "diagonal_rook",
+      "straight_bishop",
+      "weakened_queen",
+      "extended_pawn",
+      "short_knight",
+      "mobile_king",
+      "piece_capture",
+      "forward_pawn_capture",
+      "dark_square_immunity",
+      "blocked_squares",
+      "extended_initial_pawn",
+      "knight_army"
+    ],
+    "validation_batch_size": 8,
+    "warmup_steps": 20
+  },
+  "dataset_sha256": "ccaf74b5c75aca9b354c8f8febece1e848e9758abcb1816178dcde1b706be003",
+  "exposed_variants": [
+    "antichess",
+    "blocked_squares",
+    "dark_square_immunity",
+    "diagonal_rook",
+    "extended_initial_pawn",
+    "extended_pawn",
+    "forward_pawn_capture",
+    "knight_army",
+    "mobile_king",
+    "piece_capture",
+    "short_knight",
+    "standard",
+    "straight_bishop",
+    "weakened_queen"
+  ],
+  "lineage": {
+    "parent_manifest_sha256": "c9f939f3a151d0164db4180b3d8fb0002affdccf7162dd12b541d99fc59f9a3f",
+    "path": "results/qwen_warmup_seed42/best.pt",
+    "sha256": "cccddcb39030f0371dfc217b53bc32f166aa086210a5185f6bdc214eaa38de51"
+  },
+  "peak_cuda_allocated_bytes": 22160411136,
+  "provenance": {
+    "config": {
+      "architecture": {
+        "alpha": 16,
+        "attention": "sdpa",
+        "gradient_checkpointing": true,
+        "last_layers": 4,
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "rank": 8,
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+      },
+      "cpu_threads": 2,
+      "device": "cuda",
+      "eval_interval": 40,
+      "gradient_accumulation": 4,
+      "inference_batch_size": 8,
+      "k_values": [
+        0,
+        1
+      ],
+      "learning_rate": 0.0001,
+      "max_tokens": 32768,
+      "mode": "pilot",
+      "seed": 42,
+      "steps": 200,
+      "strict_episode_coverage": true,
+      "track": "qwen",
+      "train_variants": [
+        "antichess",
+        "diagonal_rook",
+        "straight_bishop",
+        "weakened_queen",
+        "extended_pawn",
+        "short_knight",
+        "mobile_king",
+        "piece_capture",
+        "forward_pawn_capture",
+        "dark_square_immunity",
+        "blocked_squares",
+        "extended_initial_pawn",
+        "knight_army"
+      ],
+      "validation_batch_size": 8,
+      "warmup_steps": 20
+    },
+    "config_sha256": "d4b4db8267cae8710400aac3ab34670e473edf37969a07368fd97ad2eeace6e3",
+    "packages": {
+      "chess": "1.11.2",
+      "numpy": "2.2.6",
+      "peft": "0.14.0",
+      "pytest": "8.3.5",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.49.0"
+    },
+    "platform": "Linux-5.15.0-164-generic-x86_64-with-glibc2.35",
+    "python": "3.12.12",
+    "source_sha256": "a294ff003c43f94b50cebd394003666cd2228fa9bfe56d3a14f4656a5e5c55cb",
+    "utc": "2026-11-25T03:39:54.968983+00:00"
+  },
+  "publication_note": "Completed run; filesystem path normalized. Binary checkpoint retained locally; its exact hash is unchanged.",
+  "published_source_sha256": "71ab3fbf2cf4c6ce0756cf44c913d90aab4753a5c9c2525cfd8ce87fa2b0d2ee",
+  "seconds": 271.71992687508464,
+  "trainable_parameters": 731651,
+  "training_episodes": 380,
+  "validation_episodes": 362
+}

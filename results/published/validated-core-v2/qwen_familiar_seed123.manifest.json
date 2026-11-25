@@ -1,0 +1,109 @@
+{
+  "best_macro_validation_nll": 1.1005533800653158,
+  "checkpoint_sha256": "b505959d1cc608de1efd6374178bd325c2b542046ea3f3a1289c49e142ee6309",
+  "config": {
+    "architecture": {
+      "alpha": 16,
+      "attention": "sdpa",
+      "gradient_checkpointing": true,
+      "last_layers": 4,
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "rank": 8,
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+    },
+    "cpu_threads": 2,
+    "device": "cuda",
+    "eval_interval": 40,
+    "gradient_accumulation": 4,
+    "inference_batch_size": 8,
+    "k_values": [
+      0,
+      1
+    ],
+    "learning_rate": 0.0001,
+    "max_tokens": 32768,
+    "mode": "pilot",
+    "seed": 123,
+    "steps": 200,
+    "strict_episode_coverage": true,
+    "track": "qwen",
+    "train_variants": [
+      "diagonal_rook",
+      "straight_bishop",
+      "weakened_queen",
+      "extended_pawn"
+    ],
+    "validation_batch_size": 8,
+    "warmup_steps": 20
+  },
+  "dataset_sha256": "47d3e5fd6db9cc87c63e2fc52f98e89743bb34696f8d7289c7f4800637fec72f",
+  "exposed_variants": [
+    "diagonal_rook",
+    "extended_pawn",
+    "standard",
+    "straight_bishop",
+    "weakened_queen"
+  ],
+  "lineage": {
+    "parent_manifest_sha256": "ca6b988769b7d6c9f85d40c7d4f5a7f268d5541a4718b42cbf76e97a75549a91",
+    "path": "results/qwen_warmup_seed123/best.pt",
+    "sha256": "f7212d355daef207c0a90631dd0b79d65fdc978c05576795ad7070de020c459c"
+  },
+  "peak_cuda_allocated_bytes": 19217201152,
+  "provenance": {
+    "config": {
+      "architecture": {
+        "alpha": 16,
+        "attention": "sdpa",
+        "gradient_checkpointing": true,
+        "last_layers": 4,
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "rank": 8,
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+      },
+      "cpu_threads": 2,
+      "device": "cuda",
+      "eval_interval": 40,
+      "gradient_accumulation": 4,
+      "inference_batch_size": 8,
+      "k_values": [
+        0,
+        1
+      ],
+      "learning_rate": 0.0001,
+      "max_tokens": 32768,
+      "mode": "pilot",
+      "seed": 123,
+      "steps": 200,
+      "strict_episode_coverage": true,
+      "track": "qwen",
+      "train_variants": [
+        "diagonal_rook",
+        "straight_bishop",
+        "weakened_queen",
+        "extended_pawn"
+      ],
+      "validation_batch_size": 8,
+      "warmup_steps": 20
+    },
+    "config_sha256": "9b79a5683233b4962c964b3130eab20f8effd0e74bce16c4447cf6753386196a",
+    "packages": {
+      "chess": "1.11.2",
+      "numpy": "2.2.6",
+      "peft": "0.14.0",
+      "pytest": "8.3.5",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.49.0"
+    },
+    "platform": "Linux-5.15.0-164-generic-x86_64-with-glibc2.35",
+    "python": "3.12.12",
+    "source_sha256": "e26992d04f0b11d19b6fb81297f9c7bf4df6819e30d190b37d39b0e6fe002f23",
+    "utc": "2026-11-25T03:05:50.129530+00:00"
+  },
+  "publication_note": "Completed run; filesystem path normalized. Binary checkpoint retained locally; its exact hash is unchanged.",
+  "published_source_sha256": "c988284f0337899cb238ebebf285f98e9f5cd136e8c1976a7638cd2c25937f1b",
+  "seconds": 206.97676745057106,
+  "trainable_parameters": 731651,
+  "training_episodes": 114,
+  "validation_episodes": 114
+}

@@ -1,3 +1,8 @@
+> **Current experiment:** predict fixed-policy W/D/L probabilities with the audited
+> `chess_icl_v2` pipeline. Start with [README_V2.md](README_V2.md) and its results
+> ledger. The documentation and results below describe the legacy material-label
+> experiments and must not be used as evidence for the new objective.
+
 # In-Context Learning of Unfamiliar Chess Variants
 
 This repository implements the research pipeline for the research question:

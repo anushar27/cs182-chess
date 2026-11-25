@@ -1,0 +1,32 @@
+{
+  "R": 32,
+  "counts_wdl": [
+    21,
+    5,
+    6
+  ],
+  "policy": "terminal_aware_v1",
+  "private_metadata_not_in_input": {
+    "condition": "relevant",
+    "demo_families": [
+      "74db3bfdee67bce4e9c82cb23430a475a25083f80d0d8a49d242ff21fb61baa5"
+    ],
+    "draw": 0,
+    "family_id": "fe0ae9960e8c18d9239201068fdbf61aa263fb9b109ddd5480c238648ee3066f",
+    "input_sha256": "3d91a5e122327ac6ab738c65d79c59de8a1027bf59fa497e74ebcccfa531188d",
+    "k": 1,
+    "query_id": "143b29ac32e16a256b649eeae96ee808d83ddc0a2174f301f0d618e0dce6be7f",
+    "split": "validation",
+    "tokens": 517,
+    "variant": "standard"
+  },
+  "query_id": "143b29ac32e16a256b649eeae96ee808d83ddc0a2174f301f0d618e0dce6be7f",
+  "root_player": "white",
+  "rules_version": "python_chess_1.11.2_auto_draws_v1",
+  "target_wdl": [
+    0.65625,
+    0.15625,
+    0.1875
+  ],
+  "tokens": 517
+}

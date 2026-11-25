@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "all_requested_rules_present": true,
+    "both_sides_all_folds": true,
+    "dataset_integrity": true,
+    "measured_h100_profile": true,
+    "minimum_replicates": true,
+    "no_censored_targets": true,
+    "outcome_variation_two_familiar_rules": true,
+    "pilot_context_gain": false,
+    "simulator_audits": true
+  },
+  "dataset_sha256": "b572fccd2c1da52a7850a253513789468c9b75390cf09f29255cdea0960b8341",
+  "min_replicates": 32,
+  "note": "Necessary gates only. See preregistration for manual protocol-freeze requirements.",
+  "passed": false,
+  "simulator_audit_sha256": "529b42df41bd0e3fa3729c1ad55a3eacc9e49cf7c3721e6429e8b8036d7651d7"
+}

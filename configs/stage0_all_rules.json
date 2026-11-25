@@ -1,0 +1,26 @@
+{
+  "demo_families_per_split": 2,
+  "max_plies": 320,
+  "near_distance": 2,
+  "policy_id": "uniform_legal_v1",
+  "query_families_per_split": 1,
+  "replicates": 4,
+  "seed": 20261124,
+  "variants": [
+    "standard",
+    "antichess",
+    "diagonal_rook",
+    "straight_bishop",
+    "weakened_queen",
+    "extended_pawn",
+    "short_knight",
+    "mobile_king",
+    "piece_capture",
+    "forward_pawn_capture",
+    "dark_square_immunity",
+    "blocked_squares",
+    "extended_initial_pawn",
+    "knight_army"
+  ],
+  "workers": 2
+}

@@ -1,0 +1,30 @@
+{
+  "step": 30,
+  "validation": {
+    "argmax_ties": 2,
+    "macro": {
+      "argmax_accuracy": 0.4375,
+      "brier": 0.14324529295944444,
+      "expected_outcome_brier": 0.6952472460844444,
+      "l1": 0.5125311204465106,
+      "nll": 1.165793266736305,
+      "target_entropy": 0.9089085647495599
+    },
+    "n": 32,
+    "per_variant": {
+      "standard": {
+        "argmax_accuracy": 0.4375,
+        "brier": 0.14324529295944444,
+        "expected_outcome_brier": 0.6952472460844444,
+        "l1": 0.5125311204465106,
+        "nll": 1.165793266736305,
+        "target_entropy": 0.9089085647495599
+      }
+    },
+    "target_argmax_counts": [
+      16,
+      4,
+      12
+    ]
+  }
+}

@@ -9,3 +9,15 @@ runs/*
 !runs/.gitkeep
 !runs/analysis/
 !runs/results/
+
+# Packaging scratch output
+/build/
+*.egg-info/
+
+# Reproducible large/local experiment artifacts (publish compact snapshots instead).
+/work/
+/figures/*.png
+/figures/*.pdf
+/results/*
+!/results/README.md
+!/results/published/

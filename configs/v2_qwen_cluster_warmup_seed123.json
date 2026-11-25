@@ -1,0 +1,32 @@
+{
+  "track": "qwen",
+  "mode": "warmup",
+  "architecture": {
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "rank": 8,
+    "alpha": 16,
+    "last_layers": 4,
+    "attention": "sdpa",
+    "gradient_checkpointing": true
+  },
+  "seed": 123,
+  "device": "cuda",
+  "cpu_threads": 2,
+  "steps": 30,
+  "eval_interval": 15,
+  "learning_rate": 0.0001,
+  "warmup_steps": 5,
+  "gradient_accumulation": 2,
+  "max_tokens": 32768,
+  "k_values": [
+    0,
+    1
+  ],
+  "train_variants": [
+    "standard"
+  ],
+  "strict_episode_coverage": true,
+  "validation_batch_size": 8,
+  "inference_batch_size": 8
+}

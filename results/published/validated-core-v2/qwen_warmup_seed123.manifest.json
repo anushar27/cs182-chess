@@ -1,0 +1,95 @@
+{
+  "best_macro_validation_nll": 1.234268466968833,
+  "checkpoint_sha256": "f7212d355daef207c0a90631dd0b79d65fdc978c05576795ad7070de020c459c",
+  "config": {
+    "architecture": {
+      "alpha": 16,
+      "attention": "sdpa",
+      "gradient_checkpointing": true,
+      "last_layers": 4,
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "rank": 8,
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+    },
+    "cpu_threads": 2,
+    "device": "cuda",
+    "eval_interval": 15,
+    "gradient_accumulation": 2,
+    "inference_batch_size": 8,
+    "k_values": [
+      0,
+      1
+    ],
+    "learning_rate": 0.0001,
+    "max_tokens": 32768,
+    "mode": "warmup",
+    "seed": 123,
+    "steps": 30,
+    "strict_episode_coverage": true,
+    "track": "qwen",
+    "train_variants": [
+      "standard"
+    ],
+    "validation_batch_size": 8,
+    "warmup_steps": 5
+  },
+  "dataset_sha256": "47d3e5fd6db9cc87c63e2fc52f98e89743bb34696f8d7289c7f4800637fec72f",
+  "exposed_variants": [
+    "standard"
+  ],
+  "lineage": null,
+  "peak_cuda_allocated_bytes": 17322100736,
+  "provenance": {
+    "config": {
+      "architecture": {
+        "alpha": 16,
+        "attention": "sdpa",
+        "gradient_checkpointing": true,
+        "last_layers": 4,
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "rank": 8,
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+      },
+      "cpu_threads": 2,
+      "device": "cuda",
+      "eval_interval": 15,
+      "gradient_accumulation": 2,
+      "inference_batch_size": 8,
+      "k_values": [
+        0,
+        1
+      ],
+      "learning_rate": 0.0001,
+      "max_tokens": 32768,
+      "mode": "warmup",
+      "seed": 123,
+      "steps": 30,
+      "strict_episode_coverage": true,
+      "track": "qwen",
+      "train_variants": [
+        "standard"
+      ],
+      "validation_batch_size": 8,
+      "warmup_steps": 5
+    },
+    "config_sha256": "2b9418d5de6ade97eb5075cf53ce64145975218ec708329a72e26dde765b50e0",
+    "packages": {
+      "chess": "1.11.2",
+      "numpy": "2.2.6",
+      "peft": "0.14.0",
+      "pytest": "8.3.5",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.49.0"
+    },
+    "platform": "Linux-5.15.0-164-generic-x86_64-with-glibc2.35",
+    "python": "3.12.12",
+    "source_sha256": "e26992d04f0b11d19b6fb81297f9c7bf4df6819e30d190b37d39b0e6fe002f23",
+    "utc": "2026-11-25T03:05:15.844463+00:00"
+  },
+  "publication_note": "Completed run; filesystem path normalized. Binary checkpoint retained locally; its exact hash is unchanged.",
+  "published_source_sha256": "f8ac27fc0179dcd25e60abdf8fa2989edeadf663ad5a79fe415056851a015e46",
+  "seconds": 16.480726331472397,
+  "trainable_parameters": 731651,
+  "training_episodes": 32,
+  "validation_episodes": 32
+}
