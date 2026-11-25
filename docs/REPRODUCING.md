@@ -105,14 +105,14 @@ K mixture. The sample with only two demos/fold is insufficient for K=4 warmup.
 Train one common warmup parent for each model seed:
 
 ```bash
-V2_DATA=data/v2_standard.json V2_CONFIG=configs/v2_qwen_warmup.json \
+V2_DATA=data/v2_standard.json V2_CONFIG=configs/v2_qwen_cluster_warmup_seed42.json \
 V2_OUTPUT=results/qwen_warmup_seed42 sbatch --export=ALL cluster/v2_train.sh
 ```
 
 7. Clone that parent for each matched main condition:
 
 ```bash
-V2_DATA=data/v2_complete.json V2_CONFIG=configs/v2_qwen_main.json \
+V2_DATA=data/v2_complete.json V2_CONFIG=configs/v2_qwen_exploratory_seed42.json \
 V2_OUTPUT=results/qwen_familiar_seed42 V2_WARMUP=results/qwen_warmup_seed42/best.pt \
 V2_GATES=results/main_gates.json sbatch --export=ALL cluster/v2_train.sh
 ```

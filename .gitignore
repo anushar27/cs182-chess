@@ -1,20 +1,10 @@
 .venv/
 __pycache__/
 *.py[cod]
+.pytest_cache/
 .DS_Store
-data/*
-!data/.gitkeep
-data_large/
-runs/*
-!runs/.gitkeep
-!runs/analysis/
-!runs/results/
-
-# Packaging scratch output
 /build/
 *.egg-info/
-
-# Reproducible large/local experiment artifacts (publish compact snapshots instead).
 /work/
 /figures/*.png
 /figures/*.pdf

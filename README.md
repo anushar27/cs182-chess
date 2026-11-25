@@ -1,120 +1,94 @@
-> **Current experiment:** predict fixed-policy W/D/L probabilities with the audited
-> `chess_icl_v2` pipeline. Start with [README_V2.md](README_V2.md) and its results
-> ledger. The documentation and results below describe the legacy material-label
-> experiments and must not be used as evidence for the new objective.
+# Fixed-policy win/draw/loss research pipeline
 
-# In-Context Learning of Unfamiliar Chess Variants
+Predict empirical W/D/L probabilities for the **player to move**, under a fixed,
+versioned policy in an exact variant simulator. These probabilities do not estimate
+optimal or strong play. Full demonstration games plus the complete query state
+are the only model input; rule names/descriptions and query labels are excluded.
+Evaluation freezes all model and adapter weights.
 
-This repository implements the research pipeline for the research question:
-**Can a small transformer pretrained on standard chess learn to evaluate positions in unfamiliar chess variants from K in-context demonstration games, without being told the rules?**
+Implementation lives in `chess_icl_v2/`. The original material-label package,
+scripts, tests, configurations and results are preserved in
+[`archive/legacy_material_labels/`](archive/README.md). Their material/centipawn targets
+and old accuracy numbers are not evidence for this experiment.
 
-## Architecture & Pipeline Overview
+**Cluster update:** eight H100 GPUs are now accessible through approved host execution.
+The earlier sandbox could not see devices. Actual Qwen training and profiling
+results are recorded in [CLUSTER_RESULTS.md](docs/CLUSTER_RESULTS.md).
 
-- **Task formulation**: Win/Draw/Loss (W/D/L) classification (not centipawn regression)
-- **No rules given**: The model receives $K$ demonstration games followed by the query position; no natural language rules are provided.
-- **Custom variant engine**: Modular engine built on `python-chess` supporting 13 creative variants across 5 categories.
-- **Model**: Decoder-only transformer (`ChessTransformer`) with causal self-attention.
+## Read before using results
 
-### The 13 Variants
+- [Actual cluster results](docs/CLUSTER_RESULTS.md)
+- [Artifact validity and superseded runs](docs/ARTIFACT_STATUS.md)
+- [Historical Stage0 results](archive/development_stage0/RESULTS.md)
+- [Exact rules and terminal conventions](docs/RULES.md)
+- [Every design decision and development incident](docs/DECISIONS.md)
+- [Data/model contracts and implementation map](docs/IMPLEMENTATION.md)
+- [Analysis plan and confirmatory protocol](docs/ANALYSIS_PLAN.md)
+- [Reproduction and cluster operations](docs/REPRODUCING.md)
 
-| # | Variant Code | Category | Rule Summary | Split |
-|---|--------------|----------|--------------|-------|
-| 1 | `diagonal_rook` | Move | Rook moves diagonally (like a bishop) | **Train** |
-| 2 | `straight_bishop` | Move | Bishop moves in straight lines (like a rook) | **Train** |
-| 3 | `weakened_queen` | Move | Queen loses diagonal movement (moves like rook only) | **Train** |
-| 4 | `extended_pawn` | Move | Pawns can always move 1 or 2 squares forward | **Train** |
-| 5 | `short_knight` | Move | Knight moves in short L-shape (ferz + dabbaba) | **Test** |
-| 6 | `mobile_king` | Move | King moves like a queen | **Test** |
-| 7 | `piece_capture` | Capture | Captured piece converts to your color on capture square | **Test** |
-| 8 | `forward_pawn_capture` | Capture | Pawns can also capture square directly ahead | **Test** |
-| 9 | `dark_square_immunity` | Capture | Pieces on dark squares cannot be captured | **Test** |
-| 10 | `blocked_squares` | Board | 8 impassable barrier squares | **Test** |
-| 11 | `long_board` | Board | Extended board simulated via multi-square pawn pushes | **Test** |
-| 12 | `knight_army` | Pieces | Each side has 15 knights + 1 king | **Test** |
-| 13 | `antichess` | Objective | Lose all pieces to win; captures are compulsory | **Test** |
+The checked-in sample is exploratory and small. Main training is gated, not
+silently launched from insufficient or censored data. The initial CPU-stage findings are retained separately. GPU profiles and subsequent
+Qwen runs use the actual H100 host; see the cluster report for completed runs.
 
----
+## Install and verify
 
-## Directory Structure
-
-```
-cs182-chess/
-├── chess_icl/
-│   ├── data.py                    # ChessTokenizer, Game/Position dataclasses, loaders
-│   ├── dataset.py                 # PyTorch datasets (Pretrain, Variant, Eval)
-│   ├── model.py                   # ChessTransformer (GPT-style causal transformer)
-│   ├── evaluate.py                # Metrics, Matteo re-evaluation test, demo quality
-│   ├── prepare_data.py            # High-level data preparation wrapper
-│   └── variants/                  # Modular variant engine
-│       ├── engine.py              # VariantBoard base class
-│       ├── move_variants.py       # 6 move variants
-│       ├── capture_variants.py    # 3 capture variants
-│       ├── board_variants.py      # blocked_squares, long_board
-│       ├── piece_variants.py      # knight_army
-│       ├── objective_variants.py  # antichess
-│       └── registry.py            # Variant registry & get_board factory
-├── scripts/
-│   ├── generate_data.py           # Self-play game generation & position sampling
-│   ├── pretrain.py                # Standard chess pretraining (Phase 2)
-│   ├── continue_train.py          # Variant continue-training (Phase 3)
-│   ├── run_eval.py                # Full evaluation matrix (Phase 4)
-│   └── analyze_results.py         # Result aggregation, figures, LaTeX tables
-├── tests/
-│   ├── test_variants.py           # Unit tests for variant engine rules
-│   ├── test_tokenizer.py          # Tokenizer & sequence roundtrip tests
-│   └── test_model.py              # Model shape, gradient, and overfit tests
-├── configs/
-│   ├── small.yaml                 # Transformer hyperparameters
-│   └── experiment.yaml            # Experiment matrix & split specification
-├── cluster/
-│   ├── generate_data.sh           # SLURM script for data generation
-│   ├── pretrain.sh                # SLURM script for pretraining (3 seeds)
-│   ├── continue_train.sh          # SLURM script for continue-training (9 jobs)
-│   ├── evaluate.sh                # SLURM script for evaluation matrix
-│   └── run_all.sh                 # Master pipeline submit script
-├── requirements.txt
-└── README.md
-```
-
----
-
-## Quickstart
-
-### 1. Installation
 ```bash
-pip install -r requirements.txt
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e '.[train,test]'
+pip install pyffish==0.0.91
+pytest tests/test_v2*.py -q
+python -m chess_icl_v2.cli audit --output results/my_audit.json
 ```
 
-### 2. Run Tests
+The pinned PyTorch wheel should match the cluster's CUDA runtime. Local validation
+used torch 2.6.0+cpu; dependency locks are recorded in `results/environment.txt`.
+
+## Generate, extend and inspect
+
 ```bash
-pytest tests/ -v
+python -m chess_icl_v2.cli generate \
+  --config configs/stage0_all_rules.json --output results/my_stage0.json
+python -m chess_icl_v2.cli extend --data results/my_stage0.json \
+  --max-plies 1280 --workers 2 --output results/my_extended.json
+python -m chess_icl_v2.cli tokens --data results/my_extended.json \
+  --tokenizer Qwen/Qwen2.5-7B-Instruct \
+  --revision a09a35458c702b33eeacc393d103063234e8bc28 \
+  --output results/my_tokens.json
 ```
 
-### 3. Generate Data
+Never turn unresolved outcomes into draws. A label is usable only when all R
+continuations terminate. `extend` replays the same streams and confirms their old
+prefixes, keeps the roots fixed, and preserves lineage. It does not sample until
+a convenient result appears.
+
+## CPU pilot and frozen controls
+
 ```bash
-# Generate standard chess and all 13 variants
-python scripts/generate_data.py --all-variants --count 2000 --seed 42
+python -m chess_icl_v2.cli train --data results/my_extended.json \
+  --config configs/v2_tiny_pilot.json --output results/my_tiny
+python -m chess_icl_v2.cli evaluate --data results/my_extended.json \
+  --checkpoint results/my_tiny/best.pt --k 0 1 --draws 5 \
+  --output results/my_tiny_validation.json
+python scripts/v2_baselines.py --data results/my_extended.json \
+  --evaluation results/my_tiny_validation.json \
+  --manifest results/my_tiny/manifest.json --output results/my_baselines.json
 ```
 
-### 4. Phase 2: Pretraining
-```bash
-python scripts/pretrain.py --seed 42 --config small --max-steps 20000 --output runs/pretrain/
-```
+The pilot config explicitly permits logged coverage exclusions. Main configs do
+not. No headline result should be computed by silently averaging different roots
+at different K values. Mismatch controls must fit and match demo token length to
+within 10%, or the root is excluded from the entire paired evaluation matrix.
 
-### 5. Phase 3: Continue-Training
-```bash
-python scripts/continue_train.py \
-    --config move_variants \
-    --pretrain-checkpoint runs/pretrain/chess_base_seed42.pt \
-    --seed 42 \
-    --output runs/variant_train/
-```
+## H100 work
 
-### 6. Phase 4: Evaluation & Analysis
-```bash
-python scripts/run_eval.py \
-    --checkpoint runs/variant_train/move_variants_seed42.pt \
-    --output runs/results/move_variants_seed42.json
+Run `cluster/v2_qwen_profile.sh` first. Then use `cluster/v2_train.sh` with the
+`V2_DATA`, `V2_CONFIG`, `V2_OUTPUT`, `V2_WARMUP` and `V2_GATES` variables documented
+in [REPRODUCING.md](docs/REPRODUCING.md). Never overwrite scheduler-provided GPU
+visibility. Do not run the archived `archive/legacy_material_labels/cluster/run_all.sh` for v2.
 
-python scripts/analyze_results.py --results-dir runs/results --output-dir runs/analysis
-```
+Research gates require simulator validation, complete labels, measured outcome
+signal, successful pilot comparisons, and GPU measurements. The gate command
+returns nonzero when requirements are missing. A saved test seal binds the exact
+dataset, checkpoint and analysis protocol; the evaluator rejects unsealed final
+test access. This is a procedural seal, not an encrypted data-access system.

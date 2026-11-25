@@ -1,7 +1,8 @@
 # Authoritative and superseded artifacts
 
 Do not pool counts across files that copy or extend the same random streams.
-Each dataset has explicit hashes and lineage. The final report uses the corrected
+Each dataset has explicit hashes and lineage. Legacy code/results now live under `archive/legacy_material_labels/`; the historical
+Stage0 report is under `archive/development_stage0/`. The final report uses the corrected
 rules and corrected evaluation controls listed below.
 
 | Artifact | Status and use |

@@ -237,3 +237,12 @@ snapshot. Respect HF_HOME in cluster scripts (default repository work/hf-cache),
 cache the tokenizer during profiling, and avoid hardcoding this chat's generated
 folder layout into published launchers. These are operational changes, not changes
 to the measured policy, model weights or statistical protocol.
+
+
+D45. After the user merged the validated-core branch, fetch and work on main.
+Archive the legacy material/centipawn package, scripts, configs, tests, dependencies,
+figures and results under archive/legacy_material_labels. Move the historical
+Stage0 report and obsolete proposal/control configs to archive/development_stage0.
+Keep the current W/D/L runtime, actual configs, tests, decisions and completed
+snapshots active. Preserve history rather than deleting evidence. Future completed
+stages are committed and pushed to main as requested.
