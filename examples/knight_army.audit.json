@@ -1,0 +1,32 @@
+{
+  "R": 32,
+  "counts_wdl": [
+    16,
+    3,
+    13
+  ],
+  "policy": "terminal_aware_v1",
+  "private_metadata_not_in_input": {
+    "condition": "relevant",
+    "demo_families": [
+      "3530a3f9a272184a39e1b1d14c9cf8e703ec12be2dab7380c5eab7f1d8cd9546"
+    ],
+    "draw": 0,
+    "family_id": "dd857b9ddcbaba17c7d39d0749e086aa40045c74a2f92fb5e276dfae0c91e378",
+    "input_sha256": "4c7ee61ac65ab90e19392a7fd77c97c6fc95994549e01b3f9910637b00bd9650",
+    "k": 1,
+    "query_id": "17bc8d16a03704c5587e56454e90e315745823211a7be1fcb29facea9f6f4323",
+    "split": "validation",
+    "tokens": 366,
+    "variant": "knight_army"
+  },
+  "query_id": "17bc8d16a03704c5587e56454e90e315745823211a7be1fcb29facea9f6f4323",
+  "root_player": "black",
+  "rules_version": "research_rules_v1",
+  "target_wdl": [
+    0.5,
+    0.09375,
+    0.40625
+  ],
+  "tokens": 366
+}

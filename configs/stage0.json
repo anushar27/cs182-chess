@@ -1,0 +1,11 @@
+{
+  "seed": 20261124,
+  "variants": ["standard", "antichess"],
+  "policy_id": "uniform_legal_v1",
+  "max_plies": 320,
+  "replicates": 8,
+  "demo_families_per_split": 3,
+  "query_families_per_split": 2,
+  "near_distance": 2,
+  "workers": 2
+}

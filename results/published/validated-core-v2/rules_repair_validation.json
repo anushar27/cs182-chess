@@ -1,0 +1,52 @@
+{
+  "evaluation_sha256": "b572fccd2c1da52a7850a253513789468c9b75390cf09f29255cdea0960b8341",
+  "final_queries": 614,
+  "label_continuations": 19648,
+  "other_query_states_and_labels_unchanged": true,
+  "rule_versions": {
+    "antichess": [
+      "python_chess_1.11.2_antichess_auto_draws_v1"
+    ],
+    "blocked_squares": [
+      "research_rules_v1"
+    ],
+    "dark_square_immunity": [
+      "research_rules_v1"
+    ],
+    "diagonal_rook": [
+      "research_rules_v1"
+    ],
+    "extended_initial_pawn": [
+      "research_rules_v1"
+    ],
+    "extended_pawn": [
+      "research_rules_v1"
+    ],
+    "forward_pawn_capture": [
+      "research_rules_v1"
+    ],
+    "knight_army": [
+      "research_rules_v1"
+    ],
+    "mobile_king": [
+      "research_rules_v1"
+    ],
+    "piece_capture": [
+      "research_rules_v2_royal_conversion"
+    ],
+    "short_knight": [
+      "research_rules_v1"
+    ],
+    "standard": [
+      "python_chess_1.11.2_auto_draws_v1"
+    ],
+    "straight_bishop": [
+      "research_rules_v1"
+    ],
+    "weakened_queen": [
+      "research_rules_v1"
+    ]
+  },
+  "training_and_evaluation_query_lists_equal": true,
+  "training_sha256": "ccaf74b5c75aca9b354c8f8febece1e848e9758abcb1816178dcde1b706be003"
+}

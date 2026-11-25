@@ -1,0 +1,26 @@
+{
+  "demo_families_per_split": 8,
+  "max_plies": 2560,
+  "near_distance": 2,
+  "policy_id": "terminal_aware_v1",
+  "query_families_per_split": 8,
+  "replicates": 32,
+  "seed": 2026112402,
+  "variants": [
+    "standard",
+    "antichess",
+    "diagonal_rook",
+    "straight_bishop",
+    "weakened_queen",
+    "extended_pawn",
+    "short_knight",
+    "mobile_king",
+    "piece_capture",
+    "forward_pawn_capture",
+    "dark_square_immunity",
+    "blocked_squares",
+    "extended_initial_pawn",
+    "knight_army"
+  ],
+  "workers": 48
+}

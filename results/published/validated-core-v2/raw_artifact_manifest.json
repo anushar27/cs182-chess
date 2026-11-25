@@ -1,0 +1,20 @@
+{
+  "artifacts": [
+    {
+      "bytes": 93186124,
+      "path": "results/terminal_policy_rules_v2.dataset.json",
+      "sha256": "ad5f71b0c0abfb06fb4592966b13cc6b9b1e10ccf44de368f527c5be94c26771"
+    },
+    {
+      "bytes": 95786370,
+      "path": "results/terminal_evaluation_rules_v2.dataset.json",
+      "sha256": "5462d39d5c220d1a6af4fcd745615b25b8ff30e696e2f265a3bf8fb6c98153a7"
+    },
+    {
+      "bytes": 70107276,
+      "path": "results/high_r_test_labels_rules_v2.json",
+      "sha256": "20b506f795abc9bd7df104ef31cf79d0fcb3f5512d7f190c53570e269cb0626b"
+    }
+  ],
+  "storage": "Local deliverable archive; raw traces and binary checkpoints deliberately excluded from Git."
+}

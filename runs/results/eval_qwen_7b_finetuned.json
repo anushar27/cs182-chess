@@ -1,0 +1,1082 @@
+[
+  {
+    "variant": "short_knight",
+    "k": 0,
+    "seed": 42,
+    "accuracy": 0.74,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.88,
+      "draw": 0.58,
+      "loss": 0.76
+    }
+  },
+  {
+    "variant": "short_knight",
+    "k": 0,
+    "seed": 123,
+    "accuracy": 0.74,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.88,
+      "draw": 0.58,
+      "loss": 0.76
+    }
+  },
+  {
+    "variant": "short_knight",
+    "k": 1,
+    "seed": 42,
+    "accuracy": 0.78,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.84,
+      "draw": 0.56,
+      "loss": 0.94
+    }
+  },
+  {
+    "variant": "short_knight",
+    "k": 1,
+    "seed": 123,
+    "accuracy": 0.7666666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.54,
+      "loss": 0.9
+    }
+  },
+  {
+    "variant": "short_knight",
+    "k": 2,
+    "seed": 42,
+    "accuracy": 0.7,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.76,
+      "draw": 0.54,
+      "loss": 0.8
+    }
+  },
+  {
+    "variant": "short_knight",
+    "k": 2,
+    "seed": 123,
+    "accuracy": 0.7266666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.8,
+      "draw": 0.52,
+      "loss": 0.86
+    }
+  },
+  {
+    "variant": "short_knight",
+    "k": 4,
+    "seed": 42,
+    "accuracy": 0.74,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.5,
+      "loss": 0.86
+    }
+  },
+  {
+    "variant": "short_knight",
+    "k": 4,
+    "seed": 123,
+    "accuracy": 0.7133333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.46,
+      "loss": 0.82
+    }
+  },
+  {
+    "variant": "short_knight",
+    "k": 8,
+    "seed": 42,
+    "accuracy": 0.7333333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.94,
+      "draw": 0.6,
+      "loss": 0.66
+    }
+  },
+  {
+    "variant": "short_knight",
+    "k": 8,
+    "seed": 123,
+    "accuracy": 0.74,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.84,
+      "draw": 0.54,
+      "loss": 0.84
+    }
+  },
+  {
+    "variant": "mobile_king",
+    "k": 0,
+    "seed": 42,
+    "accuracy": 0.7533333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.88,
+      "draw": 0.62,
+      "loss": 0.76
+    }
+  },
+  {
+    "variant": "mobile_king",
+    "k": 0,
+    "seed": 123,
+    "accuracy": 0.7533333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.88,
+      "draw": 0.62,
+      "loss": 0.76
+    }
+  },
+  {
+    "variant": "mobile_king",
+    "k": 1,
+    "seed": 42,
+    "accuracy": 0.7733333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.9,
+      "draw": 0.56,
+      "loss": 0.86
+    }
+  },
+  {
+    "variant": "mobile_king",
+    "k": 1,
+    "seed": 123,
+    "accuracy": 0.7733333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.9,
+      "draw": 0.6,
+      "loss": 0.82
+    }
+  },
+  {
+    "variant": "mobile_king",
+    "k": 2,
+    "seed": 42,
+    "accuracy": 0.74,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.9,
+      "draw": 0.48,
+      "loss": 0.84
+    }
+  },
+  {
+    "variant": "mobile_king",
+    "k": 2,
+    "seed": 123,
+    "accuracy": 0.72,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.82,
+      "draw": 0.52,
+      "loss": 0.82
+    }
+  },
+  {
+    "variant": "mobile_king",
+    "k": 4,
+    "seed": 42,
+    "accuracy": 0.74,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.92,
+      "draw": 0.5,
+      "loss": 0.8
+    }
+  },
+  {
+    "variant": "mobile_king",
+    "k": 4,
+    "seed": 123,
+    "accuracy": 0.76,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.9,
+      "draw": 0.56,
+      "loss": 0.82
+    }
+  },
+  {
+    "variant": "mobile_king",
+    "k": 8,
+    "seed": 42,
+    "accuracy": 0.76,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.94,
+      "draw": 0.54,
+      "loss": 0.8
+    }
+  },
+  {
+    "variant": "mobile_king",
+    "k": 8,
+    "seed": 123,
+    "accuracy": 0.6933333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.94,
+      "draw": 0.56,
+      "loss": 0.58
+    }
+  },
+  {
+    "variant": "piece_capture",
+    "k": 0,
+    "seed": 42,
+    "accuracy": 0.7866666666666666,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.82,
+      "draw": 0.66,
+      "loss": 0.88
+    }
+  },
+  {
+    "variant": "piece_capture",
+    "k": 0,
+    "seed": 123,
+    "accuracy": 0.7866666666666666,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.82,
+      "draw": 0.66,
+      "loss": 0.88
+    }
+  },
+  {
+    "variant": "piece_capture",
+    "k": 1,
+    "seed": 42,
+    "accuracy": 0.7333333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.78,
+      "draw": 0.52,
+      "loss": 0.9
+    }
+  },
+  {
+    "variant": "piece_capture",
+    "k": 1,
+    "seed": 123,
+    "accuracy": 0.7733333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.8,
+      "draw": 0.64,
+      "loss": 0.88
+    }
+  },
+  {
+    "variant": "piece_capture",
+    "k": 2,
+    "seed": 42,
+    "accuracy": 0.7266666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.38,
+      "loss": 0.94
+    }
+  },
+  {
+    "variant": "piece_capture",
+    "k": 2,
+    "seed": 123,
+    "accuracy": 0.7266666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.82,
+      "draw": 0.48,
+      "loss": 0.88
+    }
+  },
+  {
+    "variant": "piece_capture",
+    "k": 4,
+    "seed": 42,
+    "accuracy": 0.7333333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.46,
+      "loss": 0.88
+    }
+  },
+  {
+    "variant": "piece_capture",
+    "k": 4,
+    "seed": 123,
+    "accuracy": 0.7533333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.56,
+      "loss": 0.84
+    }
+  },
+  {
+    "variant": "piece_capture",
+    "k": 8,
+    "seed": 42,
+    "accuracy": 0.76,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.8,
+      "draw": 0.56,
+      "loss": 0.92
+    }
+  },
+  {
+    "variant": "piece_capture",
+    "k": 8,
+    "seed": 123,
+    "accuracy": 0.78,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.84,
+      "draw": 0.58,
+      "loss": 0.92
+    }
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 0,
+    "seed": 42,
+    "accuracy": 0.7733333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.96,
+      "draw": 0.62,
+      "loss": 0.74
+    }
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 0,
+    "seed": 123,
+    "accuracy": 0.7733333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.96,
+      "draw": 0.62,
+      "loss": 0.74
+    }
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 1,
+    "seed": 42,
+    "accuracy": 0.7533333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.64,
+      "loss": 0.76
+    }
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 1,
+    "seed": 123,
+    "accuracy": 0.76,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.88,
+      "draw": 0.62,
+      "loss": 0.78
+    }
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 2,
+    "seed": 42,
+    "accuracy": 0.7533333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.84,
+      "draw": 0.64,
+      "loss": 0.78
+    }
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 2,
+    "seed": 123,
+    "accuracy": 0.7133333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.78,
+      "draw": 0.6,
+      "loss": 0.76
+    }
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 4,
+    "seed": 42,
+    "accuracy": 0.7,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.82,
+      "draw": 0.54,
+      "loss": 0.74
+    }
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 4,
+    "seed": 123,
+    "accuracy": 0.7066666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.78,
+      "draw": 0.58,
+      "loss": 0.76
+    }
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 8,
+    "seed": 42,
+    "accuracy": 0.7133333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.94,
+      "draw": 0.52,
+      "loss": 0.68
+    }
+  },
+  {
+    "variant": "forward_pawn_capture",
+    "k": 8,
+    "seed": 123,
+    "accuracy": 0.76,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.92,
+      "draw": 0.54,
+      "loss": 0.82
+    }
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 0,
+    "seed": 42,
+    "accuracy": 0.6666666666666666,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.88,
+      "draw": 0.44,
+      "loss": 0.68
+    }
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 0,
+    "seed": 123,
+    "accuracy": 0.6666666666666666,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.88,
+      "draw": 0.44,
+      "loss": 0.68
+    }
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 1,
+    "seed": 42,
+    "accuracy": 0.5866666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.82,
+      "draw": 0.34,
+      "loss": 0.6
+    }
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 1,
+    "seed": 123,
+    "accuracy": 0.6133333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.84,
+      "draw": 0.38,
+      "loss": 0.62
+    }
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 2,
+    "seed": 42,
+    "accuracy": 0.6133333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.82,
+      "draw": 0.36,
+      "loss": 0.66
+    }
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 2,
+    "seed": 123,
+    "accuracy": 0.6533333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.84,
+      "draw": 0.44,
+      "loss": 0.68
+    }
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 4,
+    "seed": 42,
+    "accuracy": 0.6266666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.34,
+      "loss": 0.68
+    }
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 4,
+    "seed": 123,
+    "accuracy": 0.62,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.82,
+      "draw": 0.34,
+      "loss": 0.7
+    }
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 8,
+    "seed": 42,
+    "accuracy": 0.6333333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.94,
+      "draw": 0.34,
+      "loss": 0.62
+    }
+  },
+  {
+    "variant": "dark_square_immunity",
+    "k": 8,
+    "seed": 123,
+    "accuracy": 0.6,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.88,
+      "draw": 0.3,
+      "loss": 0.62
+    }
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 0,
+    "seed": 42,
+    "accuracy": 0.6933333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.88,
+      "draw": 0.46,
+      "loss": 0.74
+    }
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 0,
+    "seed": 123,
+    "accuracy": 0.6933333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.88,
+      "draw": 0.46,
+      "loss": 0.74
+    }
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 1,
+    "seed": 42,
+    "accuracy": 0.7266666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.82,
+      "draw": 0.52,
+      "loss": 0.84
+    }
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 1,
+    "seed": 123,
+    "accuracy": 0.72,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.5,
+      "loss": 0.8
+    }
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 2,
+    "seed": 42,
+    "accuracy": 0.68,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.92,
+      "draw": 0.34,
+      "loss": 0.78
+    }
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 2,
+    "seed": 123,
+    "accuracy": 0.7333333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.54,
+      "loss": 0.8
+    }
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 4,
+    "seed": 42,
+    "accuracy": 0.7466666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.96,
+      "draw": 0.48,
+      "loss": 0.8
+    }
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 4,
+    "seed": 123,
+    "accuracy": 0.7266666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.9,
+      "draw": 0.48,
+      "loss": 0.8
+    }
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 8,
+    "seed": 42,
+    "accuracy": 0.7666666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.94,
+      "draw": 0.66,
+      "loss": 0.7
+    }
+  },
+  {
+    "variant": "blocked_squares",
+    "k": 8,
+    "seed": 123,
+    "accuracy": 0.7533333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.96,
+      "draw": 0.5,
+      "loss": 0.8
+    }
+  },
+  {
+    "variant": "long_board",
+    "k": 0,
+    "seed": 42,
+    "accuracy": 0.7533333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.92,
+      "draw": 0.6,
+      "loss": 0.74
+    }
+  },
+  {
+    "variant": "long_board",
+    "k": 0,
+    "seed": 123,
+    "accuracy": 0.7533333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.92,
+      "draw": 0.6,
+      "loss": 0.74
+    }
+  },
+  {
+    "variant": "long_board",
+    "k": 1,
+    "seed": 42,
+    "accuracy": 0.7533333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.58,
+      "loss": 0.82
+    }
+  },
+  {
+    "variant": "long_board",
+    "k": 1,
+    "seed": 123,
+    "accuracy": 0.8066666666666666,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.84,
+      "draw": 0.7,
+      "loss": 0.88
+    }
+  },
+  {
+    "variant": "long_board",
+    "k": 2,
+    "seed": 42,
+    "accuracy": 0.7733333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.74,
+      "draw": 0.68,
+      "loss": 0.9
+    }
+  },
+  {
+    "variant": "long_board",
+    "k": 2,
+    "seed": 123,
+    "accuracy": 0.7866666666666666,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.8,
+      "draw": 0.64,
+      "loss": 0.92
+    }
+  },
+  {
+    "variant": "long_board",
+    "k": 4,
+    "seed": 42,
+    "accuracy": 0.8133333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.86,
+      "draw": 0.68,
+      "loss": 0.9
+    }
+  },
+  {
+    "variant": "long_board",
+    "k": 4,
+    "seed": 123,
+    "accuracy": 0.7666666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.82,
+      "draw": 0.58,
+      "loss": 0.9
+    }
+  },
+  {
+    "variant": "long_board",
+    "k": 8,
+    "seed": 42,
+    "accuracy": 0.8333333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.96,
+      "draw": 0.7,
+      "loss": 0.84
+    }
+  },
+  {
+    "variant": "long_board",
+    "k": 8,
+    "seed": 123,
+    "accuracy": 0.8466666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.94,
+      "draw": 0.72,
+      "loss": 0.88
+    }
+  },
+  {
+    "variant": "knight_army",
+    "k": 0,
+    "seed": 42,
+    "accuracy": 0.5866666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.76,
+      "draw": 0.34,
+      "loss": 0.66
+    }
+  },
+  {
+    "variant": "knight_army",
+    "k": 0,
+    "seed": 123,
+    "accuracy": 0.5866666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.76,
+      "draw": 0.34,
+      "loss": 0.66
+    }
+  },
+  {
+    "variant": "knight_army",
+    "k": 1,
+    "seed": 42,
+    "accuracy": 0.5933333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.58,
+      "draw": 0.48,
+      "loss": 0.72
+    }
+  },
+  {
+    "variant": "knight_army",
+    "k": 1,
+    "seed": 123,
+    "accuracy": 0.58,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.6,
+      "draw": 0.44,
+      "loss": 0.7
+    }
+  },
+  {
+    "variant": "knight_army",
+    "k": 2,
+    "seed": 42,
+    "accuracy": 0.5733333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.54,
+      "draw": 0.48,
+      "loss": 0.7
+    }
+  },
+  {
+    "variant": "knight_army",
+    "k": 2,
+    "seed": 123,
+    "accuracy": 0.5666666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.5,
+      "draw": 0.48,
+      "loss": 0.72
+    }
+  },
+  {
+    "variant": "knight_army",
+    "k": 4,
+    "seed": 42,
+    "accuracy": 0.5666666666666667,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.62,
+      "draw": 0.38,
+      "loss": 0.7
+    }
+  },
+  {
+    "variant": "knight_army",
+    "k": 4,
+    "seed": 123,
+    "accuracy": 0.5733333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.62,
+      "draw": 0.42,
+      "loss": 0.68
+    }
+  },
+  {
+    "variant": "knight_army",
+    "k": 8,
+    "seed": 42,
+    "accuracy": 0.58,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.68,
+      "draw": 0.38,
+      "loss": 0.68
+    }
+  },
+  {
+    "variant": "knight_army",
+    "k": 8,
+    "seed": 123,
+    "accuracy": 0.5733333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.72,
+      "draw": 0.4,
+      "loss": 0.6
+    }
+  },
+  {
+    "variant": "antichess",
+    "k": 0,
+    "seed": 42,
+    "accuracy": 0.19333333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.04,
+      "draw": 0.54,
+      "loss": 0.0
+    }
+  },
+  {
+    "variant": "antichess",
+    "k": 0,
+    "seed": 123,
+    "accuracy": 0.19333333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.04,
+      "draw": 0.54,
+      "loss": 0.0
+    }
+  },
+  {
+    "variant": "antichess",
+    "k": 1,
+    "seed": 42,
+    "accuracy": 0.16666666666666666,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.0,
+      "draw": 0.5,
+      "loss": 0.0
+    }
+  },
+  {
+    "variant": "antichess",
+    "k": 1,
+    "seed": 123,
+    "accuracy": 0.15333333333333332,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.0,
+      "draw": 0.46,
+      "loss": 0.0
+    }
+  },
+  {
+    "variant": "antichess",
+    "k": 2,
+    "seed": 42,
+    "accuracy": 0.19333333333333333,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.0,
+      "draw": 0.56,
+      "loss": 0.02
+    }
+  },
+  {
+    "variant": "antichess",
+    "k": 2,
+    "seed": 123,
+    "accuracy": 0.2,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.02,
+      "draw": 0.58,
+      "loss": 0.0
+    }
+  },
+  {
+    "variant": "antichess",
+    "k": 4,
+    "seed": 42,
+    "accuracy": 0.16666666666666666,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.0,
+      "draw": 0.48,
+      "loss": 0.02
+    }
+  },
+  {
+    "variant": "antichess",
+    "k": 4,
+    "seed": 123,
+    "accuracy": 0.14,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.0,
+      "draw": 0.42,
+      "loss": 0.0
+    }
+  },
+  {
+    "variant": "antichess",
+    "k": 8,
+    "seed": 42,
+    "accuracy": 0.17333333333333334,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.0,
+      "draw": 0.5,
+      "loss": 0.02
+    }
+  },
+  {
+    "variant": "antichess",
+    "k": 8,
+    "seed": 123,
+    "accuracy": 0.16666666666666666,
+    "num_samples": 150,
+    "class_accuracies": {
+      "win": 0.0,
+      "draw": 0.48,
+      "loss": 0.02
+    }
+  }
+]

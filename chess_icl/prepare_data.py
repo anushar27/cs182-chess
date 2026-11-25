@@ -1,49 +1,28 @@
-"""Offline game generation and reference scoring interfaces."""
+"""Backward-compatible wrapper for data preparation."""
 
-from collections.abc import Sequence
-from dataclasses import dataclass
 from pathlib import Path
-
-from .data import Game, Position, PositionPair
-
-
-@dataclass(frozen=True)
-class VariantConfig:
-    name: str
-    config_path: Path | None = None
+from typing import Optional
+from scripts.generate_data import generate_variant_dataset, generate_standard_dataset
 
 
-def generate_games(
-    variant: VariantConfig,
-    *,
-    game_count: int,
-    seed: int,
-) -> list[Game]:
-    """Generate complete games using pyffish to apply the variant rules."""
-    # TODO: Load the INI text with pyffish.load_variant_config for custom rules.
-    # TODO: Choose a move policy, check terminal states, and record results.
-    raise NotImplementedError("TODO: Implement game generation.")
+def prepare_all_data(output_dir: str = "data", count_per_variant: int = 2000, seed: int = 42):
+    """Generate all data for standard chess and 13 variants."""
+    from chess_icl.variants import VARIANTS
 
+    out = Path(output_dir)
+    out.mkdir(parents=True, exist_ok=True)
 
-def score_position(
-    position: Position,
-    variant: VariantConfig,
-    *,
-    engine_path: Path,
-    depth: int,
-) -> float:
-    """Get a side-to-move reference score in centipawns from Fairy-Stockfish."""
-    # TODO: Use UCI VariantPath for custom rules and select UCI_Variant by name.
-    # TODO: Pass the required position state, search, and normalize mate scores.
-    raise NotImplementedError("TODO: Implement Fairy-Stockfish reference scoring.")
+    print("Generating standard chess dataset...")
+    generate_standard_dataset(output_dir=out / "standard", count=10000, seed=seed)
 
-
-def build_position_pairs(
-    positions: Sequence[tuple[Position, Position]],
-    variant: VariantConfig,
-    *,
-    engine_path: Path,
-    depth: int,
-) -> list[PositionPair]:
-    """Score matching standard and variant positions in that order."""
-    raise NotImplementedError("TODO: Validate each pair and score both rulesets.")
+    print("Generating variant datasets...")
+    for var_name in VARIANTS:
+        print(f"Generating variant {var_name}...")
+        generate_variant_dataset(
+            variant_name=var_name,
+            output_dir=out / var_name,
+            heuristic_count=count_per_variant,
+            random_count=min(500, count_per_variant // 4),
+            eval_pos_count=500,
+            seed=seed,
+        )

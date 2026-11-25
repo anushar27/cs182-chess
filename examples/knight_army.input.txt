@@ -1,0 +1,7 @@
+<DEMO>
+{"initial":{"current_fen":"nnnnknnn/nnnnnnnn/8/8/8/8/NNNNNNNN/NNNNKNNN w - - 0 1","extras":{},"history_uci":[],"initial_fen":"nnnnknnn/nnnnnnnn/8/8/8/8/NNNNNNNN/NNNNKNNN w - - 0 1"},"moves_uci":["c2d4","a7b5","d2e4","b7c5","g1f3","c7e6","f1d2","c5a6","d4e6","e7g6","d2c4","g6f4","f3d4","g8e7","e6g7"],"white_outcome":"W"}
+</DEMO>
+<QUERY>
+{"current_fen":"nnnnknnn/n2nnn2/4nn2/nn6/5N2/3N1NN1/N1N1NNNN/NN1NKNN1 b - - 13 7","extras":{},"history_uci":["b2d3","h7f6","h1g3","g7e6","c2a3","f7g5","a3c2","g5f7","d2f3","b7a5","d3f4","c7b5","c1d3"],"initial_fen":"nnnnknnn/nnnnnnnn/8/8/8/8/NNNNNNNN/NNNNKNNN w - - 0 1"}
+</QUERY>
+<PREDICT_WDL>

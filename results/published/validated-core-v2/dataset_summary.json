@@ -1,0 +1,281 @@
+{
+  "R": 32,
+  "integrity": {
+    "families": 672,
+    "implementation": "exact pigeonhole Hamming index",
+    "near_distance": 2,
+    "passed": true,
+    "queries": 614,
+    "scope": "all demo states vs roots; cross-fold query roots"
+  },
+  "note": "Fold quotas8 families per rule; hash eligibility70/15/15 is not the final fold ratio.",
+  "policy": "terminal_aware_v1",
+  "rows": [
+    {
+      "continuations": 1536,
+      "counts_wdl": [
+        572,
+        440,
+        524
+      ],
+      "roots": 48,
+      "roots_by_fold": {
+        "test": 16,
+        "train": 16,
+        "validation": 16
+      },
+      "rules_versions": [
+        "python_chess_1.11.2_auto_draws_v1"
+      ],
+      "unresolved": 0,
+      "variant": "standard"
+    },
+    {
+      "continuations": 1536,
+      "counts_wdl": [
+        745,
+        12,
+        779
+      ],
+      "roots": 48,
+      "roots_by_fold": {
+        "test": 16,
+        "train": 16,
+        "validation": 16
+      },
+      "rules_versions": [
+        "python_chess_1.11.2_antichess_auto_draws_v1"
+      ],
+      "unresolved": 0,
+      "variant": "antichess"
+    },
+    {
+      "continuations": 1280,
+      "counts_wdl": [
+        450,
+        467,
+        363
+      ],
+      "roots": 40,
+      "roots_by_fold": {
+        "test": 14,
+        "train": 12,
+        "validation": 14
+      },
+      "rules_versions": [
+        "research_rules_v1"
+      ],
+      "unresolved": 0,
+      "variant": "diagonal_rook"
+    },
+    {
+      "continuations": 1472,
+      "counts_wdl": [
+        566,
+        349,
+        557
+      ],
+      "roots": 46,
+      "roots_by_fold": {
+        "test": 15,
+        "train": 15,
+        "validation": 16
+      },
+      "rules_versions": [
+        "research_rules_v1"
+      ],
+      "unresolved": 0,
+      "variant": "straight_bishop"
+    },
+    {
+      "continuations": 1408,
+      "counts_wdl": [
+        474,
+        436,
+        498
+      ],
+      "roots": 44,
+      "roots_by_fold": {
+        "test": 16,
+        "train": 16,
+        "validation": 12
+      },
+      "rules_versions": [
+        "research_rules_v1"
+      ],
+      "unresolved": 0,
+      "variant": "weakened_queen"
+    },
+    {
+      "continuations": 1440,
+      "counts_wdl": [
+        597,
+        289,
+        554
+      ],
+      "roots": 45,
+      "roots_by_fold": {
+        "test": 16,
+        "train": 14,
+        "validation": 15
+      },
+      "rules_versions": [
+        "research_rules_v1"
+      ],
+      "unresolved": 0,
+      "variant": "extended_pawn"
+    },
+    {
+      "continuations": 1408,
+      "counts_wdl": [
+        453,
+        526,
+        429
+      ],
+      "roots": 44,
+      "roots_by_fold": {
+        "test": 16,
+        "train": 14,
+        "validation": 14
+      },
+      "rules_versions": [
+        "research_rules_v1"
+      ],
+      "unresolved": 0,
+      "variant": "short_knight"
+    },
+    {
+      "continuations": 1184,
+      "counts_wdl": [
+        157,
+        895,
+        132
+      ],
+      "roots": 37,
+      "roots_by_fold": {
+        "test": 12,
+        "train": 11,
+        "validation": 14
+      },
+      "rules_versions": [
+        "research_rules_v1"
+      ],
+      "unresolved": 0,
+      "variant": "mobile_king"
+    },
+    {
+      "continuations": 1408,
+      "counts_wdl": [
+        679,
+        21,
+        708
+      ],
+      "roots": 44,
+      "roots_by_fold": {
+        "test": 14,
+        "train": 16,
+        "validation": 14
+      },
+      "rules_versions": [
+        "research_rules_v2_royal_conversion"
+      ],
+      "unresolved": 0,
+      "variant": "piece_capture"
+    },
+    {
+      "continuations": 1472,
+      "counts_wdl": [
+        575,
+        353,
+        544
+      ],
+      "roots": 46,
+      "roots_by_fold": {
+        "test": 16,
+        "train": 16,
+        "validation": 14
+      },
+      "rules_versions": [
+        "research_rules_v1"
+      ],
+      "unresolved": 0,
+      "variant": "forward_pawn_capture"
+    },
+    {
+      "continuations": 1408,
+      "counts_wdl": [
+        186,
+        1018,
+        204
+      ],
+      "roots": 44,
+      "roots_by_fold": {
+        "test": 14,
+        "train": 14,
+        "validation": 16
+      },
+      "rules_versions": [
+        "research_rules_v1"
+      ],
+      "unresolved": 0,
+      "variant": "dark_square_immunity"
+    },
+    {
+      "continuations": 1344,
+      "counts_wdl": [
+        297,
+        745,
+        302
+      ],
+      "roots": 42,
+      "roots_by_fold": {
+        "test": 16,
+        "train": 14,
+        "validation": 12
+      },
+      "rules_versions": [
+        "research_rules_v1"
+      ],
+      "unresolved": 0,
+      "variant": "blocked_squares"
+    },
+    {
+      "continuations": 1280,
+      "counts_wdl": [
+        465,
+        345,
+        470
+      ],
+      "roots": 40,
+      "roots_by_fold": {
+        "test": 14,
+        "train": 16,
+        "validation": 10
+      },
+      "rules_versions": [
+        "research_rules_v1"
+      ],
+      "unresolved": 0,
+      "variant": "extended_initial_pawn"
+    },
+    {
+      "continuations": 1472,
+      "counts_wdl": [
+        393,
+        672,
+        407
+      ],
+      "roots": 46,
+      "roots_by_fold": {
+        "test": 16,
+        "train": 16,
+        "validation": 14
+      },
+      "rules_versions": [
+        "research_rules_v1"
+      ],
+      "unresolved": 0,
+      "variant": "knight_army"
+    }
+  ]
+}

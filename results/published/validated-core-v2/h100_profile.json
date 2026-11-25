@@ -1,0 +1,66 @@
+{
+  "device_name": "NVIDIA H100 80GB HBM3",
+  "passed": true,
+  "provenance": {
+    "config": {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+    },
+    "config_sha256": "518a817734f96c9e9d09b98716b2bc378935c84ad9813200d89ba03649350c99",
+    "packages": {
+      "chess": "1.11.2",
+      "numpy": "2.2.6",
+      "peft": "0.14.0",
+      "pytest": "8.3.5",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.49.0"
+    },
+    "platform": "Linux-5.15.0-164-generic-x86_64-with-glibc2.35",
+    "python": "3.12.12",
+    "source_sha256": "36ddfe2b44118bb867a0a1d560fa844019cc4a08d228e348ae526d92e377767b",
+    "utc": "2026-11-25T03:01:20.801072+00:00"
+  },
+  "rows": [
+    {
+      "loss": 2.240126132965088,
+      "peak_allocated_bytes": 16511436800,
+      "peak_reserved_bytes": 16894656512,
+      "seconds": 1.5692953206598759,
+      "status": "passed",
+      "tokens": 4096
+    },
+    {
+      "loss": 1.6038568019866943,
+      "peak_allocated_bytes": 18773892096,
+      "peak_reserved_bytes": 19998441472,
+      "seconds": 0.8654015958309174,
+      "status": "passed",
+      "tokens": 8192
+    },
+    {
+      "loss": 1.2036994695663452,
+      "peak_allocated_bytes": 23284734976,
+      "peak_reserved_bytes": 25820135424,
+      "seconds": 2.0746951401233673,
+      "status": "passed",
+      "tokens": 16384
+    },
+    {
+      "loss": 1.0656349658966064,
+      "peak_allocated_bytes": 27795053568,
+      "peak_reserved_bytes": 34202451968,
+      "seconds": 3.707019157707691,
+      "status": "passed",
+      "tokens": 24576
+    },
+    {
+      "loss": 1.1187591552734375,
+      "peak_allocated_bytes": 32307207168,
+      "peak_reserved_bytes": 41651535872,
+      "seconds": 5.693734999746084,
+      "status": "passed",
+      "tokens": 32768
+    }
+  ],
+  "save_reload_deterministic": true
+}

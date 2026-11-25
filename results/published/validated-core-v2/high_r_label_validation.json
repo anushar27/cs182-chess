@@ -1,0 +1,8 @@
+{
+  "family_selection_verified": true,
+  "independent_of_R32_streams": true,
+  "passed": true,
+  "seed_streams_match_corrected_states": true,
+  "unique_continuations": 14336,
+  "unresolved": 0
+}

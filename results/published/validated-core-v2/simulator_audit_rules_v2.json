@@ -1,0 +1,143 @@
+{
+  "passed": true,
+  "provenance": {
+    "config": {
+      "games": 3,
+      "plies": 160,
+      "seed": 42
+    },
+    "config_sha256": "d3172fc69ada4227a209d97b9f93c7d0afd31084cd391202250890be01725ede",
+    "packages": {
+      "chess": "1.11.2",
+      "numpy": "2.2.6",
+      "peft": "0.14.0",
+      "pytest": "8.3.5",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.49.0"
+    },
+    "platform": "Linux-5.15.0-164-generic-x86_64-with-glibc2.35",
+    "python": "3.12.12",
+    "source_sha256": "ff62e13369c60dd5b74493efc616e620bf98f9d6fd6eb1518b23ab4135291cb9",
+    "utc": "2026-11-25T03:38:27.280446+00:00"
+  },
+  "reference_config_sha256": "86ff48c2adbe1126b67c2c4e544602d9a6dac074c106132f045191e35dd1d27b",
+  "reference_version": [
+    0,
+    0,
+    91
+  ],
+  "variants": {
+    "antichess": {
+      "errors": [],
+      "independent_move_comparisons": 252,
+      "independent_terminal_comparisons": 3,
+      "passed": true,
+      "reachable_positions": 252,
+      "reference": "pyffish"
+    },
+    "blocked_squares": {
+      "errors": [],
+      "independent_move_comparisons": 0,
+      "independent_terminal_comparisons": 0,
+      "passed": true,
+      "reachable_positions": 480,
+      "reference": "golden/property tests required; no independent engine"
+    },
+    "dark_square_immunity": {
+      "errors": [],
+      "independent_move_comparisons": 0,
+      "independent_terminal_comparisons": 0,
+      "passed": true,
+      "reachable_positions": 356,
+      "reference": "golden/property tests required; no independent engine"
+    },
+    "diagonal_rook": {
+      "errors": [],
+      "independent_move_comparisons": 400,
+      "independent_terminal_comparisons": 1,
+      "passed": true,
+      "reachable_positions": 400,
+      "reference": "pyffish"
+    },
+    "extended_initial_pawn": {
+      "errors": [],
+      "independent_move_comparisons": 0,
+      "independent_terminal_comparisons": 0,
+      "passed": true,
+      "reachable_positions": 480,
+      "reference": "golden/property tests required; no independent engine"
+    },
+    "extended_pawn": {
+      "errors": [],
+      "independent_move_comparisons": 480,
+      "independent_terminal_comparisons": 0,
+      "passed": true,
+      "reachable_positions": 480,
+      "reference": "pyffish"
+    },
+    "forward_pawn_capture": {
+      "errors": [],
+      "independent_move_comparisons": 480,
+      "independent_terminal_comparisons": 0,
+      "passed": true,
+      "reachable_positions": 480,
+      "reference": "pyffish"
+    },
+    "knight_army": {
+      "errors": [],
+      "independent_move_comparisons": 480,
+      "independent_terminal_comparisons": 0,
+      "passed": true,
+      "reachable_positions": 480,
+      "reference": "pyffish"
+    },
+    "mobile_king": {
+      "errors": [],
+      "independent_move_comparisons": 480,
+      "independent_terminal_comparisons": 0,
+      "passed": true,
+      "reachable_positions": 480,
+      "reference": "pyffish"
+    },
+    "piece_capture": {
+      "errors": [],
+      "independent_move_comparisons": 0,
+      "independent_terminal_comparisons": 0,
+      "passed": true,
+      "reachable_positions": 463,
+      "reference": "golden/property tests required; no independent engine"
+    },
+    "short_knight": {
+      "errors": [],
+      "independent_move_comparisons": 480,
+      "independent_terminal_comparisons": 0,
+      "passed": true,
+      "reachable_positions": 480,
+      "reference": "pyffish"
+    },
+    "standard": {
+      "errors": [],
+      "independent_move_comparisons": 474,
+      "independent_terminal_comparisons": 1,
+      "passed": true,
+      "reachable_positions": 474,
+      "reference": "pyffish"
+    },
+    "straight_bishop": {
+      "errors": [],
+      "independent_move_comparisons": 480,
+      "independent_terminal_comparisons": 0,
+      "passed": true,
+      "reachable_positions": 480,
+      "reference": "pyffish"
+    },
+    "weakened_queen": {
+      "errors": [],
+      "independent_move_comparisons": 480,
+      "independent_terminal_comparisons": 0,
+      "passed": true,
+      "reachable_positions": 480,
+      "reference": "pyffish"
+    }
+  }
+}

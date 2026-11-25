@@ -1,0 +1,2207 @@
+{
+  "checkpoint": "runs/variant_train/all_variants_seed456.pt",
+  "main_results": [
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 0,
+      "seed": 42,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 0,
+      "seed": 123,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 0,
+      "seed": 456,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 1,
+      "seed": 42,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 1,
+      "seed": 123,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 1,
+      "seed": 456,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 2,
+      "seed": 42,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 2,
+      "seed": 123,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 2,
+      "seed": 456,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 4,
+      "seed": 42,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 4,
+      "seed": 123,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 4,
+      "seed": 456,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 8,
+      "seed": 42,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 8,
+      "seed": 123,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 8,
+      "seed": 456,
+      "accuracy": 0.996,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 16,
+      "seed": 42,
+      "accuracy": 0.0,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 16,
+      "seed": 123,
+      "accuracy": 0.0,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "short_knight",
+      "category": "MOVE",
+      "K": 16,
+      "seed": 456,
+      "accuracy": 0.0,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 0,
+      "seed": 42,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 0,
+      "seed": 123,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 0,
+      "seed": 456,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 1,
+      "seed": 42,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 1,
+      "seed": 123,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 1,
+      "seed": 456,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 2,
+      "seed": 42,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 2,
+      "seed": 123,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 2,
+      "seed": 456,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 4,
+      "seed": 42,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 4,
+      "seed": 123,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 4,
+      "seed": 456,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 8,
+      "seed": 42,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 8,
+      "seed": 123,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 8,
+      "seed": 456,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 16,
+      "seed": 42,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 16,
+      "seed": 123,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "mobile_king",
+      "category": "MOVE",
+      "K": 16,
+      "seed": 456,
+      "accuracy": 0.95,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 0,
+      "seed": 42,
+      "accuracy": 0.07,
+      "per_class": {
+        "loss": 0.0,
+        "win": 0.0,
+        "draw": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 0,
+      "seed": 123,
+      "accuracy": 0.07,
+      "per_class": {
+        "loss": 0.0,
+        "win": 0.0,
+        "draw": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 0,
+      "seed": 456,
+      "accuracy": 0.07,
+      "per_class": {
+        "loss": 0.0,
+        "win": 0.0,
+        "draw": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 1,
+      "seed": 42,
+      "accuracy": 0.466,
+      "per_class": {
+        "loss": 0.4069264069264069,
+        "win": 0.5470085470085471,
+        "draw": 0.3142857142857143
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 1,
+      "seed": 123,
+      "accuracy": 0.33,
+      "per_class": {
+        "loss": 0.29004329004329005,
+        "win": 0.3247863247863248,
+        "draw": 0.6285714285714286
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 1,
+      "seed": 456,
+      "accuracy": 0.472,
+      "per_class": {
+        "loss": 0.9913419913419913,
+        "win": 0.029914529914529916,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 2,
+      "seed": 42,
+      "accuracy": 0.468,
+      "per_class": {
+        "loss": 0.9956709956709957,
+        "win": 0.017094017094017096,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 2,
+      "seed": 123,
+      "accuracy": 0.482,
+      "per_class": {
+        "loss": 0.9437229437229437,
+        "win": 0.09829059829059829,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 2,
+      "seed": 456,
+      "accuracy": 0.48,
+      "per_class": {
+        "loss": 0.9956709956709957,
+        "win": 0.042735042735042736,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 4,
+      "seed": 42,
+      "accuracy": 0.478,
+      "per_class": {
+        "loss": 0.961038961038961,
+        "win": 0.07264957264957266,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 4,
+      "seed": 123,
+      "accuracy": 0.468,
+      "per_class": {
+        "loss": 1.0,
+        "win": 0.01282051282051282,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 4,
+      "seed": 456,
+      "accuracy": 0.458,
+      "per_class": {
+        "loss": 0.974025974025974,
+        "win": 0.017094017094017096,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 8,
+      "seed": 42,
+      "accuracy": 0.462,
+      "per_class": {
+        "loss": 1.0,
+        "win": 0.0,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 8,
+      "seed": 123,
+      "accuracy": 0.464,
+      "per_class": {
+        "loss": 0.9913419913419913,
+        "win": 0.01282051282051282,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 8,
+      "seed": 456,
+      "accuracy": 0.484,
+      "per_class": {
+        "loss": 0.9783549783549783,
+        "win": 0.06837606837606838,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 16,
+      "seed": 42,
+      "accuracy": 0.462,
+      "per_class": {
+        "loss": 1.0,
+        "win": 0.0,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 16,
+      "seed": 123,
+      "accuracy": 0.462,
+      "per_class": {
+        "loss": 1.0,
+        "win": 0.0,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "piece_capture",
+      "category": "CAPTURE",
+      "K": 16,
+      "seed": 456,
+      "accuracy": 0.464,
+      "per_class": {
+        "loss": 1.0,
+        "win": 0.004273504273504274,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 0,
+      "seed": 42,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 0,
+      "seed": 123,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 0,
+      "seed": 456,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 1,
+      "seed": 42,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 1,
+      "seed": 123,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 1,
+      "seed": 456,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 2,
+      "seed": 42,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 2,
+      "seed": 123,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 2,
+      "seed": 456,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 4,
+      "seed": 42,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 4,
+      "seed": 123,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 4,
+      "seed": 456,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 8,
+      "seed": 42,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 8,
+      "seed": 123,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 8,
+      "seed": 456,
+      "accuracy": 0.986,
+      "per_class": {
+        "draw": 1.0,
+        "win": 0.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 16,
+      "seed": 42,
+      "accuracy": 0.012,
+      "per_class": {
+        "draw": 0.0,
+        "win": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 16,
+      "seed": 123,
+      "accuracy": 0.012,
+      "per_class": {
+        "draw": 0.0,
+        "win": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "forward_pawn_capture",
+      "category": "CAPTURE",
+      "K": 16,
+      "seed": 456,
+      "accuracy": 0.012,
+      "per_class": {
+        "draw": 0.0,
+        "win": 1.0,
+        "loss": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 0,
+      "seed": 42,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 0,
+      "seed": 123,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 0,
+      "seed": 456,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 1,
+      "seed": 42,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 1,
+      "seed": 123,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 1,
+      "seed": 456,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 2,
+      "seed": 42,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 2,
+      "seed": 123,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 2,
+      "seed": 456,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 4,
+      "seed": 42,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 4,
+      "seed": 123,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 4,
+      "seed": 456,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 8,
+      "seed": 42,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 8,
+      "seed": 123,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 8,
+      "seed": 456,
+      "accuracy": 0.98,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 16,
+      "seed": 42,
+      "accuracy": 0.014,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 16,
+      "seed": 123,
+      "accuracy": 0.014,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "dark_square_immunity",
+      "category": "CAPTURE",
+      "K": 16,
+      "seed": 456,
+      "accuracy": 0.014,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 0,
+      "seed": 42,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 0,
+      "seed": 123,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 0,
+      "seed": 456,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 1,
+      "seed": 42,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 1,
+      "seed": 123,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 1,
+      "seed": 456,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 2,
+      "seed": 42,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 2,
+      "seed": 123,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 2,
+      "seed": 456,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 4,
+      "seed": 42,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 4,
+      "seed": 123,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 4,
+      "seed": 456,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 8,
+      "seed": 42,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 8,
+      "seed": 123,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 8,
+      "seed": 456,
+      "accuracy": 0.99,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 16,
+      "seed": 42,
+      "accuracy": 0.004,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 16,
+      "seed": 123,
+      "accuracy": 0.004,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "blocked_squares",
+      "category": "BOARD",
+      "K": 16,
+      "seed": 456,
+      "accuracy": 0.004,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 0,
+      "seed": 42,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 0,
+      "seed": 123,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 0,
+      "seed": 456,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 1,
+      "seed": 42,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 1,
+      "seed": 123,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 1,
+      "seed": 456,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 2,
+      "seed": 42,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 2,
+      "seed": 123,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 2,
+      "seed": 456,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 4,
+      "seed": 42,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 4,
+      "seed": 123,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 4,
+      "seed": 456,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 8,
+      "seed": 42,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 8,
+      "seed": 123,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 8,
+      "seed": 456,
+      "accuracy": 0.978,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 16,
+      "seed": 42,
+      "accuracy": 0.014,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 16,
+      "seed": 123,
+      "accuracy": 0.014,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "long_board",
+      "category": "BOARD",
+      "K": 16,
+      "seed": 456,
+      "accuracy": 0.014,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 0,
+      "seed": 42,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 0,
+      "seed": 123,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 0,
+      "seed": 456,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 1,
+      "seed": 42,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 1,
+      "seed": 123,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 1,
+      "seed": 456,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 2,
+      "seed": 42,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 2,
+      "seed": 123,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 2,
+      "seed": 456,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 4,
+      "seed": 42,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 4,
+      "seed": 123,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 4,
+      "seed": 456,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 8,
+      "seed": 42,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 8,
+      "seed": 123,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 8,
+      "seed": 456,
+      "accuracy": 0.994,
+      "per_class": {
+        "draw": 1.0,
+        "loss": 0.0,
+        "win": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 16,
+      "seed": 42,
+      "accuracy": 0.004,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 16,
+      "seed": 123,
+      "accuracy": 0.004,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "knight_army",
+      "category": "PIECES",
+      "K": 16,
+      "seed": 456,
+      "accuracy": 0.004,
+      "per_class": {
+        "draw": 0.0,
+        "loss": 0.0,
+        "win": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 0,
+      "seed": 42,
+      "accuracy": 0.074,
+      "per_class": {
+        "win": 0.0,
+        "loss": 0.0,
+        "draw": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 0,
+      "seed": 123,
+      "accuracy": 0.074,
+      "per_class": {
+        "win": 0.0,
+        "loss": 0.0,
+        "draw": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 0,
+      "seed": 456,
+      "accuracy": 0.074,
+      "per_class": {
+        "win": 0.0,
+        "loss": 0.0,
+        "draw": 1.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 1,
+      "seed": 42,
+      "accuracy": 0.368,
+      "per_class": {
+        "win": 0.52,
+        "loss": 0.3041825095057034,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 1,
+      "seed": 123,
+      "accuracy": 0.486,
+      "per_class": {
+        "win": 0.13,
+        "loss": 0.8250950570342205,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 1,
+      "seed": 456,
+      "accuracy": 0.404,
+      "per_class": {
+        "win": 0.355,
+        "loss": 0.49809885931558934,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 2,
+      "seed": 42,
+      "accuracy": 0.394,
+      "per_class": {
+        "win": 0.575,
+        "loss": 0.311787072243346,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 2,
+      "seed": 123,
+      "accuracy": 0.512,
+      "per_class": {
+        "win": 0.025,
+        "loss": 0.9543726235741445,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 2,
+      "seed": 456,
+      "accuracy": 0.51,
+      "per_class": {
+        "win": 0.055,
+        "loss": 0.9277566539923955,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 4,
+      "seed": 42,
+      "accuracy": 0.404,
+      "per_class": {
+        "win": 0.53,
+        "loss": 0.3650190114068441,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 4,
+      "seed": 123,
+      "accuracy": 0.504,
+      "per_class": {
+        "win": 0.05,
+        "loss": 0.9201520912547528,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 4,
+      "seed": 456,
+      "accuracy": 0.492,
+      "per_class": {
+        "win": 0.04,
+        "loss": 0.9049429657794676,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 8,
+      "seed": 42,
+      "accuracy": 0.422,
+      "per_class": {
+        "win": 0.57,
+        "loss": 0.3688212927756654,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 8,
+      "seed": 123,
+      "accuracy": 0.516,
+      "per_class": {
+        "win": 0.05,
+        "loss": 0.9429657794676806,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 8,
+      "seed": 456,
+      "accuracy": 0.522,
+      "per_class": {
+        "win": 0.0,
+        "loss": 0.9923954372623575,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 16,
+      "seed": 42,
+      "accuracy": 0.4,
+      "per_class": {
+        "win": 1.0,
+        "loss": 0.0,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 16,
+      "seed": 123,
+      "accuracy": 0.4,
+      "per_class": {
+        "win": 1.0,
+        "loss": 0.0,
+        "draw": 0.0
+      },
+      "total": 500
+    },
+    {
+      "variant": "antichess",
+      "category": "OBJECTIVE",
+      "K": 16,
+      "seed": 456,
+      "accuracy": 0.4,
+      "per_class": {
+        "win": 1.0,
+        "loss": 0.0,
+        "draw": 0.0
+      },
+      "total": 500
+    }
+  ],
+  "demo_quality_results": {
+    "short_knight": {
+      "4": {
+        "strong": 0.996,
+        "weak": 0.996
+      },
+      "8": {
+        "strong": 0.996,
+        "weak": 0.996
+      }
+    },
+    "mobile_king": {
+      "4": {
+        "strong": 0.95,
+        "weak": 0.95
+      },
+      "8": {
+        "strong": 0.95,
+        "weak": 0.95
+      }
+    },
+    "piece_capture": {
+      "4": {
+        "strong": 0.068,
+        "weak": 0.07
+      },
+      "8": {
+        "strong": 0.478,
+        "weak": 0.07
+      }
+    },
+    "forward_pawn_capture": {
+      "4": {
+        "strong": 0.986,
+        "weak": 0.986
+      },
+      "8": {
+        "strong": 0.986,
+        "weak": 0.986
+      }
+    },
+    "dark_square_immunity": {
+      "4": {
+        "strong": 0.98,
+        "weak": 0.98
+      },
+      "8": {
+        "strong": 0.98,
+        "weak": 0.98
+      }
+    },
+    "blocked_squares": {
+      "4": {
+        "strong": 0.99,
+        "weak": 0.99
+      },
+      "8": {
+        "strong": 0.99,
+        "weak": 0.99
+      }
+    },
+    "long_board": {
+      "4": {
+        "strong": 0.978,
+        "weak": 0.978
+      },
+      "8": {
+        "strong": 0.978,
+        "weak": 0.978
+      }
+    },
+    "knight_army": {
+      "4": {
+        "strong": 0.994,
+        "weak": 0.994
+      },
+      "8": {
+        "strong": 0.994,
+        "weak": 0.994
+      }
+    },
+    "antichess": {
+      "4": {
+        "strong": 0.388,
+        "weak": 0.42
+      },
+      "8": {
+        "strong": 0.526,
+        "weak": 0.508
+      }
+    }
+  },
+  "reevaluation_results": {
+    "antichess_K0": {
+      "flip_accuracy": 0.0,
+      "count": 1,
+      "correct_flips": 0
+    },
+    "antichess_K4": {
+      "flip_accuracy": 1.0,
+      "count": 1,
+      "correct_flips": 1
+    },
+    "antichess_K8": {
+      "flip_accuracy": 1.0,
+      "count": 1,
+      "correct_flips": 1
+    },
+    "antichess_K16": {
+      "flip_accuracy": 1.0,
+      "count": 1,
+      "correct_flips": 1
+    }
+  }
+}

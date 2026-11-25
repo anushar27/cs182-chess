@@ -1,0 +1,44 @@
+{
+  "architecture": {
+    "alpha": 16,
+    "attention": "sdpa",
+    "gradient_checkpointing": true,
+    "last_layers": 4,
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "rank": 8,
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "cpu_threads": 2,
+  "device": "cuda",
+  "eval_interval": 40,
+  "gradient_accumulation": 4,
+  "inference_batch_size": 8,
+  "k_values": [
+    0,
+    1
+  ],
+  "learning_rate": 0.0001,
+  "max_tokens": 32768,
+  "mode": "pilot",
+  "seed": 42,
+  "steps": 200,
+  "strict_episode_coverage": true,
+  "track": "qwen",
+  "train_variants": [
+    "antichess",
+    "diagonal_rook",
+    "straight_bishop",
+    "weakened_queen",
+    "extended_pawn",
+    "short_knight",
+    "mobile_king",
+    "piece_capture",
+    "forward_pawn_capture",
+    "dark_square_immunity",
+    "blocked_squares",
+    "extended_initial_pawn",
+    "knight_army"
+  ],
+  "validation_batch_size": 8,
+  "warmup_steps": 20
+}

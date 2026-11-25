@@ -1,0 +1,9 @@
+{
+  "host": "wnckcaina01",
+  "logical_cpus": 192,
+  "torch": "2.6.0+cu124",
+  "cuda": "12.4",
+  "cuda_available": true,
+  "gpu_count": 8,
+  "inventory_csv": "index, name, memory.total [MiB], memory.used [MiB], driver_version\n0, NVIDIA H100 80GB HBM3, 81559 MiB, 2168 MiB, 580.95.05\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 10294 MiB, 580.95.05\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 8578 MiB, 580.95.05\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 8512 MiB, 580.95.05\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 4581 MiB, 580.95.05\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 8256 MiB, 580.95.05\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 5635 MiB, 580.95.05\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 7604 MiB, 580.95.05\n"
+}

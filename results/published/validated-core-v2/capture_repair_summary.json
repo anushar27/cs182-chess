@@ -1,0 +1,37 @@
+{
+  "dropped_repaired_queries": 0,
+  "excluded_repaired_demos": 0,
+  "provenance": {
+    "config": {
+      "demo_families_per_split": 8,
+      "max_plies": 2560,
+      "near_distance": 2,
+      "policy_id": "terminal_aware_v1",
+      "query_families_per_split": 8,
+      "replicates": 32,
+      "seed": 2026112402,
+      "variants": [
+        "piece_capture"
+      ],
+      "workers": 48
+    },
+    "config_sha256": "fce6d1e3ae7ff6cb101a946b4f72cb21b026730a57d15cf5157e56977d563bf4",
+    "packages": {
+      "chess": "1.11.2",
+      "numpy": "2.2.6",
+      "peft": "0.14.0",
+      "pytest": "8.3.5",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.49.0"
+    },
+    "platform": "Linux-5.15.0-164-generic-x86_64-with-glibc2.35",
+    "python": "3.12.12",
+    "source_sha256": "e8c7590b951e1ba146be0fab341f1fa0c3cf45f42c056b3957a9763c25fb304b",
+    "utc": "2026-11-25T03:33:55.214565+00:00"
+  },
+  "reason": "King capturing enemy rook bypassed conversion because castling target color was omitted",
+  "retained_repaired_queries": 44,
+  "rules_version": "research_rules_v2_royal_conversion",
+  "usable_repaired_demos": 72,
+  "variant": "piece_capture"
+}

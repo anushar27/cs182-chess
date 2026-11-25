@@ -1,0 +1,126 @@
+{
+  "step": 200,
+  "validation": {
+    "argmax_ties": 8,
+    "macro": {
+      "argmax_accuracy": 0.5349587912087913,
+      "brier": 0.14146723394408073,
+      "expected_outcome_brier": 0.6111607077879452,
+      "l1": 0.5161961159387419,
+      "nll": 1.0205275628398487,
+      "target_entropy": 0.7706737978770877
+    },
+    "n": 362,
+    "per_variant": {
+      "antichess": {
+        "argmax_accuracy": 0.46875,
+        "brier": 0.42523782542870153,
+        "expected_outcome_brier": 0.6066343098037015,
+        "l1": 0.9660737223457545,
+        "nll": 0.9785530829988802,
+        "target_entropy": 0.2708092525125022
+      },
+      "blocked_squares": {
+        "argmax_accuracy": 0.2916666666666667,
+        "brier": 0.11947414621169794,
+        "expected_outcome_brier": 0.7295001878783646,
+        "l1": 0.4943421995267272,
+        "nll": 1.2223749283255378,
+        "target_entropy": 1.0099368729182419
+      },
+      "dark_square_immunity": {
+        "argmax_accuracy": 0.84375,
+        "brier": 0.0880959332590796,
+        "expected_outcome_brier": 0.4748146832590796,
+        "l1": 0.3967658845940605,
+        "nll": 0.8478988658079087,
+        "target_entropy": 0.6646534556292857
+      },
+      "diagonal_rook": {
+        "argmax_accuracy": 0.39285714285714285,
+        "brier": 0.1658796440124249,
+        "expected_outcome_brier": 0.6826207154409962,
+        "l1": 0.5645305626094341,
+        "nll": 1.1296392106419488,
+        "target_entropy": 0.8771332147785492
+      },
+      "extended_initial_pawn": {
+        "argmax_accuracy": 0.6,
+        "brier": 0.14095163266148733,
+        "expected_outcome_brier": 0.5727875701614873,
+        "l1": 0.5379081357270479,
+        "nll": 0.9635449009854808,
+        "target_entropy": 0.72818803979149
+      },
+      "extended_pawn": {
+        "argmax_accuracy": 0.6,
+        "brier": 0.07385908126734433,
+        "expected_outcome_brier": 0.5941715812673444,
+        "l1": 0.37022815210123855,
+        "nll": 0.9843253347609594,
+        "target_entropy": 0.8581524660964922
+      },
+      "forward_pawn_capture": {
+        "argmax_accuracy": 0.6785714285714286,
+        "brier": 0.08509742455082402,
+        "expected_outcome_brier": 0.602675549550824,
+        "l1": 0.41774031626326696,
+        "nll": 1.0050285113153585,
+        "target_entropy": 0.8420622191669694
+      },
+      "knight_army": {
+        "argmax_accuracy": 0.5714285714285714,
+        "brier": 0.12195391629962052,
+        "expected_outcome_brier": 0.6112117287996206,
+        "l1": 0.45788197006498066,
+        "nll": 1.0217589634771305,
+        "target_entropy": 0.8057947052875429
+      },
+      "mobile_king": {
+        "argmax_accuracy": 0.6428571428571429,
+        "brier": 0.2182412825189087,
+        "expected_outcome_brier": 0.5043740950189087,
+        "l1": 0.7106501223253352,
+        "nll": 0.8923089966218087,
+        "target_entropy": 0.4929229868578329
+      },
+      "piece_capture": {
+        "argmax_accuracy": 0.6428571428571429,
+        "brier": 0.08856477278301393,
+        "expected_outcome_brier": 0.5698705763544425,
+        "l1": 0.43328684142657686,
+        "nll": 0.9121897352975586,
+        "target_entropy": 0.707539522811447
+      },
+      "short_knight": {
+        "argmax_accuracy": 0.6071428571428571,
+        "brier": 0.08912195992150738,
+        "expected_outcome_brier": 0.6293005313500787,
+        "l1": 0.4276181273162365,
+        "nll": 1.058680419805683,
+        "target_entropy": 0.8953030364116372
+      },
+      "straight_bishop": {
+        "argmax_accuracy": 0.40625,
+        "brier": 0.09509376246665349,
+        "expected_outcome_brier": 0.6531992312166535,
+        "l1": 0.4244366640923545,
+        "nll": 1.072688847648425,
+        "target_entropy": 0.8972516418536631
+      },
+      "weakened_queen": {
+        "argmax_accuracy": 0.20833333333333334,
+        "brier": 0.12750265989178564,
+        "expected_outcome_brier": 0.7139284411417858,
+        "l1": 0.5090868088106314,
+        "nll": 1.1778665192313513,
+        "target_entropy": 0.9690119582864855
+      }
+    },
+    "target_argmax_counts": [
+      106,
+      152,
+      104
+    ]
+  }
+}

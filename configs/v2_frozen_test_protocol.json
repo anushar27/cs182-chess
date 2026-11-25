@@ -1,0 +1,55 @@
+{
+  "id": "terminal_policy_rules_v2_matching_v2_frozen_test",
+  "stage": "exploratory",
+  "created_utc": "2026-11-25T03:07:40.597568+00:00",
+  "policy_id": "terminal_aware_v1",
+  "dataset": "terminal_evaluation_rules_v2.dataset.json",
+  "heldout_variants": [
+    "antichess",
+    "short_knight",
+    "mobile_king",
+    "piece_capture",
+    "forward_pawn_capture",
+    "dark_square_immunity",
+    "blocked_squares",
+    "extended_initial_pawn",
+    "knight_army"
+  ],
+  "model_seeds": [
+    42,
+    123,
+    456
+  ],
+  "k_values": [
+    0,
+    1
+  ],
+  "demo_draws": 5,
+  "conditions": [
+    "zero",
+    "relevant",
+    "mismatched",
+    "corrupt_outcomes",
+    "corrupt_trajectories"
+  ],
+  "checkpoint_selection": "macro validation NLL over four familiar rules and K0/1, evaluation every40 updates,200 updates total",
+  "primary_metric": "macro paired soft NLL(K0)-NLL(relevant K1)",
+  "bootstrap": "model seeds, then five demo draws, then source families, stratify by rule,1000 replicates",
+  "label_noise": "separate independent R256 subset, first2 test family hashes per rule, seed2026112410",
+  "claim_limits": [
+    "pretraining contamination possible",
+    "exploratory dataset/policy selection",
+    "no claim of optimal play",
+    "report controls and negative results",
+    "do not use Stage0 testfold as unseen test"
+  ],
+  "cohorts": [
+    "length_matched_controls",
+    "all_root_prediction"
+  ],
+  "matching": "K1 exhaustive foreign-demo length-ranked search; exact10% full-input demo-token admission; fixed24 extra validation/test demos per rule; no truncation",
+  "rule_revision": {
+    "piece_capture": "research_rules_v2_royal_conversion"
+  },
+  "checkpoint_note": "Four-rule/standard gradients unaffected by the capture repair; all-rule reference retrained on corrected data"
+}
