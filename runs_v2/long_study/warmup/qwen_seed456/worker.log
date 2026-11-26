@@ -1,0 +1,6 @@
+
+[2026-11-25T08:20:02.869863+00:00] LAUNCH gpu=4 resume=False cmd=/usr/local/bin/python3 /data/backups/rganapa/Sebastian/cs182-chess/scripts_v2/train_long_study.py --arch qwen --phase warmup --exposure standard --seed 456 --snapshot-dir data_v2_2026112501/snapshots/snap_v2 --output-dir runs_v2/long_study/warmup/qwen_seed456 --max-steps 1000 --eval-interval 100 --ckpt-interval 250 --batch-size 1 --grad-accum 8 --max-seq-len 32768 --gpu 0 --k-values 0 1 2 4 --milestones 0 200 1000
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 10283.65it/s]
+/data/backups/rganapa/antigravity/.local/lib/python3.12/site-packages/transformers/modeling_utils.py:3204: FutureWarning: `gradient_checkpointing_enable` is deprecated and will be removed in v6. Use `activation_checkpointing_enable` instead.
+  warnings.warn(
+{"status": "completed", "step": 1000, "best_val_nll": 1.0123847196497355}

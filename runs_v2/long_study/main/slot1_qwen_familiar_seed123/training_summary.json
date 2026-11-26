@@ -1,0 +1,108 @@
+{
+  "status": "completed",
+  "signal": null,
+  "arch": "qwen",
+  "phase": "main",
+  "exposure": "familiar",
+  "exposed_variants": [
+    "diagonal_rook",
+    "straight_bishop",
+    "weakened_queen",
+    "extended_pawn"
+  ],
+  "seed": 123,
+  "step": 10000,
+  "max_steps": 10000,
+  "total_tokens_processed": 86402011,
+  "total_episodes_processed": 80000,
+  "unique_roots_seen": 14141,
+  "unique_families_seen": 7108,
+  "best_val_nll": 0.9456826462966139,
+  "best_val_step": 9500,
+  "wall_seconds": 19395.830894060433,
+  "gpu_process_seconds": 19395.830895800143,
+  "cpu_process_seconds": 10573.381747506,
+  "model_load_seconds": 61.426958438009024,
+  "peak_vram_mb": 17068.15625,
+  "hashes": {
+    "snapshot_sha256": "754c5ec01f10fa4f32b89df17910d9da1e73f8c6964886825ce32ebea6e818a2",
+    "model_config_sha256": "29b5a67edc785c8f5d0802230f5920562c68cb31693ae34317c54379fc0114d4",
+    "tokenizer_sha256": "451fa54f28dcdce210b587c3fe2c986bb1cd984a76668860698b1316821787e5",
+    "initial_weights_sha256": "952a8f549c4332e714523ecbffced413de7892613e8b2d833f8f4228bc71f57b"
+  },
+  "final_weights_sha256": "6f3bdea4b6a83136e4af401e8b564d099f022f3ef461e1fa784fc766ff412a0d",
+  "exposure_lineage": [
+    {
+      "arch": "qwen",
+      "phase": "warmup",
+      "exposure": "standard",
+      "exposed_variants": [
+        "standard"
+      ],
+      "seed": 123,
+      "init_weights_dir": null
+    },
+    {
+      "arch": "qwen",
+      "phase": "main",
+      "exposure": "familiar",
+      "exposed_variants": [
+        "diagonal_rook",
+        "straight_bishop",
+        "weakened_queen",
+        "extended_pawn"
+      ],
+      "seed": 123,
+      "init_weights_dir": "runs_v2/long_study/warmup/qwen_seed123/best_weights"
+    }
+  ],
+  "run_config": {
+    "arch": "qwen",
+    "phase": "main",
+    "exposure": "familiar",
+    "exposed_variants": [
+      "diagonal_rook",
+      "straight_bishop",
+      "weakened_queen",
+      "extended_pawn"
+    ],
+    "seed": 123,
+    "snapshot_dir": "data_v2_2026112501/snapshots/snap_v3",
+    "init_weights_dir": null,
+    "max_steps": 10000,
+    "eval_interval": 500,
+    "ckpt_interval": 250,
+    "milestones": [
+      0,
+      200,
+      1000,
+      2500,
+      5000,
+      10000
+    ],
+    "batch_size": 1,
+    "grad_accum": 8,
+    "k_values": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "val_k_values": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "val_roots_per_variant": 32,
+    "max_seq_len": 32768,
+    "notation": "san",
+    "lr": 0.0001,
+    "weight_decay": 0.01,
+    "min_lr_ratio": 0.1,
+    "warmup_steps": null,
+    "max_grad_norm": 1.0
+  },
+  "output_dir": "runs_v2/long_study/main/slot1_qwen_familiar_seed123",
+  "finished_at": "2026-11-26T00:46:30.379931+00:00"
+}

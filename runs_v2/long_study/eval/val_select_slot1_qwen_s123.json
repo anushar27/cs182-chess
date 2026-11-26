@@ -1,0 +1,1386 @@
+{
+  "manifest_version": "1.0",
+  "created_at_utc": "2026-11-26T05:42:29.152515+00:00",
+  "frozen": true,
+  "arch": "qwen",
+  "selection_regime": "familiar",
+  "selection_variants": [
+    "diagonal_rook",
+    "straight_bishop",
+    "weakened_queen",
+    "extended_pawn"
+  ],
+  "k_values": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "num_draws": 5,
+  "controls": [
+    "token_matched_foreign",
+    "corrupted_outcomes",
+    "corrupted_trajectories"
+  ],
+  "exclusions": {
+    "max_seq_len": 32768,
+    "require_zero_dropped_demos": true,
+    "excluded_variants": [],
+    "excluded_root_ids": []
+  },
+  "notation": "san",
+  "data_dir": "data_v2_2026112501/snapshots/snap_v3",
+  "snapshot_sha256": "04cccaeab8d005b2ca8128d75e96c9e41dde55005076e78439cb892f95548870",
+  "selected_checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_10000",
+  "selected_checkpoint_sha256": "a52f0208604f68423953ef868093401e92b96a0b175559abf280293d65eb4ee7",
+  "selected_checkpoint": {
+    "name": "step_10000",
+    "step": 10000,
+    "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_10000",
+    "checkpoint_sha256": "a52f0208604f68423953ef868093401e92b96a0b175559abf280293d65eb4ee7",
+    "macro_nll": 0.9509099759610788,
+    "macro_brier_vector": 0.061326996515329996
+  },
+  "candidates": [
+    {
+      "name": "step_00500",
+      "step": 500,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_00500",
+      "checkpoint_sha256": "cba9e5c20c8e4148fc3a740d66e16386a8bc538a2d6645092cedde39eedf576a",
+      "macro_nll": 1.0151622970551804,
+      "macro_brier_vector": 0.10279503421497906,
+      "macro_brier_categorical": 0.562626140834842,
+      "per_k": {
+        "0": {
+          "macro_nll": 1.0102870917108668,
+          "macro_brier_vector": 0.09890851568820373,
+          "macro_brier_categorical": 0.5592966267063372
+        },
+        "1": {
+          "macro_nll": 1.010556136815828,
+          "macro_brier_vector": 0.09923450616839721,
+          "macro_brier_categorical": 0.5554248793188878
+        },
+        "2": {
+          "macro_nll": 1.0148141815973202,
+          "macro_brier_vector": 0.10198558286918318,
+          "macro_brier_categorical": 0.5586927586638215
+        },
+        "4": {
+          "macro_nll": 1.0249917780967064,
+          "macro_brier_vector": 0.1110515321341321,
+          "macro_brier_categorical": 0.5770902986503212
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9970814639568649,
+          "1": 1.0320941878708387,
+          "2": 1.0392527607558217,
+          "4": 1.052318442910249
+        },
+        "straight_bishop": {
+          "0": 1.0492704735265317,
+          "1": 0.9972885316442841,
+          "2": 0.9962494977185367,
+          "4": 1.0097650670206346
+        },
+        "weakened_queen": {
+          "0": 1.0107750000888913,
+          "1": 1.046270746129139,
+          "2": 1.0546451482329113,
+          "4": 1.0554931648178612
+        },
+        "extended_pawn": {
+          "0": 0.9840214292711795,
+          "1": 0.9665710816190504,
+          "2": 0.9691093196820113,
+          "4": 0.9823904376380806
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_01000",
+      "step": 1000,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_01000",
+      "checkpoint_sha256": "8c6a1eac4914a66c2e88c55f0a7599650ca1e9a12881a46d427e61b9084efe8f",
+      "macro_nll": 1.0570802944071693,
+      "macro_brier_vector": 0.13450509288782042,
+      "macro_brier_categorical": 0.6018864283946995,
+      "per_k": {
+        "0": {
+          "macro_nll": 1.0341667599216386,
+          "macro_brier_vector": 0.11252784030358833,
+          "macro_brier_categorical": 0.5672735004971305
+        },
+        "1": {
+          "macro_nll": 1.0680561798004968,
+          "macro_brier_vector": 0.14370751410987478,
+          "macro_brier_categorical": 0.6164220560837261
+        },
+        "2": {
+          "macro_nll": 1.0500692316248839,
+          "macro_brier_vector": 0.13088020647639284,
+          "macro_brier_categorical": 0.5987249739305638
+        },
+        "4": {
+          "macro_nll": 1.0760290062816578,
+          "macro_brier_vector": 0.15090481066142575,
+          "macro_brier_categorical": 0.6251251830673776
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 1.0964106292282498,
+          "1": 1.0796504853913975,
+          "2": 1.073516839202549,
+          "4": 1.0974628141202338
+        },
+        "straight_bishop": {
+          "0": 0.983007119426351,
+          "1": 1.0720663356702667,
+          "2": 1.0373108539431055,
+          "4": 1.0728076372282993
+        },
+        "weakened_queen": {
+          "0": 1.0964607927358,
+          "1": 1.0776199094322525,
+          "2": 1.07495791416218,
+          "4": 1.089501756680621
+        },
+        "extended_pawn": {
+          "0": 0.9607884982961533,
+          "1": 1.0428879887080704,
+          "2": 1.014491319191701,
+          "4": 1.0443438170974768
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_01500",
+      "step": 1500,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_01500",
+      "checkpoint_sha256": "e7d7e5758650dd057fa8cd4eecc7412057850a7dbf47242921b59f5e10ae5ce9",
+      "macro_nll": 1.1857513618184354,
+      "macro_brier_vector": 0.19814817279496355,
+      "macro_brier_categorical": 0.6870213010452529,
+      "per_k": {
+        "0": {
+          "macro_nll": 1.1835806798417354,
+          "macro_brier_vector": 0.2039434736760888,
+          "macro_brier_categorical": 0.6948225004655375
+        },
+        "1": {
+          "macro_nll": 1.186952393855335,
+          "macro_brier_vector": 0.19373609480594334,
+          "macro_brier_categorical": 0.6836899353942651
+        },
+        "2": {
+          "macro_nll": 1.197163999247302,
+          "macro_brier_vector": 0.20366025386071474,
+          "macro_brier_categorical": 0.690570421464072
+        },
+        "4": {
+          "macro_nll": 1.1753083743293689,
+          "macro_brier_vector": 0.1912528688371074,
+          "macro_brier_categorical": 0.679002346857137
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 1.166645582366154,
+          "1": 1.141974305937736,
+          "2": 1.1623605363299545,
+          "4": 1.1421891168499387
+        },
+        "straight_bishop": {
+          "0": 1.2292044020253354,
+          "1": 1.25988117775528,
+          "2": 1.2565922192306889,
+          "4": 1.2369025672022746
+        },
+        "weakened_queen": {
+          "0": 1.1517447461495671,
+          "1": 1.131543408641733,
+          "2": 1.1473462576270297,
+          "4": 1.1336670940601998
+        },
+        "extended_pawn": {
+          "0": 1.1867279888258853,
+          "1": 1.214410683086591,
+          "2": 1.222356983801535,
+          "4": 1.1884747192050618
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_02000",
+      "step": 2000,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_02000",
+      "checkpoint_sha256": "9d2b197eea28fac4a922cf9d544d66f288afe8af424bd9194e382d86df97ed38",
+      "macro_nll": 1.033279649183942,
+      "macro_brier_vector": 0.11320066999659475,
+      "macro_brier_categorical": 0.5890730307708443,
+      "per_k": {
+        "0": {
+          "macro_nll": 1.031970366406074,
+          "macro_brier_vector": 0.11218053761276922,
+          "macro_brier_categorical": 0.5870650390666707
+        },
+        "1": {
+          "macro_nll": 1.034379631714876,
+          "macro_brier_vector": 0.11396577275772926,
+          "macro_brier_categorical": 0.5904620417706118
+        },
+        "2": {
+          "macro_nll": 1.0337994745107673,
+          "macro_brier_vector": 0.11352482550269004,
+          "macro_brier_categorical": 0.5899984312167474
+        },
+        "4": {
+          "macro_nll": 1.032969124104051,
+          "macro_brier_vector": 0.11313154411319046,
+          "macro_brier_categorical": 0.5887666110293472
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9986748262188252,
+          "1": 1.0120369628102712,
+          "2": 1.0115836934599578,
+          "4": 1.0127157946804488
+        },
+        "straight_bishop": {
+          "0": 1.088860354282886,
+          "1": 1.0778560007767493,
+          "2": 1.0759955955022613,
+          "4": 1.0739217064742
+        },
+        "weakened_queen": {
+          "0": 1.0083605924713421,
+          "1": 1.016359174342024,
+          "2": 1.01544804912809,
+          "4": 1.0182946115243068
+        },
+        "extended_pawn": {
+          "0": 1.031985692651243,
+          "1": 1.0312663889304592,
+          "2": 1.032170559952759,
+          "4": 1.0269443837372485
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_02500",
+      "step": 2500,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_02500",
+      "checkpoint_sha256": "2f3e673abc328532f345bec66a148a80acd5a46bf58e83a6db25ae7ee486efd1",
+      "macro_nll": 0.999232427456735,
+      "macro_brier_vector": 0.09301246929921184,
+      "macro_brier_categorical": 0.5363522731021622,
+      "per_k": {
+        "0": {
+          "macro_nll": 1.0141519082081014,
+          "macro_brier_vector": 0.10196419435947321,
+          "macro_brier_categorical": 0.5453714963728076
+        },
+        "1": {
+          "macro_nll": 0.9953472173242153,
+          "macro_brier_vector": 0.0902906505877728,
+          "macro_brier_categorical": 0.5348169726515664
+        },
+        "2": {
+          "macro_nll": 0.9942399126275925,
+          "macro_brier_vector": 0.0900317169375903,
+          "macro_brier_categorical": 0.5340604876429579
+        },
+        "4": {
+          "macro_nll": 0.9931906716670309,
+          "macro_brier_vector": 0.08976331531201104,
+          "macro_brier_categorical": 0.5311601357413165
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 1.0006061012750065,
+          "1": 0.9980003943498226,
+          "2": 0.9928618694470988,
+          "4": 0.9930481565442077
+        },
+        "straight_bishop": {
+          "0": 1.0432441102684022,
+          "1": 0.9946323788789153,
+          "2": 0.9941039779274305,
+          "4": 0.9929431637173118
+        },
+        "weakened_queen": {
+          "0": 1.0228208326487032,
+          "1": 1.0178146187948118,
+          "2": 1.0120267696251988,
+          "4": 1.01063896806489
+        },
+        "extended_pawn": {
+          "0": 0.989936588640294,
+          "1": 0.9709414772733115,
+          "2": 0.9779670335106421,
+          "4": 0.9761323983417142
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_03000",
+      "step": 3000,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_03000",
+      "checkpoint_sha256": "3e3603bbb6e9098f0d0b199a6ef622f5da227efe2c65117ef9926237509922e0",
+      "macro_nll": 1.00505007257614,
+      "macro_brier_vector": 0.0975451806185163,
+      "macro_brier_categorical": 0.5647073400624806,
+      "per_k": {
+        "0": {
+          "macro_nll": 1.0193248851416294,
+          "macro_brier_vector": 0.1076414519672768,
+          "macro_brier_categorical": 0.57745869673804
+        },
+        "1": {
+          "macro_nll": 1.0039065255297102,
+          "macro_brier_vector": 0.09587095823108993,
+          "macro_brier_categorical": 0.5644926780343744
+        },
+        "2": {
+          "macro_nll": 1.0001278389212385,
+          "macro_brier_vector": 0.09395912079443458,
+          "macro_brier_categorical": 0.5603400381197199
+        },
+        "4": {
+          "macro_nll": 0.9968410407119819,
+          "macro_brier_vector": 0.09270919148126391,
+          "macro_brier_categorical": 0.5565379473577882
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 1.0343888358157078,
+          "1": 0.9989584975844054,
+          "2": 0.9992540940739444,
+          "4": 1.0012933323000923
+        },
+        "straight_bishop": {
+          "0": 1.018477399037179,
+          "1": 1.0053441461589907,
+          "2": 0.9935538468837622,
+          "4": 0.9882491010104053
+        },
+        "weakened_queen": {
+          "0": 1.0363253147558953,
+          "1": 1.0087404304617964,
+          "2": 1.0076721581927488,
+          "4": 1.0076228535381053
+        },
+        "extended_pawn": {
+          "0": 0.9881079909577358,
+          "1": 1.002583027913648,
+          "2": 1.0000312565344986,
+          "4": 0.9901988759993243
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_03500",
+      "step": 3500,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_03500",
+      "checkpoint_sha256": "1c775462883605e199aa545ba00d03fac565aa0fff398ca04e1502a2fd426eda",
+      "macro_nll": 1.007260751625322,
+      "macro_brier_vector": 0.09897419111941955,
+      "macro_brier_categorical": 0.5604546013690586,
+      "per_k": {
+        "0": {
+          "macro_nll": 1.0042545579729556,
+          "macro_brier_vector": 0.09580406619631535,
+          "macro_brier_categorical": 0.5543214149272442
+        },
+        "1": {
+          "macro_nll": 1.0112053857651142,
+          "macro_brier_vector": 0.10177612380495249,
+          "macro_brier_categorical": 0.5648108924114195
+        },
+        "2": {
+          "macro_nll": 1.0083820458540025,
+          "macro_brier_vector": 0.09974302302291987,
+          "macro_brier_categorical": 0.5627450246202566
+        },
+        "4": {
+          "macro_nll": 1.0052010169092158,
+          "macro_brier_vector": 0.09857355145349045,
+          "macro_brier_categorical": 0.5599410735173139
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9974115987516177,
+          "1": 1.0010176211866504,
+          "2": 1.0000616397843942,
+          "4": 1.0026114650224456
+        },
+        "straight_bishop": {
+          "0": 1.0285968123324436,
+          "1": 1.0162841604749975,
+          "2": 1.0028114932644303,
+          "4": 0.9955313522796025
+        },
+        "weakened_queen": {
+          "0": 1.0108675856238798,
+          "1": 1.015948551703946,
+          "2": 1.0133913155697492,
+          "4": 1.0130235891916355
+        },
+        "extended_pawn": {
+          "0": 0.9801422351838815,
+          "1": 1.0115712096948626,
+          "2": 1.0172637347974356,
+          "4": 1.0096376611431799
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_04000",
+      "step": 4000,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_04000",
+      "checkpoint_sha256": "1cc8bcc4dc198510a38a0884fc13e6a34f57f738da73cd0a62dae0f636aae417",
+      "macro_nll": 0.9980017813230799,
+      "macro_brier_vector": 0.09263602379240082,
+      "macro_brier_categorical": 0.5325979963964217,
+      "per_k": {
+        "0": {
+          "macro_nll": 1.0037202063153468,
+          "macro_brier_vector": 0.09526084515544343,
+          "macro_brier_categorical": 0.5389710308158484
+        },
+        "1": {
+          "macro_nll": 1.0010889040813726,
+          "macro_brier_vector": 0.09444684652821604,
+          "macro_brier_categorical": 0.5342055926591043
+        },
+        "2": {
+          "macro_nll": 0.9957400675358208,
+          "macro_brier_vector": 0.09157323576705578,
+          "macro_brier_categorical": 0.5305340328951897
+        },
+        "4": {
+          "macro_nll": 0.9914579473597794,
+          "macro_brier_vector": 0.08926316771888802,
+          "macro_brier_categorical": 0.5266813292155443
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 1.0232697204504706,
+          "1": 1.010497475138937,
+          "2": 1.0039843887932831,
+          "4": 1.0009517029458308
+        },
+        "straight_bishop": {
+          "0": 0.9956637172934932,
+          "1": 0.9919878157365496,
+          "2": 0.9853464696224581,
+          "4": 0.9805817752924788
+        },
+        "weakened_queen": {
+          "0": 1.031639116404144,
+          "1": 1.0296607169854577,
+          "2": 1.020339597414891,
+          "4": 1.0147475515539417
+        },
+        "extended_pawn": {
+          "0": 0.9643082711132793,
+          "1": 0.9722096084645467,
+          "2": 0.973289814312651,
+          "4": 0.9695507596468668
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_04500",
+      "step": 4500,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_04500",
+      "checkpoint_sha256": "10bc5c72b50c3085d4be8b6bd9ed0a3463b1c4e0aab50550dd86eac7a7285833",
+      "macro_nll": 1.000017715027667,
+      "macro_brier_vector": 0.09418657378981889,
+      "macro_brier_categorical": 0.533881722169863,
+      "per_k": {
+        "0": {
+          "macro_nll": 1.0057092351139638,
+          "macro_brier_vector": 0.09658949795761154,
+          "macro_brier_categorical": 0.540969587358001
+        },
+        "1": {
+          "macro_nll": 1.000690342011799,
+          "macro_brier_vector": 0.09429483287445742,
+          "macro_brier_categorical": 0.5344939570532279
+        },
+        "2": {
+          "macro_nll": 0.9999951392006607,
+          "macro_brier_vector": 0.09479407105003178,
+          "macro_brier_categorical": 0.5325731628583688
+        },
+        "4": {
+          "macro_nll": 0.9936761437842444,
+          "macro_brier_vector": 0.0910678932771748,
+          "macro_brier_categorical": 0.527490181409854
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 1.0130510864667694,
+          "1": 1.0031431662146633,
+          "2": 1.0038082151251149,
+          "4": 1.001335851371408
+        },
+        "straight_bishop": {
+          "0": 1.0090258895482234,
+          "1": 0.9941530397167538,
+          "2": 0.9902797521025715,
+          "4": 0.9831753067360811
+        },
+        "weakened_queen": {
+          "0": 1.027956840802619,
+          "1": 1.0280279974734179,
+          "2": 1.026613942420899,
+          "4": 1.0193010718417326
+        },
+        "extended_pawn": {
+          "0": 0.9728031236382435,
+          "1": 0.9774371646423607,
+          "2": 0.9792786471540572,
+          "4": 0.9708923451877564
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_05000",
+      "step": 5000,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_05000",
+      "checkpoint_sha256": "6bcc74435d94316c191d35f1007b31f6a82c13d23e7613fccb976f5c1012b06a",
+      "macro_nll": 0.9837368943867201,
+      "macro_brier_vector": 0.08221875563284815,
+      "macro_brier_categorical": 0.5188754934366525,
+      "per_k": {
+        "0": {
+          "macro_nll": 0.9876096299722471,
+          "macro_brier_vector": 0.08451158080897232,
+          "macro_brier_categorical": 0.5234868407713402
+        },
+        "1": {
+          "macro_nll": 0.9843967992065196,
+          "macro_brier_vector": 0.08218589093599644,
+          "macro_brier_categorical": 0.5161857970245366
+        },
+        "2": {
+          "macro_nll": 0.9826413061086561,
+          "macro_brier_vector": 0.0816065366434929,
+          "macro_brier_categorical": 0.5182511236195885
+        },
+        "4": {
+          "macro_nll": 0.9802998422594579,
+          "macro_brier_vector": 0.08057101414293093,
+          "macro_brier_categorical": 0.5175782123311446
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9769487803489539,
+          "1": 0.9723608213666495,
+          "2": 0.9721598483370583,
+          "4": 0.9743731058119534
+        },
+        "straight_bishop": {
+          "0": 1.005829173419981,
+          "1": 0.9811492029968967,
+          "2": 0.9732181526993507,
+          "4": 0.9669464109146759
+        },
+        "weakened_queen": {
+          "0": 0.9900827247067356,
+          "1": 0.9943201036265336,
+          "2": 0.989833554141546,
+          "4": 0.9897463911064722
+        },
+        "extended_pawn": {
+          "0": 0.9775778414133179,
+          "1": 0.9897570688359986,
+          "2": 0.9953536692566695,
+          "4": 0.9901334612047302
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_05500",
+      "step": 5500,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_05500",
+      "checkpoint_sha256": "11a24e287e8ef1dce8d8d40e775801da7820476ae8ee4e422889c8d2d3a3fce4",
+      "macro_nll": 0.9846461697976717,
+      "macro_brier_vector": 0.0839936353493952,
+      "macro_brier_categorical": 0.5275649272814767,
+      "per_k": {
+        "0": {
+          "macro_nll": 0.9940007559680231,
+          "macro_brier_vector": 0.08872605369256727,
+          "macro_brier_categorical": 0.5408702037485443
+        },
+        "1": {
+          "macro_nll": 0.9815593279257624,
+          "macro_brier_vector": 0.08164967359147873,
+          "macro_brier_categorical": 0.5211069593145672
+        },
+        "2": {
+          "macro_nll": 0.9823909686453621,
+          "macro_brier_vector": 0.08312749047975691,
+          "macro_brier_categorical": 0.5241711968088825
+        },
+        "4": {
+          "macro_nll": 0.9806336266515392,
+          "macro_brier_vector": 0.0824713236337779,
+          "macro_brier_categorical": 0.524111349253913
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9729825788347489,
+          "1": 0.9716210804573442,
+          "2": 0.9730318804998007,
+          "4": 0.9743857722721159
+        },
+        "straight_bishop": {
+          "0": 1.02680015832729,
+          "1": 0.9738146237936366,
+          "2": 0.975442069948053,
+          "4": 0.9757978152812836
+        },
+        "weakened_queen": {
+          "0": 0.984342974559289,
+          "1": 0.9987366147628004,
+          "2": 0.9949941680636557,
+          "4": 0.9909082364050038
+        },
+        "extended_pawn": {
+          "0": 0.991877312150764,
+          "1": 0.9820649926892685,
+          "2": 0.9860957560699393,
+          "4": 0.9814426826477535
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_06000",
+      "step": 6000,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_06000",
+      "checkpoint_sha256": "55663c4683fc432c080ad2b8cc69e1c607a50d369545413ea680a21a819bfa0c",
+      "macro_nll": 0.9738217340745767,
+      "macro_brier_vector": 0.07645007000216206,
+      "macro_brier_categorical": 0.5094363276216908,
+      "per_k": {
+        "0": {
+          "macro_nll": 0.9802550133156529,
+          "macro_brier_vector": 0.08008858662538565,
+          "macro_brier_categorical": 0.5180404832432455
+        },
+        "1": {
+          "macro_nll": 0.9733504101143771,
+          "macro_brier_vector": 0.07533341126598518,
+          "macro_brier_categorical": 0.5056472231875994
+        },
+        "2": {
+          "macro_nll": 0.9706072801358452,
+          "macro_brier_vector": 0.0745397300353953,
+          "macro_brier_categorical": 0.5052484102023698
+        },
+        "4": {
+          "macro_nll": 0.971074232732432,
+          "macro_brier_vector": 0.07583855208188206,
+          "macro_brier_categorical": 0.5088091938535485
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9874471334071352,
+          "1": 0.9788605532531216,
+          "2": 0.9719613986012123,
+          "4": 0.9736506077125691
+        },
+        "straight_bishop": {
+          "0": 0.9804635833096971,
+          "1": 0.9555857924050992,
+          "2": 0.9575714789434535,
+          "4": 0.9623330468744135
+        },
+        "weakened_queen": {
+          "0": 0.9926915503330462,
+          "1": 0.9985293248718881,
+          "2": 0.9896407284755404,
+          "4": 0.9849910877792255
+        },
+        "extended_pawn": {
+          "0": 0.9604177862127327,
+          "1": 0.9604259699273997,
+          "2": 0.9632555145231744,
+          "4": 0.9633221885635196
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_06500",
+      "step": 6500,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_06500",
+      "checkpoint_sha256": "c925d62ff1ad4fa0009e5300fe8a6b413ef7883860f96f869d90b526d1e3a248",
+      "macro_nll": 0.9585687435382539,
+      "macro_brier_vector": 0.06582709854191887,
+      "macro_brier_categorical": 0.47789447462643464,
+      "per_k": {
+        "0": {
+          "macro_nll": 0.9639024351388092,
+          "macro_brier_vector": 0.06884027842227257,
+          "macro_brier_categorical": 0.4845349727688936
+        },
+        "1": {
+          "macro_nll": 0.959658880540428,
+          "macro_brier_vector": 0.06608675425437625,
+          "macro_brier_categorical": 0.47676933033583874
+        },
+        "2": {
+          "macro_nll": 0.9562570016129021,
+          "macro_brier_vector": 0.06437198365424396,
+          "macro_brier_categorical": 0.47437672774196155
+        },
+        "4": {
+          "macro_nll": 0.9544566568608763,
+          "macro_brier_vector": 0.06400937783678269,
+          "macro_brier_categorical": 0.47589686765904476
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9727258568281991,
+          "1": 0.9628578957865882,
+          "2": 0.9604116916176824,
+          "4": 0.9613847714811753
+        },
+        "straight_bishop": {
+          "0": 0.9599728060329422,
+          "1": 0.9407201273437173,
+          "2": 0.9378539056378568,
+          "4": 0.9388030827229727
+        },
+        "weakened_queen": {
+          "0": 0.9746459446115041,
+          "1": 0.9777159668633846,
+          "2": 0.9714294457070234,
+          "4": 0.9658853839518142
+        },
+        "extended_pawn": {
+          "0": 0.9482651330825915,
+          "1": 0.9573415321680221,
+          "2": 0.9553329634890457,
+          "4": 0.9517533892875428
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_07000",
+      "step": 7000,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_07000",
+      "checkpoint_sha256": "cdd9c36399c6adb3ed7342dc5660a617014a7c2a9124489f7037f7dd4cbf1e12",
+      "macro_nll": 0.9571099157354559,
+      "macro_brier_vector": 0.06511380261566393,
+      "macro_brier_categorical": 0.4719651539033366,
+      "per_k": {
+        "0": {
+          "macro_nll": 0.9621952458919171,
+          "macro_brier_vector": 0.06792670515844036,
+          "macro_brier_categorical": 0.4769827975950831
+        },
+        "1": {
+          "macro_nll": 0.958557780134322,
+          "macro_brier_vector": 0.06558118393507227,
+          "macro_brier_categorical": 0.4713567636637096
+        },
+        "2": {
+          "macro_nll": 0.9546160389404286,
+          "macro_brier_vector": 0.06366602508514993,
+          "macro_brier_categorical": 0.4687096454771171
+        },
+        "4": {
+          "macro_nll": 0.9530705979751557,
+          "macro_brier_vector": 0.06328129628399318,
+          "macro_brier_categorical": 0.4708114088774366
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9725705240740786,
+          "1": 0.9663711737476761,
+          "2": 0.9621075357748315,
+          "4": 0.9634293822843524
+        },
+        "straight_bishop": {
+          "0": 0.9588484186114351,
+          "1": 0.9358354650624392,
+          "2": 0.9318279254517332,
+          "4": 0.9312633964046899
+        },
+        "weakened_queen": {
+          "0": 0.9764843176651785,
+          "1": 0.9824994478211875,
+          "2": 0.9719784777377467,
+          "4": 0.9660714828432477
+        },
+        "extended_pawn": {
+          "0": 0.9408777232169759,
+          "1": 0.9495250339059856,
+          "2": 0.9525502167974028,
+          "4": 0.9515181303683332
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_07500",
+      "step": 7500,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_07500",
+      "checkpoint_sha256": "597bc595264348bd47ac0d86d6ad4161a1482e760a056fae15c776babab34f79",
+      "macro_nll": 0.9639594609394309,
+      "macro_brier_vector": 0.0702223763288165,
+      "macro_brier_categorical": 0.47148611585451317,
+      "per_k": {
+        "0": {
+          "macro_nll": 0.9715790171290188,
+          "macro_brier_vector": 0.07513250459009681,
+          "macro_brier_categorical": 0.4772902141686824
+        },
+        "1": {
+          "macro_nll": 0.9643426331357958,
+          "macro_brier_vector": 0.07014137880624753,
+          "macro_brier_categorical": 0.4700353383004732
+        },
+        "2": {
+          "macro_nll": 0.9606495754289366,
+          "macro_brier_vector": 0.06796989907479589,
+          "macro_brier_categorical": 0.46759488902051943
+        },
+        "4": {
+          "macro_nll": 0.9592666180639721,
+          "macro_brier_vector": 0.06764572284412582,
+          "macro_brier_categorical": 0.47102402192837756
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9776822782842784,
+          "1": 0.9698217574112361,
+          "2": 0.9694409619754623,
+          "4": 0.9732150027777301
+        },
+        "straight_bishop": {
+          "0": 0.9748811043784212,
+          "1": 0.9434650619104115,
+          "2": 0.93606462613436,
+          "4": 0.9342107463474815
+        },
+        "weakened_queen": {
+          "0": 0.9679253900629465,
+          "1": 0.972416882229821,
+          "2": 0.9665815351461018,
+          "4": 0.9614956774898284
+        },
+        "extended_pawn": {
+          "0": 0.9658272957904291,
+          "1": 0.9716668309917146,
+          "2": 0.970511178459822,
+          "4": 0.9681450456408484
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_08000",
+      "step": 8000,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_08000",
+      "checkpoint_sha256": "268f7d61d408367f071236e00830821f47935eab652df542de324e5c19074e4f",
+      "macro_nll": 0.9543222716156314,
+      "macro_brier_vector": 0.06356828753164621,
+      "macro_brier_categorical": 0.46575361820615024,
+      "per_k": {
+        "0": {
+          "macro_nll": 0.958287218940359,
+          "macro_brier_vector": 0.0656478464381135,
+          "macro_brier_categorical": 0.47332480293456286
+        },
+        "1": {
+          "macro_nll": 0.9556991330123759,
+          "macro_brier_vector": 0.06400611428201584,
+          "macro_brier_categorical": 0.46426458704354656
+        },
+        "2": {
+          "macro_nll": 0.952666929072907,
+          "macro_brier_vector": 0.06262603900412811,
+          "macro_brier_categorical": 0.46176267530650367
+        },
+        "4": {
+          "macro_nll": 0.9506358054368842,
+          "macro_brier_vector": 0.061993150402327384,
+          "macro_brier_categorical": 0.4636624075399881
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.966883507952635,
+          "1": 0.9658161637601655,
+          "2": 0.9625026078291444,
+          "4": 0.9628031144085091
+        },
+        "straight_bishop": {
+          "0": 0.9587636593432073,
+          "1": 0.931434520216305,
+          "2": 0.9304404201142763,
+          "4": 0.9319291553010697
+        },
+        "weakened_queen": {
+          "0": 0.966794054009017,
+          "1": 0.9876743978216089,
+          "2": 0.9799016013483285,
+          "4": 0.970421761620314
+        },
+        "extended_pawn": {
+          "0": 0.9407076544565766,
+          "1": 0.937871450251424,
+          "2": 0.9378230869998786,
+          "4": 0.9373891904176441
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_08500",
+      "step": 8500,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_08500",
+      "checkpoint_sha256": "eecf76fb5dbd24b7b99d92192495424b070e7a97011826c947fde9436e23710f",
+      "macro_nll": 0.9525433611877413,
+      "macro_brier_vector": 0.062469757647713495,
+      "macro_brier_categorical": 0.4633802170100052,
+      "per_k": {
+        "0": {
+          "macro_nll": 0.9594398228371618,
+          "macro_brier_vector": 0.06657276370124263,
+          "macro_brier_categorical": 0.47332900300580383
+        },
+        "1": {
+          "macro_nll": 0.9532750313265558,
+          "macro_brier_vector": 0.06262911888891985,
+          "macro_brier_categorical": 0.46085892169088255
+        },
+        "2": {
+          "macro_nll": 0.9493724148695148,
+          "macro_brier_vector": 0.06045792993837525,
+          "macro_brier_categorical": 0.4587028911567772
+        },
+        "4": {
+          "macro_nll": 0.9480861757177328,
+          "macro_brier_vector": 0.06021921806231627,
+          "macro_brier_categorical": 0.4606300521865572
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.975048233717164,
+          "1": 0.9637531868081262,
+          "2": 0.9594891066735856,
+          "4": 0.9621601891377631
+        },
+        "straight_bishop": {
+          "0": 0.9517746547501162,
+          "1": 0.9284189831348728,
+          "2": 0.9262271954900452,
+          "4": 0.9264007789458862
+        },
+        "weakened_queen": {
+          "0": 0.9632402258041115,
+          "1": 0.971976509403434,
+          "2": 0.9622432045157268,
+          "4": 0.95556650705334
+        },
+        "extended_pawn": {
+          "0": 0.9476961770772551,
+          "1": 0.9489514459597902,
+          "2": 0.9495301527987017,
+          "4": 0.948217227733942
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_09000",
+      "step": 9000,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_09000",
+      "checkpoint_sha256": "9703e6a017c2f5378195cda16d004f11145b97b95941620f633ee1cc32f791e6",
+      "macro_nll": 0.9523052784957053,
+      "macro_brier_vector": 0.06252665319071037,
+      "macro_brier_categorical": 0.4650219839971686,
+      "per_k": {
+        "0": {
+          "macro_nll": 0.9588705898967945,
+          "macro_brier_vector": 0.06625851294331789,
+          "macro_brier_categorical": 0.47645546794126536
+        },
+        "1": {
+          "macro_nll": 0.953415470235097,
+          "macro_brier_vector": 0.06275444501918374,
+          "macro_brier_categorical": 0.4637530980362106
+        },
+        "2": {
+          "macro_nll": 0.949469728438888,
+          "macro_brier_vector": 0.06088085723998322,
+          "macro_brier_categorical": 0.45984482306923785
+        },
+        "4": {
+          "macro_nll": 0.9474653254120418,
+          "macro_brier_vector": 0.06021279756035662,
+          "macro_brier_categorical": 0.46003454694196066
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9738087042502132,
+          "1": 0.9638630675296318,
+          "2": 0.958830113403464,
+          "4": 0.9599503996793725
+        },
+        "straight_bishop": {
+          "0": 0.952215918270866,
+          "1": 0.9265617097121102,
+          "2": 0.9259135983814207,
+          "4": 0.9258128968695839
+        },
+        "weakened_queen": {
+          "0": 0.9685279941695418,
+          "1": 0.9794193577444253,
+          "2": 0.9713377737345964,
+          "4": 0.9642048346782333
+        },
+        "extended_pawn": {
+          "0": 0.9409297428965572,
+          "1": 0.9438177459542209,
+          "2": 0.9417974282360706,
+          "4": 0.9398931704209773
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_09500",
+      "step": 9500,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_09500",
+      "checkpoint_sha256": "f6f8cef9e61e93574a204cefc897021a7848e26d967653af1b92d6e298d8086d",
+      "macro_nll": 0.9514169767699414,
+      "macro_brier_vector": 0.06238547494193915,
+      "macro_brier_categorical": 0.46126814914824793,
+      "per_k": {
+        "0": {
+          "macro_nll": 0.9575935215357927,
+          "macro_brier_vector": 0.06574779187828161,
+          "macro_brier_categorical": 0.4709000631136676
+        },
+        "1": {
+          "macro_nll": 0.9515397046480384,
+          "macro_brier_vector": 0.0621360777927399,
+          "macro_brier_categorical": 0.4586192549006316
+        },
+        "2": {
+          "macro_nll": 0.9481292607304622,
+          "macro_brier_vector": 0.06043292236733852,
+          "macro_brier_categorical": 0.45636016179667277
+        },
+        "4": {
+          "macro_nll": 0.9484054201654726,
+          "macro_brier_vector": 0.06122510772939657,
+          "macro_brier_categorical": 0.4591931167820198
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9744204084971185,
+          "1": 0.9601394804702705,
+          "2": 0.9565127986160555,
+          "4": 0.959436857265061
+        },
+        "straight_bishop": {
+          "0": 0.9515988164918097,
+          "1": 0.9304667924286012,
+          "2": 0.9299920943045672,
+          "4": 0.9327868223363008
+        },
+        "weakened_queen": {
+          "0": 0.9642432787775701,
+          "1": 0.9714202725264718,
+          "2": 0.9629031711621956,
+          "4": 0.9565446219544984
+        },
+        "extended_pawn": {
+          "0": 0.9401115823766726,
+          "1": 0.9441322731668101,
+          "2": 0.9431089788390303,
+          "4": 0.9448533791060305
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    },
+    {
+      "name": "step_10000",
+      "step": 10000,
+      "checkpoint_path": "runs_v2/long_study/main/slot1_qwen_familiar_seed123/candidates/step_10000",
+      "checkpoint_sha256": "a52f0208604f68423953ef868093401e92b96a0b175559abf280293d65eb4ee7",
+      "macro_nll": 0.9509099759610788,
+      "macro_brier_vector": 0.061326996515329996,
+      "macro_brier_categorical": 0.46439566766001733,
+      "per_k": {
+        "0": {
+          "macro_nll": 0.9558180490773103,
+          "macro_brier_vector": 0.06389200996619292,
+          "macro_brier_categorical": 0.47323662996556587
+        },
+        "1": {
+          "macro_nll": 0.9516729270309312,
+          "macro_brier_vector": 0.06157987471321487,
+          "macro_brier_categorical": 0.46281950961295265
+        },
+        "2": {
+          "macro_nll": 0.9488766129518564,
+          "macro_brier_vector": 0.060171185168952514,
+          "macro_brier_categorical": 0.46005927863836316
+        },
+        "4": {
+          "macro_nll": 0.9472723147842173,
+          "macro_brier_vector": 0.05966491621295969,
+          "macro_brier_categorical": 0.46146725242318776
+        }
+      },
+      "per_variant_nll": {
+        "diagonal_rook": {
+          "0": 0.9692588847506326,
+          "1": 0.9608799895364606,
+          "2": 0.959292417727313,
+          "4": 0.9617130667832713
+        },
+        "straight_bishop": {
+          "0": 0.9510512113224867,
+          "1": 0.9256264303008083,
+          "2": 0.9231325761199077,
+          "4": 0.9222936529921129
+        },
+        "weakened_queen": {
+          "0": 0.9571674988561512,
+          "1": 0.9661951239353862,
+          "2": 0.9604279938980382,
+          "4": 0.954743850370809
+        },
+        "extended_pawn": {
+          "0": 0.9457946013799704,
+          "1": 0.9539901643510695,
+          "2": 0.9526534640621664,
+          "4": 0.9503386889906761
+        }
+      },
+      "determinism_check": {
+        "checked_samples": 2,
+        "max_abs_diff": 0.0,
+        "tol": 1e-05,
+        "passed": true
+      },
+      "cache_stats": {
+        "hits": 71,
+        "misses": 8057
+      }
+    }
+  ]
+}

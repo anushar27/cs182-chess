@@ -1,0 +1,108 @@
+{
+  "status": "completed",
+  "signal": null,
+  "arch": "scratch",
+  "phase": "main",
+  "exposure": "familiar",
+  "exposed_variants": [
+    "diagonal_rook",
+    "straight_bishop",
+    "weakened_queen",
+    "extended_pawn"
+  ],
+  "seed": 42,
+  "step": 10000,
+  "max_steps": 10000,
+  "total_tokens_processed": 86082946,
+  "total_episodes_processed": 80000,
+  "unique_roots_seen": 14139,
+  "unique_families_seen": 7108,
+  "best_val_nll": 1.0114903183959612,
+  "best_val_step": 8500,
+  "wall_seconds": 15012.954872563481,
+  "gpu_process_seconds": 15012.954876422882,
+  "cpu_process_seconds": 6285.0882152760005,
+  "model_load_seconds": 0.8856797404587269,
+  "peak_vram_mb": 9461.79541015625,
+  "hashes": {
+    "snapshot_sha256": "754c5ec01f10fa4f32b89df17910d9da1e73f8c6964886825ce32ebea6e818a2",
+    "model_config_sha256": "8ffb262057494f632c1250fc08b4c31713fd9e84b036c49725fa8d356d2297a4",
+    "tokenizer_sha256": "451fa54f28dcdce210b587c3fe2c986bb1cd984a76668860698b1316821787e5",
+    "initial_weights_sha256": "b5905e556ad04d7044c125a9b3b2efa856ba7a9cb425650766be34dd624b5cb9"
+  },
+  "final_weights_sha256": "e95ce68ce314988251f480e88f724ee506e730f3255fb6179a879bf575fb989b",
+  "exposure_lineage": [
+    {
+      "arch": "scratch",
+      "phase": "warmup",
+      "exposure": "standard",
+      "exposed_variants": [
+        "standard"
+      ],
+      "seed": 42,
+      "init_weights_dir": null
+    },
+    {
+      "arch": "scratch",
+      "phase": "main",
+      "exposure": "familiar",
+      "exposed_variants": [
+        "diagonal_rook",
+        "straight_bishop",
+        "weakened_queen",
+        "extended_pawn"
+      ],
+      "seed": 42,
+      "init_weights_dir": "runs_v2/long_study/warmup/scratch_seed42/best_weights"
+    }
+  ],
+  "run_config": {
+    "arch": "scratch",
+    "phase": "main",
+    "exposure": "familiar",
+    "exposed_variants": [
+      "diagonal_rook",
+      "straight_bishop",
+      "weakened_queen",
+      "extended_pawn"
+    ],
+    "seed": 42,
+    "snapshot_dir": "data_v2_2026112501/snapshots/snap_v3",
+    "init_weights_dir": null,
+    "max_steps": 10000,
+    "eval_interval": 500,
+    "ckpt_interval": 250,
+    "milestones": [
+      0,
+      200,
+      1000,
+      2500,
+      5000,
+      10000
+    ],
+    "batch_size": 1,
+    "grad_accum": 8,
+    "k_values": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "val_k_values": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "val_roots_per_variant": 32,
+    "max_seq_len": 32768,
+    "notation": "san",
+    "lr": 0.0003,
+    "weight_decay": 0.1,
+    "min_lr_ratio": 0.1,
+    "warmup_steps": null,
+    "max_grad_norm": 1.0
+  },
+  "output_dir": "runs_v2/long_study/main/slot3_scratch_familiar_seed42",
+  "finished_at": "2026-11-25T23:35:11.757597+00:00"
+}

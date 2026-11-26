@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "timestamp": "2026-11-25T08:02:43.900332+00:00",
+  "mock_small": false,
+  "device": "cuda:4",
+  "arches": [
+    "scratch"
+  ],
+  "snapshot_dir": "data_v2_2026112501/snapshots/snap_v1",
+  "checks": {
+    "check1_params_grads_lineage": {
+      "scratch": {
+        "passed": true,
+        "meta_494m_counts": {
+          "embedding_params": 136249344,
+          "backbone_other_params": 357898112,
+          "head_params": 2691,
+          "other_params": 357900803,
+          "total_params": 494150147,
+          "total_trainable": 494150147
+        },
+        "runnable_counts": {
+          "embedding_params": 136249344,
+          "backbone_other_params": 357898112,
+          "head_params": 2691,
+          "other_params": 357900803,
+          "total_params": 494150147,
+          "total_trainable": 494150147
+        },
+        "all_params_fp32": true,
+        "all_params_have_finite_grad": true
+      },
+      "exposure_lineage_check": {
+        "passed": true,
+        "sample_lineage": [
+          {
+            "init_weights_dir": "/tmp/warmup_parent/best_weights"
+          },
+          {
+            "arch": "scratch",
+            "phase": "main",
+            "exposure": "familiar",
+            "exposed_variants": [
+              "diagonal_rook",
+              "straight_bishop",
+              "weakened_queen",
+              "extended_pawn"
+            ],
+            "seed": 42,
+            "init_weights_dir": "/tmp/warmup_parent/best_weights"
+          }
+        ]
+      }
+    },
+    "check2_loss_padding_prompt_sampling": {
+      "passed": true,
+      "complete_state_prompt_reconstruction": true,
+      "strict_no_trim_overflow_error": true,
+      "dynamic_sampling_ks_seen": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "dynamic_sampling_variants_seen": [
+        "antichess",
+        "blocked_squares",
+        "dark_square_immunity",
+        "diagonal_rook"
+      ],
+      "attention_mask_invariance": {
+        "scratch": {
+          "passed": true,
+          "max_prob_diff_none_vs_ones": 0.0,
+          "max_prob_diff_none_vs_padded": 0.0,
+          "loss_diff_none_vs_padded": 0.0,
+          "tol_ones": 0.0001,
+          "tol_pad": 0.05
+        }
+      }
+    },
+    "check3_save_resume_equivalence": {
+      "scratch": {
+        "passed": true,
+        "identical_input_sha256_steps_4_5": true,
+        "max_loss_diff_steps_4_5": 0.0019059181213378906,
+        "final_weights_sha256_exact_match": false
+      }
+    },
+    "check4_5_profile_and_projections": {
+      "scratch": {
+        "passed": true,
+        "profile_steps": 50,
+        "grad_accum": 8,
+        "longest_k4_tokens_tested": 5956,
+        "total_tokens_profiled": 429395,
+        "tokens_per_second": 4889.254194623241,
+        "model_load_seconds": 0.034273747354745865,
+        "total_profile_seconds": 87.82423308491707,
+        "avg_step_seconds": 1.7564840511977673,
+        "avg_optimizer_step_seconds": 0.031025700271129608,
+        "peak_allocated_mb": 9458.314453125,
+        "peak_reserved_mb": 10030.0,
+        "val_panel_episodes": 512,
+        "val_panel_seconds": 13.277312658727169,
+        "checkpoint_save_seconds": 6.530163649469614,
+        "checkpoint_size_mb": 5655.448925971985,
+        "milestone_weights_size_mb": 1885.1292400360107,
+        "projections": {
+          "warmup_1k_gpu_hours": 0.53205891836952,
+          "main_10k_gpu_hours": 5.025452106910654,
+          "warmup_plus_main_gpu_hours": 5.557511025280174,
+          "warmup_disk_gb": 36.81905001215637,
+          "main_disk_gb": 60.751354817301035
+        }
+      }
+    }
+  },
+  "study_projections": {
+    "num_warmup_jobs": 6,
+    "num_main_jobs": 8,
+    "total_gpu_hours_all_14_jobs": 21.697985182751175,
+    "total_disk_gb_all_14_jobs": 353.46256930567324
+  }
+}

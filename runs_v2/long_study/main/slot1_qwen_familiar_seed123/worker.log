@@ -1,0 +1,12 @@
+
+[2026-11-25T19:19:16.418158+00:00] LAUNCH gpu=3 resume=False cmd=/usr/local/bin/python3 /data/backups/rganapa/Sebastian/cs182-chess/scripts_v2/train_long_study.py --arch qwen --phase main --exposure familiar --seed 123 --snapshot-dir data_v2_2026112501/snapshots/snap_v3 --output-dir runs_v2/long_study/main/slot1_qwen_familiar_seed123 --max-steps 10000 --eval-interval 500 --ckpt-interval 250 --batch-size 1 --grad-accum 8 --max-seq-len 32768 --gpu 0 --k-values 0 1 2 4 --milestones 0 200 1000 2500 5000 10000 --init-weights-dir runs_v2/long_study/warmup/qwen_seed123/best_weights
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:  38%|███▊      | 130/339 [00:00<00:00, 1293.39it/s]Loading weights:  84%|████████▍ | 286/339 [00:00<00:00, 1447.79it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 1481.45it/s]
+/data/backups/rganapa/antigravity/.local/lib/python3.12/site-packages/transformers/modeling_utils.py:3204: FutureWarning: `gradient_checkpointing_enable` is deprecated and will be removed in v6. Use `activation_checkpointing_enable` instead.
+  warnings.warn(
+{"status": "interrupted_checkpointed", "step": 4663, "best_val_nll": 1.0162838449341476}
+
+[2026-11-25T21:42:50.752733+00:00] LAUNCH gpu=3 resume=True cmd=/usr/local/bin/python3 /data/backups/rganapa/Sebastian/cs182-chess/scripts_v2/train_long_study.py --arch qwen --phase main --exposure familiar --seed 123 --snapshot-dir data_v2_2026112501/snapshots/snap_v3 --output-dir runs_v2/long_study/main/slot1_qwen_familiar_seed123 --max-steps 10000 --eval-interval 500 --ckpt-interval 250 --batch-size 1 --grad-accum 8 --max-seq-len 32768 --gpu 0 --k-values 0 1 2 4 --milestones 0 200 1000 2500 5000 10000 --resume
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:  29%|██▉       | 100/339 [00:00<00:00, 983.10it/s]Loading weights:  59%|█████▊    | 199/339 [00:00<00:00, 640.30it/s]Loading weights:  80%|███████▉  | 270/339 [00:00<00:00, 598.29it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 717.45it/s]
+/data/backups/rganapa/antigravity/.local/lib/python3.12/site-packages/transformers/modeling_utils.py:3204: FutureWarning: `gradient_checkpointing_enable` is deprecated and will be removed in v6. Use `activation_checkpointing_enable` instead.
+  warnings.warn(
+{"status": "completed", "step": 10000, "best_val_nll": 0.9456826462966139}

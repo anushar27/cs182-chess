@@ -1,0 +1,71 @@
+"""Unified evaluation, baseline, control, and uncertainty suite for chess_icl_v2."""
+
+from .baselines import (
+    BoardKNNBaseline,
+    DemoMajorityBaseline,
+    EqualMaterialSlice,
+    LengthHistogramBaseline,
+    MultinomialLogisticRegression,
+    Predictor,
+    QueryMaterialBaseline,
+    TrainingPriorBaseline,
+    UniformBaseline,
+    compute_standard_material_diff,
+    encode_fen_64x13_plus_1,
+    filter_equal_material,
+)
+from .controls import (
+    make_corrupted_outcome_episodes,
+    make_corrupted_trajectory_episodes,
+    make_mismatched_context_episodes,
+)
+from .metrics import (
+    CLASS_NAMES,
+    compute_argmax_accuracy,
+    compute_brier,
+    compute_brier_per_sample,
+    compute_context_gain,
+    compute_ece,
+    compute_l1_tv,
+    compute_mc_noise_floor,
+    compute_nll,
+    compute_side_calibration,
+)
+from .uncertainty import (
+    aggregate_evaluation_records,
+    aggregate_seed_draw_hierarchy,
+    bootstrap_by_source_game,
+    macro_average_variants,
+)
+
+__all__ = [
+    "CLASS_NAMES",
+    "Predictor",
+    "MultinomialLogisticRegression",
+    "UniformBaseline",
+    "TrainingPriorBaseline",
+    "DemoMajorityBaseline",
+    "LengthHistogramBaseline",
+    "QueryMaterialBaseline",
+    "BoardKNNBaseline",
+    "EqualMaterialSlice",
+    "filter_equal_material",
+    "compute_standard_material_diff",
+    "encode_fen_64x13_plus_1",
+    "compute_nll",
+    "compute_brier",
+    "compute_brier_per_sample",
+    "compute_l1_tv",
+    "compute_argmax_accuracy",
+    "compute_ece",
+    "compute_side_calibration",
+    "compute_context_gain",
+    "compute_mc_noise_floor",
+    "make_mismatched_context_episodes",
+    "make_corrupted_outcome_episodes",
+    "make_corrupted_trajectory_episodes",
+    "bootstrap_by_source_game",
+    "aggregate_seed_draw_hierarchy",
+    "macro_average_variants",
+    "aggregate_evaluation_records",
+]

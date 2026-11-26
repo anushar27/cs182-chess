@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-11-25T08:54:55.041095+00:00",
+  "pid": 3732245,
+  "status": "completed",
+  "arch": "qwen",
+  "phase": "warmup",
+  "exposure": "standard",
+  "seed": 42,
+  "step": 1000,
+  "max_steps": 1000,
+  "total_tokens": 8555305,
+  "total_episodes": 8000,
+  "tokens_per_sec": 3255.9734383642103,
+  "peak_vram_mb": 16799.6455078125,
+  "wall_seconds": 2627.572113584727,
+  "gpu_process_seconds": 2627.572113722563,
+  "last_train_loss": 1.0981263518333435,
+  "last_val_nll": 1.0206908080461092
+}

@@ -1,0 +1,9 @@
+
+[2026-11-25T19:19:16.430577+00:00] LAUNCH gpu=6 resume=False cmd=/usr/local/bin/python3 /data/backups/rganapa/Sebastian/cs182-chess/scripts_v2/train_long_study.py --arch scratch --phase main --exposure familiar --seed 456 --snapshot-dir data_v2_2026112501/snapshots/snap_v3 --output-dir runs_v2/long_study/main/slot5_scratch_familiar_seed456 --max-steps 10000 --eval-interval 500 --ckpt-interval 250 --batch-size 1 --grad-accum 8 --max-seq-len 32768 --gpu 0 --k-values 0 1 2 4 --milestones 0 200 1000 2500 5000 10000 --init-weights-dir runs_v2/long_study/warmup/scratch_seed456/best_weights
+/data/backups/rganapa/antigravity/.local/lib/python3.12/site-packages/transformers/modeling_utils.py:3204: FutureWarning: `gradient_checkpointing_enable` is deprecated and will be removed in v6. Use `activation_checkpointing_enable` instead.
+  warnings.warn(
+
+[2026-11-25T23:35:30.595681+00:00] LAUNCH gpu=2 resume=True cmd=/usr/local/bin/python3 /data/backups/rganapa/Sebastian/cs182-chess/scripts_v2/train_long_study.py --arch scratch --phase main --exposure familiar --seed 456 --snapshot-dir data_v2_2026112501/snapshots/snap_v3 --output-dir runs_v2/long_study/main/slot5_scratch_familiar_seed456 --max-steps 10000 --eval-interval 500 --ckpt-interval 250 --batch-size 1 --grad-accum 8 --max-seq-len 32768 --gpu 0 --k-values 0 1 2 4 --milestones 0 200 1000 2500 5000 10000 --resume
+/data/backups/rganapa/antigravity/.local/lib/python3.12/site-packages/transformers/modeling_utils.py:3204: FutureWarning: `gradient_checkpointing_enable` is deprecated and will be removed in v6. Use `activation_checkpointing_enable` instead.
+  warnings.warn(
+{"status": "completed", "step": 10000, "best_val_nll": 1.012853878813409}

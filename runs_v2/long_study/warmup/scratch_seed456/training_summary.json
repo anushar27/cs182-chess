@@ -1,0 +1,86 @@
+{
+  "status": "completed",
+  "signal": null,
+  "arch": "scratch",
+  "phase": "warmup",
+  "exposure": "standard",
+  "exposed_variants": [
+    "standard"
+  ],
+  "seed": 456,
+  "step": 1000,
+  "max_steps": 1000,
+  "total_tokens_processed": 8528562,
+  "total_episodes_processed": 8000,
+  "unique_roots_seen": 1500,
+  "unique_families_seen": 757,
+  "best_val_nll": 1.0839821627594883,
+  "best_val_step": 600,
+  "wall_seconds": 1907.3496828749776,
+  "gpu_process_seconds": 1907.3496834933758,
+  "cpu_process_seconds": 1535.578926575,
+  "model_load_seconds": 0.3931625485420227,
+  "peak_vram_mb": 9453.955078125,
+  "hashes": {
+    "snapshot_sha256": "42360c26115075c7e46fb2942b6e5984ebafba4cb6add2c49d85e76c60ee2f41",
+    "model_config_sha256": "8ffb262057494f632c1250fc08b4c31713fd9e84b036c49725fa8d356d2297a4",
+    "tokenizer_sha256": "451fa54f28dcdce210b587c3fe2c986bb1cd984a76668860698b1316821787e5",
+    "initial_weights_sha256": "6bf7f7d4ec5d173a8c17591b58c53ffbf5e890db2ecf1c7e922494ad23f1f310"
+  },
+  "final_weights_sha256": "38ad333364f78e1af5f41e20831d5fee9d2663b8b55495c94f669d9822490289",
+  "exposure_lineage": [
+    {
+      "arch": "scratch",
+      "phase": "warmup",
+      "exposure": "standard",
+      "exposed_variants": [
+        "standard"
+      ],
+      "seed": 456,
+      "init_weights_dir": null
+    }
+  ],
+  "run_config": {
+    "arch": "scratch",
+    "phase": "warmup",
+    "exposure": "standard",
+    "exposed_variants": [
+      "standard"
+    ],
+    "seed": 456,
+    "snapshot_dir": "data_v2_2026112501/snapshots/snap_v2",
+    "init_weights_dir": null,
+    "max_steps": 1000,
+    "eval_interval": 100,
+    "ckpt_interval": 250,
+    "milestones": [
+      0,
+      200,
+      1000
+    ],
+    "batch_size": 1,
+    "grad_accum": 8,
+    "k_values": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "val_k_values": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "val_roots_per_variant": 32,
+    "max_seq_len": 32768,
+    "notation": "san",
+    "lr": 0.0003,
+    "weight_decay": 0.1,
+    "min_lr_ratio": 0.1,
+    "warmup_steps": null,
+    "max_grad_norm": 1.0
+  },
+  "output_dir": "runs_v2/long_study/warmup/scratch_seed456",
+  "finished_at": "2026-11-25T08:52:13.991358+00:00"
+}
