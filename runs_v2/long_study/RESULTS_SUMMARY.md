@@ -70,3 +70,22 @@ Across the `R=256` subset, vector Brier and held-out/standard NLLs decrease cons
 ## 4. Artifact & Code Verification
 - Unit tests (`tests_v2/test_data_long_study.py`, `tests_v2/test_long_study_models.py`, `tests_v2/test_long_study_training.py`, `tests_v2/test_long_study_eval.py`): **29 passed, 0 failed, 0 skipped** (`325.02s`).
 - Compact non-binary evaluation artifacts committed in `runs_v2/long_study/eval/`: `val_select_slot*.json`, `eval_summary_slot0..7.json`, `eval_agg_qwen_familiar_3seeds.json`, `eval_agg_scratch_familiar_3seeds.json`, `baselines_test.json`. (130 MB raw `eval_test_slot*.json` per-root files and weights/datasets are git-ignored.)
+
+
+## 5. `K=8` & `K=16` Context-Length Scaling Extension
+All `K=8` and `K=16` test prompts fit cleanly under `max_seq_len=32768` (`0` dropped demos across all `1,773` test roots; global max tokens `8,634` at `K=8`, `15,352` at `K=16`, `100.0%` root coverage).
+
+- **New `K ∈ {0, 1, 2, 4, 8}` trained slots (`10,000` steps on `snap_v3`, `138,462,971` tokens each):**
+  - `slot8` (`Qwen2.5-7B LoRA all_single`, `s42`): `best_val_nll = 0.95321 @ 10000` (`19,058 MB` peak VRAM); frozen full-val selection picked `step_10000` (`macro_nll = 0.95327`, `brier_vec = 0.10379`).
+  - `slot9` (`Scratch 494M all_single`, `s42`): `best_val_nll = 0.96509 @ 10000` (`9,466 MB` peak VRAM); frozen full-val selection picked `step_09000` (`macro_nll = 0.96312`, `brier_vec = 0.10928`).
+
+| Slot | Model / Train `K` | Regime | K=0 NLL | K=4 NLL | K=8 NLL | K=16 NLL | Foreign K=16 | R=256 K=8 | R=256 K=16 |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| `slot0` | Qwen Fam (`K≤4`) | `familiar` | `0.9573` | **`0.9480`** | `0.9509` | `0.9539` | `0.9701` | — | — |
+| `slot0` | Qwen Fam (`K≤4`) | `standard` | **`0.9189`** | `0.9226` | `0.9262` | `0.9273` | `0.9273` | — | — |
+| `slot6` | Qwen All (`K≤4`) | `heldout`* | `0.9660` | `0.9000` | `0.8998` | `0.8998` | `1.0036` | `0.8812` | `0.8811` |
+| `slot7` | Scratch All (`K≤4`) | `heldout`* | `0.9775` | `0.9112` | `0.9089` | `0.9113` | `0.9707` | `0.8931` | `0.8923` |
+| **`slot8`** | **Qwen All (`K≤8`)** | `heldout`* | `0.9627` | `0.8982` | **`0.8944`** | `0.8968` | `1.0012` | **`0.8760`** | `0.8785` |
+| **`slot9`** | **Scratch All (`K≤8`)** | `heldout`* | `0.9665` | `0.9092` | **`0.9029`** | `0.9063` | `0.9857` | **`0.8867`** | `0.8877` |
+
+- **Takeaway:** Zero-shot length extrapolation beyond `K=4` (`slot0`, `slot6`, `slot7`) saturates or ticks up slightly in macro NLL, whereas training with `K ∈ {0, 1, 2, 4, 8}` (`slot8`, `slot9`) unlocks additional `K=4 → K=8` gains (`0.8982 → 0.8944` Qwen, `0.9092 → 0.9029` Scratch, eliminating `slot6`'s zero-shot `K=8` regression on `dark_square_immunity`). Both `K=8`-trained models peak at their maximum trained context (`K=8`) and tick up slightly under unseen `K=16` extrapolation (`0.8968` / `0.9063`).

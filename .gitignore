@@ -18,6 +18,7 @@ runs_v2/**/*.pt
 runs_v2/**/*.safetensors
 runs_v2/**/*.bin
 runs_v2/long_study/eval/eval_test_slot*.json
+runs_v2/long_study/eval/eval_test_k*.json
 runs_v2_tiny/
 mplconfig_chess_v2/
 pytest-of-rganapa/

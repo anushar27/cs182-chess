@@ -1,0 +1,135 @@
+{
+  "status": "completed",
+  "signal": null,
+  "arch": "qwen",
+  "phase": "main",
+  "exposure": "all_rules",
+  "exposed_variants": [
+    "diagonal_rook",
+    "straight_bishop",
+    "weakened_queen",
+    "extended_pawn",
+    "short_knight",
+    "mobile_king",
+    "piece_capture",
+    "forward_pawn_capture",
+    "dark_square_immunity",
+    "blocked_squares",
+    "long_board",
+    "knight_army",
+    "antichess"
+  ],
+  "seed": 42,
+  "step": 10000,
+  "max_steps": 10000,
+  "total_tokens_processed": 138462971,
+  "total_episodes_processed": 80000,
+  "unique_roots_seen": 37993,
+  "unique_families_seen": 22344,
+  "best_val_nll": 0.9532128890590675,
+  "best_val_step": 10000,
+  "wall_seconds": 19717.77939490229,
+  "gpu_process_seconds": 19717.779395878315,
+  "cpu_process_seconds": 5511.991574764001,
+  "model_load_seconds": 25.087592106312513,
+  "peak_vram_mb": 19058.4990234375,
+  "hashes": {
+    "snapshot_sha256": "754c5ec01f10fa4f32b89df17910d9da1e73f8c6964886825ce32ebea6e818a2",
+    "model_config_sha256": "29b5a67edc785c8f5d0802230f5920562c68cb31693ae34317c54379fc0114d4",
+    "tokenizer_sha256": "451fa54f28dcdce210b587c3fe2c986bb1cd984a76668860698b1316821787e5",
+    "initial_weights_sha256": "612926efd167dbf2b4fc3aa8838552118b9ac61ca627e6536e33cd59a8f74c90"
+  },
+  "final_weights_sha256": "00b8ca2e3233acfeff811a3d7eb4a5aedfefdac7523b31971299bea7c9f73274",
+  "exposure_lineage": [
+    {
+      "arch": "qwen",
+      "phase": "warmup",
+      "exposure": "standard",
+      "exposed_variants": [
+        "standard"
+      ],
+      "seed": 42,
+      "init_weights_dir": null
+    },
+    {
+      "arch": "qwen",
+      "phase": "main",
+      "exposure": "all_rules",
+      "exposed_variants": [
+        "diagonal_rook",
+        "straight_bishop",
+        "weakened_queen",
+        "extended_pawn",
+        "short_knight",
+        "mobile_king",
+        "piece_capture",
+        "forward_pawn_capture",
+        "dark_square_immunity",
+        "blocked_squares",
+        "long_board",
+        "knight_army",
+        "antichess"
+      ],
+      "seed": 42,
+      "init_weights_dir": "runs_v2/long_study/warmup/qwen_seed42/best_weights"
+    }
+  ],
+  "run_config": {
+    "arch": "qwen",
+    "phase": "main",
+    "exposure": "all_rules",
+    "exposed_variants": [
+      "diagonal_rook",
+      "straight_bishop",
+      "weakened_queen",
+      "extended_pawn",
+      "short_knight",
+      "mobile_king",
+      "piece_capture",
+      "forward_pawn_capture",
+      "dark_square_immunity",
+      "blocked_squares",
+      "long_board",
+      "knight_army",
+      "antichess"
+    ],
+    "seed": 42,
+    "snapshot_dir": "data_v2_2026112501/snapshots/snap_v3",
+    "init_weights_dir": null,
+    "max_steps": 10000,
+    "eval_interval": 500,
+    "ckpt_interval": 250,
+    "milestones": [
+      0,
+      200,
+      1000,
+      2500,
+      5000,
+      10000
+    ],
+    "batch_size": 1,
+    "grad_accum": 8,
+    "k_values": [
+      0,
+      1,
+      2,
+      4,
+      8
+    ],
+    "val_k_values": [
+      0,
+      4,
+      8
+    ],
+    "val_roots_per_variant": 32,
+    "max_seq_len": 32768,
+    "notation": "san",
+    "lr": 0.0001,
+    "weight_decay": 0.01,
+    "min_lr_ratio": 0.1,
+    "warmup_steps": null,
+    "max_grad_norm": 1.0
+  },
+  "output_dir": "runs_v2/long_study/main/slot8_qwen_all_rules_k8_seed42",
+  "finished_at": "2026-11-28T07:24:08.152121+00:00"
+}
